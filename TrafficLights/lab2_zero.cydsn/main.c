@@ -10,14 +10,15 @@
 int algo = 0;
 uint16 t_count = 0;
 const int RED = 1,
-	      YELLOW = 1,
-	      GREEN = 1;
+	YELLOW = 1,
+	GREEN = 1;
 const int ALGO_1 = 0,
-	      ALGO_2 = 1;
+	ALGO_2 = 1;
 
-int time_intarvals[2][8] = {
-		{ 6, 8, 13, 14, 15, 16, 17, 19 },
-	    { 2, 3, 4, 5, 6, 8, 17, 19 }
+/*traffic_lights intervals according to the algorithms.*/
+int traffic_lights_intervals[2][8] = {
+		{ 6, 8, 13, 14, 15, 16, 17, 19 }, /*ALGO_1*/
+	{ 2, 3, 4, 5, 6, 8, 17, 19 } /*ALGO_2*/
 };
 void setLeds(int red, int yellow, int green)
 {
@@ -42,35 +43,35 @@ CY_ISR(Pin_SW2_Handler)
 
 void runAlgorithm1()
 {
-	if (t_count < time_intarvals[ALGO_1][0])
+	if (t_count < traffic_lights_intervals[ALGO_1][0])
 	{
 		setLeds(RED, 0, 0);
 	}
-	else if (t_count < time_intarvals[ALGO_1][1])
+	else if (t_count < traffic_lights_intervals[ALGO_1][1])
 	{
 		setLeds(RED, YELLOW, 0);
 	}
-	else if (t_count < time_intarvals[ALGO_1][2])
+	else if (t_count < traffic_lights_intervals[ALGO_1][2])
 	{
 		setLeds(0, 0, GREEN);
 	}
-	else if (t_count < time_intarvals[ALGO_1][3])
+	else if (t_count < traffic_lights_intervals[ALGO_1][3])
 	{
 		setLeds(0, 0, 0);
 	}
-	else if (t_count < time_intarvals[ALGO_1][4])
+	else if (t_count < traffic_lights_intervals[ALGO_1][4])
 	{
 		setLeds(0, 0, GREEN);
 	}
-	else if (t_count < time_intarvals[ALGO_1][5])
+	else if (t_count < traffic_lights_intervals[ALGO_1][5])
 	{
 		setLeds(0, 0, 0);
 	}
-	else if (t_count < time_intarvals[ALGO_1][6])
+	else if (t_count < traffic_lights_intervals[ALGO_1][6])
 	{
 		setLeds(0, 0, GREEN);
 	}
-	else if (t_count < time_intarvals[ALGO_1][7])
+	else if (t_count < traffic_lights_intervals[ALGO_1][7])
 	{
 		setLeds(0, YELLOW, 0);
 	}
@@ -81,35 +82,35 @@ void runAlgorithm1()
 }
 void runAlgorithm2()
 {
-	if (t_count < time_intarvals[ALGO_2][0])
+	if (t_count < traffic_lights_intervals[ALGO_2][0])
 	{
 		setLeds(0, 0, GREEN);
 	}
-	else if (t_count < time_intarvals[ALGO_2][1])
+	else if (t_count < traffic_lights_intervals[ALGO_2][1])
 	{
 		setLeds(0, 0, 0);
 	}
-	else if (t_count < time_intarvals[ALGO_2][2])
+	else if (t_count < traffic_lights_intervals[ALGO_2][2])
 	{
 		setLeds(0, 0, GREEN);
 	}
-	else if (t_count < time_intarvals[ALGO_2][3])
+	else if (t_count < traffic_lights_intervals[ALGO_2][3])
 	{
 		setLeds(0, 0, 0);
 	}
-	else if (t_count < time_intarvals[ALGO_2][4])
+	else if (t_count < traffic_lights_intervals[ALGO_2][4])
 	{
 		setLeds(0, 0, GREEN);
 	}
-	else if (t_count < time_intarvals[ALGO_2][5])
+	else if (t_count < traffic_lights_intervals[ALGO_2][5])
 	{
 		setLeds(0, YELLOW, 0);
 	}
-	else if (t_count < time_intarvals[ALGO_2][6])
+	else if (t_count < traffic_lights_intervals[ALGO_2][6])
 	{
 		setLeds(RED, 0, 0);
 	}
-	else if (t_count < time_intarvals[ALGO_2][7])
+	else if (t_count < traffic_lights_intervals[ALGO_2][7])
 	{
 		setLeds(0, YELLOW, 0);
 	}
