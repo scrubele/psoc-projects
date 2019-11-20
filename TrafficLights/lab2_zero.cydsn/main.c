@@ -18,7 +18,7 @@ const int ALGO_1 = 0,
 /*traffic_lights intervals according to the algorithms.*/
 int traffic_lights_intervals[2][8] = {
 		{ 6, 8, 13, 14, 15, 16, 17, 19 }, /*ALGO_1*/
-	{ 2, 3, 4, 5, 6, 8, 17, 19 } /*ALGO_2*/
+	    { 2, 3, 4, 5, 6, 8, 17, 19 } /*ALGO_2*/
 };
 void setLeds(int red, int yellow, int green)
 {

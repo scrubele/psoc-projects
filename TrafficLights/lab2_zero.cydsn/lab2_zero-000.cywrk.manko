@@ -195,9 +195,7 @@
 <Unloaded />
 <OpenDocs>
 <name v=".\TopDesign\TopDesign.cysch" />
-<name v=".\lab2_zero.cydwr" />
 <name v=".\main.c" />
-<name v=".\Generated_Source\PSoC5\Cm3Start.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -205,7 +203,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1055, 495" SelectedTabbedMdiWindow="9988d789-9e8f-4fe6-ace6-7031fbc81d7b"><DocumentWindow Key="D:\micro\lab2_zero.cydsn\TopDesign\TopDesign.cysch" Guid="9988d789-9e8f-4fe6-ace6-7031fbc81d7b" /><DocumentWindow Key="D:\micro\lab2_zero.cydsn\lab2_zero.cydwr" Guid="a4b3202b-c61f-4d2e-9cc6-f56d4e793354" /><DocumentWindow Key="D:\micro\lab2_zero.cydsn\main.c" Guid="0da47f38-3e04-4ead-8da4-95364f575934" /><DocumentWindow Key="D:\micro\lab2_zero.cydsn\Generated_Source\PSoC5\Cm3Start.c" Guid="a5653c49-8991-44b4-8769-0eb879754c72" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="2c5c55dd-08f1-4ee3-8db7-6187ecdbff8a" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1098, 495" SelectedTabbedMdiWindow="7a900902-0fb7-49d9-abd2-a7975ece9fb6"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="2c5c55dd-08f1-4ee3-8db7-6187ecdbff8a" /><DocumentWindow Key="D:\repositories\psoc-projects\TrafficLights\lab2_zero.cydsn\TopDesign\TopDesign.cysch" Guid="ebd939c0-69fb-48da-a66e-43fb8795fae8" /><DocumentWindow Key="D:\repositories\psoc-projects\TrafficLights\lab2_zero.cydsn\main.c" Guid="7a900902-0fb7-49d9-abd2-a7975ece9fb6" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
