@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Lab1\Lab1\Source Files\main.c">
+<ExpandedNodeIds>
+<v>Lab1</v>
+<v>Lab1\Lab1</v>
+<v>Lab1\Lab1\TopDesign</v>
+<v>Lab1\Lab1\Lab1.cydwr</v>
+<v>Lab1\Lab1\Lab1.cydwr\Pins</v>
+<v>Lab1\Lab1\Lab1.cydwr\Analog</v>
+<v>Lab1\Lab1\Lab1.cydwr\Clocks</v>
+<v>Lab1\Lab1\Lab1.cydwr\Interrupts</v>
+<v>Lab1\Lab1\Lab1.cydwr\System</v>
+<v>Lab1\Lab1\Lab1.cydwr\Directives</v>
+<v>Lab1\Lab1\Lab1.cydwr\Flash Security</v>
+<v>Lab1\Lab1\Header Files</v>
+<v>Lab1\Lab1\Header Files\cyapicallbacks.h</v>
+<v>Lab1\Lab1\Source Files</v>
+<v>Lab1\Lab1\Source Files\main.c</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Lab1</v>
+<v>Lab1\Lab1</v>
+<v>Lab1\Lab1\TopDesign</v>
+<v>Lab1\Lab1\Lab1.cydwr</v>
+<v>Lab1\Lab1\Lab1.cydwr\Pins</v>
+<v>Lab1\Lab1\Lab1.cydwr\Analog</v>
+<v>Lab1\Lab1\Lab1.cydwr\Clocks</v>
+<v>Lab1\Lab1\Lab1.cydwr\Interrupts</v>
+<v>Lab1\Lab1\Lab1.cydwr\System</v>
+<v>Lab1\Lab1\Lab1.cydwr\Directives</v>
+<v>Lab1\Lab1\Lab1.cydwr\Flash Security</v>
+<v>Lab1\Lab1\Header Files</v>
+<v>Lab1\Lab1\Header Files\cyapicallbacks.h</v>
+<v>Lab1\Lab1\Source Files</v>
+<v>Lab1\Lab1\Source Files\main.c</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Lab1</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Lab1</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Lab1</v>
+<v>Lab1\Lab1</v>
+<v>Lab1\Lab1\CortexM0</v>
+<v>Lab1\Lab1\CortexM0\ARM_GCC_541</v>
+<v>Lab1\Lab1\CortexM0\ARM_GCC_541\Debug</v>
+<v>Lab1\Lab1\CortexM0\ARM_GCC_541\Debug\Lab1.elf</v>
+<v>Lab1\Lab1\CortexM0\ARM_GCC_541\Debug\Lab1.hex</v>
+<v>Lab1\Lab1\CortexM0\ARM_GCC_541\Debug\Lab1.map</v>
+<v>Lab1\Lab1\Lab1.gpdsc</v>
+<v>Lab1\Lab1\Lab1.rpt</v>
+<v>Lab1\Lab1\Lab1_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Lab1</v>
+<v>Lab1\Lab1</v>
+<v>Lab1\Lab1\CortexM0</v>
+<v>Lab1\Lab1\CortexM0\ARM_GCC_541</v>
+<v>Lab1\Lab1\CortexM0\ARM_GCC_541\Debug</v>
+<v>Lab1\Lab1\CortexM0\ARM_GCC_541\Debug\Lab1.elf</v>
+<v>Lab1\Lab1\CortexM0\ARM_GCC_541\Debug\Lab1.hex</v>
+<v>Lab1\Lab1\CortexM0\ARM_GCC_541\Debug\Lab1.map</v>
+<v>Lab1\Lab1\Lab1.gpdsc</v>
+<v>Lab1\Lab1\Lab1.rpt</v>
+<v>Lab1\Lab1\Lab1_timing.html</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Lab1</v>
+<v>Lab1\Lab1</v>
+<v>Lab1\Lab1\PSoC 4 Architecture TRM</v>
+<v>Lab1\Lab1\PRoC BLE Family Datasheet</v>
+<v>Lab1\Lab1\System Reference Guides</v>
+<v>Lab1\Lab1\System Reference Guides\cy_boot_v5_70</v>
+<v>Lab1\Lab1\System Reference Guides\cy_lfclk_v1_20</v>
+<v>Lab1\Lab1\cy_pins_v2_20</v>
+<v>Lab1\Lab1\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>Lab1\Lab1\Gnd_v1_0</v>
+<v>Lab1\Lab1\Gnd_v1_0\Gnd_v1_0.pdf</v>
+<v>Lab1\Lab1\LED_v1_0.pdf</v>
+<v>Lab1\Lab1\Power_v1_0.pdf</v>
+<v>Lab1\Lab1\Resistor_v1_0.pdf</v>
+<v>Lab1\Lab1\SwitchSPST_v1_0</v>
+<v>Lab1\Lab1\SwitchSPST_v1_0\SwitchSPST_v1_0.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Lab1</v>
+<v>Lab1\Lab1</v>
+<v>Lab1\Lab1\PSoC 4 Architecture TRM</v>
+<v>Lab1\Lab1\PRoC BLE Family Datasheet</v>
+<v>Lab1\Lab1\System Reference Guides</v>
+<v>Lab1\Lab1\System Reference Guides\cy_boot_v5_70</v>
+<v>Lab1\Lab1\System Reference Guides\cy_lfclk_v1_20</v>
+<v>Lab1\Lab1\cy_pins_v2_20</v>
+<v>Lab1\Lab1\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>Lab1\Lab1\Gnd_v1_0</v>
+<v>Lab1\Lab1\Gnd_v1_0\Gnd_v1_0.pdf</v>
+<v>Lab1\Lab1\LED_v1_0.pdf</v>
+<v>Lab1\Lab1\Power_v1_0.pdf</v>
+<v>Lab1\Lab1\Resistor_v1_0.pdf</v>
+<v>Lab1\Lab1\SwitchSPST_v1_0</v>
+<v>Lab1\Lab1\SwitchSPST_v1_0\SwitchSPST_v1_0.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\Lab1.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\Lab1.cydsn\Lab1.cydwr" />
+<name v=".\Lab1.cydsn\main.c" />
+<name v=".\Lab1.cydsn\cyapicallbacks.h" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1055, 406" SelectedTabbedMdiWindow="fe88781e-6f4c-4319-9074-39949ad93238"><DocumentWindow Key="D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\TopDesign\TopDesign.cysch" Guid="fe88781e-6f4c-4319-9074-39949ad93238" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="631327e1-0407-4e32-a6cd-f066aa72ddb0" /><DocumentWindow Key="D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\Lab1.cydwr" Guid="2d58e7e0-c13a-4c61-9ffb-1934b538d7d1" /><DocumentWindow Key="D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\main.c" Guid="8ec1f0c5-c858-41a6-9b2c-b31e6ec4a97b" /><DocumentWindow Key="D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\cyapicallbacks.h" Guid="b0bd9447-0e58-4231-8cb4-48d1501fda7b" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>

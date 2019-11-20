@@ -1,0 +1,43 @@
+Loading plugins phase: Elapsed time ==> 3s.057ms
+<CYPRESSTAG name="CyDsfit arguments...">
+cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\Lab1.cyprj -d CYBLE-012011-00 -s D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\Generated_Source\PSoC4 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+</CYPRESSTAG>
+<CYPRESSTAG name="Design elaboration results...">
+ADD: sdb.M0012: error: Terminals "Pin_1.fb_0,SW1.T2" connected to signal "Net_350" have mismatching types.
+ * D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\TopDesign\TopDesign.cysch (Signal: Net_350)
+ * D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\TopDesign\TopDesign.cysch (Shape_106.6)
+ * D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\TopDesign\TopDesign.cysch (T2)
+ * D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\TopDesign\TopDesign.cysch (Shape_124)
+ * D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\TopDesign\TopDesign.cysch (fb_0)
+ * D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\TopDesign\TopDesign.cysch (Shape_7.2)
+
+ADD: sdb.M0018: error: Multiple drivers on signal "Net_350", bit(s) "0".
+ * D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\TopDesign\TopDesign.cysch (Signal: Net_350)
+ * D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\TopDesign\TopDesign.cysch (Shape_106.6)
+ * D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\TopDesign\TopDesign.cysch (Shape_124)
+ * D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\TopDesign\TopDesign.cysch (Shape_7.2)
+
+ADD: sdb.M0012: error: Terminals "Pin_2.fb_0,SW2.T2" connected to signal "Net_362" have mismatching types.
+ * D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\TopDesign\TopDesign.cysch (Signal: Net_362)
+ * D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\TopDesign\TopDesign.cysch (Shape_107.6)
+ * D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\TopDesign\TopDesign.cysch (T2)
+ * D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\TopDesign\TopDesign.cysch (Shape_123)
+ * D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\TopDesign\TopDesign.cysch (fb_0)
+ * D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\TopDesign\TopDesign.cysch (Shape_38.2)
+
+ADD: sdb.M0018: error: Multiple drivers on signal "Net_362", bit(s) "0".
+ * D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\TopDesign\TopDesign.cysch (Signal: Net_362)
+ * D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\TopDesign\TopDesign.cysch (Shape_107.6)
+ * D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\TopDesign\TopDesign.cysch (Shape_123)
+ * D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\TopDesign\TopDesign.cysch (Shape_38.2)
+
+ADD: sdb.M0012: error: Terminals "R_1.T1,Pin_RED.y_0" connected to signal "Net_367" have mismatching types.
+ * D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\TopDesign\TopDesign.cysch (Signal: Net_367)
+ * D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\TopDesign\TopDesign.cysch (Shape_125.2)
+ * D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\TopDesign\TopDesign.cysch (y_0)
+ * D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\TopDesign\TopDesign.cysch (Shape_128.9)
+ * D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\TopDesign\TopDesign.cysch (T1)
+ * D:\university\5th semester\microcontrollers\Lab1\Lab1.cydsn\TopDesign\TopDesign.cysch (Shape_129)
+
+</CYPRESSTAG>
+Elaboration phase: Elapsed time ==> 2s.145ms

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="5f2be1a5-0687-4501-bb8c-cf21cb8211bf">
+<CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf type_name="CyDesigner.Common.ProjMgmt.GUI.CyBookmarkData" version="1">
+<indicators />
+</CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf>
+</dataGuid>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="lab2_zero-000\lab2_zero\lab2_zero.cydwr">
+<ExpandedNodeIds>
+<v>lab2_zero-000</v>
+<v>lab2_zero-000\lab2_zero</v>
+<v>lab2_zero-000\lab2_zero\TopDesign</v>
+<v>lab2_zero-000\lab2_zero\lab2_zero.cydwr</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>lab2_zero-000</v>
+<v>lab2_zero-000\lab2_zero</v>
+<v>lab2_zero-000\lab2_zero\TopDesign</v>
+<v>lab2_zero-000\lab2_zero\lab2_zero.cydwr</v>
+<v>lab2_zero-000\lab2_zero\lab2_zero.cydwr\Pins</v>
+<v>lab2_zero-000\lab2_zero\lab2_zero.cydwr\Analog</v>
+<v>lab2_zero-000\lab2_zero\lab2_zero.cydwr\Clocks</v>
+<v>lab2_zero-000\lab2_zero\lab2_zero.cydwr\Interrupts</v>
+<v>lab2_zero-000\lab2_zero\lab2_zero.cydwr\DMA</v>
+<v>lab2_zero-000\lab2_zero\lab2_zero.cydwr\System</v>
+<v>lab2_zero-000\lab2_zero\lab2_zero.cydwr\Directives</v>
+<v>lab2_zero-000\lab2_zero\lab2_zero.cydwr\Flash Security</v>
+<v>lab2_zero-000\lab2_zero\lab2_zero.cydwr\EEPROM</v>
+<v>lab2_zero-000\lab2_zero\Header Files</v>
+<v>lab2_zero-000\lab2_zero\Source Files</v>
+<v>lab2_zero-000\lab2_zero\Generated_Source</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>lab2_zero-000</v>
+<v>lab2_zero-000\lab2_zero</v>
+<v>lab2_zero-000\lab2_zero\TopDesign</v>
+<v>lab2_zero-000\lab2_zero\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>lab2_zero-000</v>
+<v>lab2_zero-000\lab2_zero</v>
+<v>lab2_zero-000\lab2_zero\TopDesign</v>
+<v>lab2_zero-000\lab2_zero\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>lab2_zero-000</v>
+<v>lab2_zero-000\lab2_zero</v>
+<v>lab2_zero-000\lab2_zero\CortexM3</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_LCDPort.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_PM.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_Blue.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_Green.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_Red.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_SW2.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_SW2_Int.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_Test.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_Int.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_PM.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\lab2_zero.elf</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\lab2_zero.hex</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\lab2_zero.map</v>
+<v>lab2_zero-000\lab2_zero\lab2_zero.gpdsc</v>
+<v>lab2_zero-000\lab2_zero\lab2_zero.rpt</v>
+<v>lab2_zero-000\lab2_zero\lab2_zero_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>lab2_zero-000</v>
+<v>lab2_zero-000\lab2_zero</v>
+<v>lab2_zero-000\lab2_zero\CortexM3</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_LCDPort.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_PM.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_Blue.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_Green.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_Red.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_SW2.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_SW2_Int.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_Test.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_Int.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_PM.lst</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\lab2_zero.elf</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\lab2_zero.hex</v>
+<v>lab2_zero-000\lab2_zero\CortexM3\ARM_GCC_541\Debug\lab2_zero.map</v>
+<v>lab2_zero-000\lab2_zero\lab2_zero.gpdsc</v>
+<v>lab2_zero-000\lab2_zero\lab2_zero.rpt</v>
+<v>lab2_zero-000\lab2_zero\lab2_zero_timing.html</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="lab2_zero-000\lab2_zero">
+<ExpandedNodeIds>
+<v>lab2_zero-000</v>
+<v>lab2_zero-000\lab2_zero</v>
+<v>lab2_zero-000\lab2_zero\PSoC 5LP Architecture TRM</v>
+<v>lab2_zero-000\lab2_zero\CY8C58LP Family Datasheet</v>
+<v>lab2_zero-000\lab2_zero\System Reference Guides</v>
+<v>lab2_zero-000\lab2_zero\System Reference Guides\cy_boot_v5_70</v>
+<v>lab2_zero-000\lab2_zero\cy_clock_v2_20.pdf</v>
+<v>lab2_zero-000\lab2_zero\cy_isr_v1_70</v>
+<v>lab2_zero-000\lab2_zero\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
+<v>lab2_zero-000\lab2_zero\cy_pins_v2_20</v>
+<v>lab2_zero-000\lab2_zero\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>lab2_zero-000\lab2_zero\Gnd_v1_0.pdf</v>
+<v>lab2_zero-000\lab2_zero\LED_v1_0</v>
+<v>lab2_zero-000\lab2_zero\LED_v1_0\LED_v1_0.pdf</v>
+<v>lab2_zero-000\lab2_zero\Power_v1_0</v>
+<v>lab2_zero-000\lab2_zero\Power_v1_0\Power_v1_0.pdf</v>
+<v>lab2_zero-000\lab2_zero\Resistor_v1_0</v>
+<v>lab2_zero-000\lab2_zero\Resistor_v1_0\Resistor_v1_0.pdf</v>
+<v>lab2_zero-000\lab2_zero\SwitchSPST_v1_0.pdf</v>
+<v>lab2_zero-000\lab2_zero\Timer_v2_80.pdf</v>
+<v>lab2_zero-000\lab2_zero\ZeroTerminal.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>lab2_zero-000</v>
+<v>lab2_zero-000\lab2_zero</v>
+<v>lab2_zero-000\lab2_zero\PSoC 5LP Architecture TRM</v>
+<v>lab2_zero-000\lab2_zero\CY8C58LP Family Datasheet</v>
+<v>lab2_zero-000\lab2_zero\System Reference Guides</v>
+<v>lab2_zero-000\lab2_zero\System Reference Guides\cy_boot_v5_70</v>
+<v>lab2_zero-000\lab2_zero\cy_clock_v2_20.pdf</v>
+<v>lab2_zero-000\lab2_zero\cy_isr_v1_70</v>
+<v>lab2_zero-000\lab2_zero\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
+<v>lab2_zero-000\lab2_zero\cy_pins_v2_20</v>
+<v>lab2_zero-000\lab2_zero\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>lab2_zero-000\lab2_zero\Gnd_v1_0.pdf</v>
+<v>lab2_zero-000\lab2_zero\LED_v1_0</v>
+<v>lab2_zero-000\lab2_zero\LED_v1_0\LED_v1_0.pdf</v>
+<v>lab2_zero-000\lab2_zero\Power_v1_0</v>
+<v>lab2_zero-000\lab2_zero\Power_v1_0\Power_v1_0.pdf</v>
+<v>lab2_zero-000\lab2_zero\Resistor_v1_0</v>
+<v>lab2_zero-000\lab2_zero\Resistor_v1_0\Resistor_v1_0.pdf</v>
+<v>lab2_zero-000\lab2_zero\SwitchSPST_v1_0.pdf</v>
+<v>lab2_zero-000\lab2_zero\Timer_v2_80.pdf</v>
+<v>lab2_zero-000\lab2_zero\ZeroTerminal.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\TopDesign\TopDesign.cysch" />
+<name v=".\lab2_zero.cydwr" />
+<name v=".\main.c" />
+<name v=".\Generated_Source\PSoC5\Cm3Start.c" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1055, 495" SelectedTabbedMdiWindow="9988d789-9e8f-4fe6-ace6-7031fbc81d7b"><DocumentWindow Key="D:\micro\lab2_zero.cydsn\TopDesign\TopDesign.cysch" Guid="9988d789-9e8f-4fe6-ace6-7031fbc81d7b" /><DocumentWindow Key="D:\micro\lab2_zero.cydsn\lab2_zero.cydwr" Guid="a4b3202b-c61f-4d2e-9cc6-f56d4e793354" /><DocumentWindow Key="D:\micro\lab2_zero.cydsn\main.c" Guid="0da47f38-3e04-4ead-8da4-95364f575934" /><DocumentWindow Key="D:\micro\lab2_zero.cydsn\Generated_Source\PSoC5\Cm3Start.c" Guid="a5653c49-8991-44b4-8769-0eb879754c72" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="2c5c55dd-08f1-4ee3-8db7-6187ecdbff8a" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>
