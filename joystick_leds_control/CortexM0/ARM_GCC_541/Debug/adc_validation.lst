@@ -1,0 +1,676 @@
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccH8STYW.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"adc_validation.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.adc_validation_init,"ax",%progbits
+  20              		.align	2
+  21              		.global	adc_validation_init
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	adc_validation_init, %function
+  25              	adc_validation_init:
+  26              	.LFB34:
+  27              		.file 1 "adc_validation.c"
+   1:adc_validation.c **** #include "lab.h"
+   2:adc_validation.c **** 
+   3:adc_validation.c **** //Змінні для зчитування значення з джойстика
+   4:adc_validation.c **** int y = 0;
+   5:adc_validation.c **** int x = 0;
+   6:adc_validation.c **** 
+   7:adc_validation.c **** //Ініціалізація компонент
+   8:adc_validation.c **** void adc_validation_init(void){
+  28              		.loc 1 8 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+   9:adc_validation.c ****     ADC_Start();
+  36              		.loc 1 9 0
+  37 0002 FFF7FEFF 		bl	ADC_Start
+  38              	.LVL0:
+  10:adc_validation.c ****     ADC_StartConvert();
+  39              		.loc 1 10 0
+  40 0006 FFF7FEFF 		bl	ADC_StartConvert
+  41              	.LVL1:
+  11:adc_validation.c ****     PWM_X_Start();
+  42              		.loc 1 11 0
+  43 000a FFF7FEFF 		bl	PWM_X_Start
+  44              	.LVL2:
+  12:adc_validation.c ****     PWM_Y_Start();
+  45              		.loc 1 12 0
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccH8STYW.s 			page 2
+
+
+  46 000e FFF7FEFF 		bl	PWM_Y_Start
+  47              	.LVL3:
+  13:adc_validation.c **** }
+  48              		.loc 1 13 0
+  49              		@ sp needed
+  50 0012 10BD     		pop	{r4, pc}
+  51              		.cfi_endproc
+  52              	.LFE34:
+  53              		.size	adc_validation_init, .-adc_validation_init
+  54              		.section	.text.adc_get_led_position,"ax",%progbits
+  55              		.align	2
+  56              		.global	adc_get_led_position
+  57              		.code	16
+  58              		.thumb_func
+  59              		.type	adc_get_led_position, %function
+  60              	adc_get_led_position:
+  61              	.LFB35:
+  14:adc_validation.c **** 
+  15:adc_validation.c **** //Алгоритм виконання завдання
+  16:adc_validation.c **** void adc_get_led_position(void){
+  62              		.loc 1 16 0
+  63              		.cfi_startproc
+  64              		@ args = 0, pretend = 0, frame = 0
+  65              		@ frame_needed = 0, uses_anonymous_args = 0
+  66 0000 10B5     		push	{r4, lr}
+  67              		.cfi_def_cfa_offset 8
+  68              		.cfi_offset 4, -8
+  69              		.cfi_offset 14, -4
+  17:adc_validation.c ****     //Зчитування аналогового сигналу за допомогою ADC(АЦП
+  18:adc_validation.c ****     x = ADC_GetResult16(0);
+  70              		.loc 1 18 0
+  71 0002 0020     		movs	r0, #0
+  72 0004 FFF7FEFF 		bl	ADC_GetResult16
+  73              	.LVL4:
+  74 0008 064C     		ldr	r4, .L3
+  75 000a 2060     		str	r0, [r4]
+  19:adc_validation.c ****     y = ADC_GetResult16(1);   
+  76              		.loc 1 19 0
+  77 000c 0120     		movs	r0, #1
+  78 000e FFF7FEFF 		bl	ADC_GetResult16
+  79              	.LVL5:
+  80 0012 6060     		str	r0, [r4, #4]
+  20:adc_validation.c ****     
+  21:adc_validation.c ****     //Запис значення з ADC в PWM(ШІМ)
+  22:adc_validation.c ****     //За допомогою PWM контролюється яркість діодів
+  23:adc_validation.c ****     PWM_X_WriteCompare(x);
+  81              		.loc 1 23 0
+  82 0014 2068     		ldr	r0, [r4]
+  83 0016 FFF7FEFF 		bl	PWM_X_WriteCompare
+  84              	.LVL6:
+  24:adc_validation.c ****     PWM_Y_WriteCompare(y); 
+  85              		.loc 1 24 0
+  86 001a 6068     		ldr	r0, [r4, #4]
+  87 001c FFF7FEFF 		bl	PWM_Y_WriteCompare
+  88              	.LVL7:
+  25:adc_validation.c **** }...
+  89              		.loc 1 25 0
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccH8STYW.s 			page 3
+
+
+  90              		@ sp needed
+  91 0020 10BD     		pop	{r4, pc}
+  92              	.L4:
+  93 0022 C046     		.align	2
+  94              	.L3:
+  95 0024 00000000 		.word	.LANCHOR0
+  96              		.cfi_endproc
+  97              	.LFE35:
+  98              		.size	adc_get_led_position, .-adc_get_led_position
+  99              		.global	x
+ 100              		.global	y
+ 101              		.bss
+ 102              		.align	2
+ 103              		.set	.LANCHOR0,. + 0
+ 104              		.type	x, %object
+ 105              		.size	x, 4
+ 106              	x:
+ 107 0000 00000000 		.space	4
+ 108              		.type	y, %object
+ 109              		.size	y, 4
+ 110              	y:
+ 111 0004 00000000 		.space	4
+ 112              		.text
+ 113              	.Letext0:
+ 114              		.file 2 "Generated_Source\\PSoC4/ADC.h"
+ 115              		.file 3 "Generated_Source\\PSoC4/PWM_X.h"
+ 116              		.file 4 "Generated_Source\\PSoC4/PWM_Y.h"
+ 117              		.section	.debug_info,"",%progbits
+ 118              	.Ldebug_info0:
+ 119 0000 82010000 		.4byte	0x182
+ 120 0004 0400     		.2byte	0x4
+ 121 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 122 000a 04       		.byte	0x4
+ 123 000b 01       		.uleb128 0x1
+ 124 000c D7000000 		.4byte	.LASF23
+ 125 0010 0C       		.byte	0xc
+ 126 0011 A8010000 		.4byte	.LASF24
+ 127 0015 2E000000 		.4byte	.LASF25
+ 128 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 129 001d 00000000 		.4byte	0
+ 130 0021 00000000 		.4byte	.Ldebug_line0
+ 131 0025 02       		.uleb128 0x2
+ 132 0026 01       		.byte	0x1
+ 133 0027 06       		.byte	0x6
+ 134 0028 78010000 		.4byte	.LASF0
+ 135 002c 02       		.uleb128 0x2
+ 136 002d 01       		.byte	0x1
+ 137 002e 08       		.byte	0x8
+ 138 002f 83000000 		.4byte	.LASF1
+ 139 0033 02       		.uleb128 0x2
+ 140 0034 02       		.byte	0x2
+ 141 0035 05       		.byte	0x5
+ 142 0036 5C000000 		.4byte	.LASF2
+ 143 003a 02       		.uleb128 0x2
+ 144 003b 02       		.byte	0x2
+ 145 003c 07       		.byte	0x7
+ 146 003d 65010000 		.4byte	.LASF3
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccH8STYW.s 			page 4
+
+
+ 147 0041 02       		.uleb128 0x2
+ 148 0042 04       		.byte	0x4
+ 149 0043 05       		.byte	0x5
+ 150 0044 A2000000 		.4byte	.LASF4
+ 151 0048 02       		.uleb128 0x2
+ 152 0049 04       		.byte	0x4
+ 153 004a 07       		.byte	0x7
+ 154 004b 4A000000 		.4byte	.LASF5
+ 155 004f 02       		.uleb128 0x2
+ 156 0050 08       		.byte	0x8
+ 157 0051 05       		.byte	0x5
+ 158 0052 00000000 		.4byte	.LASF6
+ 159 0056 02       		.uleb128 0x2
+ 160 0057 08       		.byte	0x8
+ 161 0058 07       		.byte	0x7
+ 162 0059 66000000 		.4byte	.LASF7
+ 163 005d 03       		.uleb128 0x3
+ 164 005e 04       		.byte	0x4
+ 165 005f 05       		.byte	0x5
+ 166 0060 696E7400 		.ascii	"int\000"
+ 167 0064 02       		.uleb128 0x2
+ 168 0065 04       		.byte	0x4
+ 169 0066 07       		.byte	0x7
+ 170 0067 0E000000 		.4byte	.LASF8
+ 171 006b 02       		.uleb128 0x2
+ 172 006c 04       		.byte	0x4
+ 173 006d 04       		.byte	0x4
+ 174 006e 7D000000 		.4byte	.LASF9
+ 175 0072 02       		.uleb128 0x2
+ 176 0073 08       		.byte	0x8
+ 177 0074 04       		.byte	0x4
+ 178 0075 D0000000 		.4byte	.LASF10
+ 179 0079 02       		.uleb128 0x2
+ 180 007a 01       		.byte	0x1
+ 181 007b 08       		.byte	0x8
+ 182 007c 9D000000 		.4byte	.LASF11
+ 183 0080 02       		.uleb128 0x2
+ 184 0081 08       		.byte	0x8
+ 185 0082 04       		.byte	0x4
+ 186 0083 B9010000 		.4byte	.LASF12
+ 187 0087 02       		.uleb128 0x2
+ 188 0088 04       		.byte	0x4
+ 189 0089 07       		.byte	0x7
+ 190 008a E3010000 		.4byte	.LASF13
+ 191 008e 04       		.uleb128 0x4
+ 192 008f CF010000 		.4byte	.LASF14
+ 193 0093 01       		.byte	0x1
+ 194 0094 08       		.byte	0x8
+ 195 0095 00000000 		.4byte	.LFB34
+ 196 0099 14000000 		.4byte	.LFE34-.LFB34
+ 197 009d 01       		.uleb128 0x1
+ 198 009e 9C       		.byte	0x9c
+ 199 009f C8000000 		.4byte	0xc8
+ 200 00a3 05       		.uleb128 0x5
+ 201 00a4 06000000 		.4byte	.LVL0
+ 202 00a8 34010000 		.4byte	0x134
+ 203 00ac 05       		.uleb128 0x5
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccH8STYW.s 			page 5
+
+
+ 204 00ad 0A000000 		.4byte	.LVL1
+ 205 00b1 3F010000 		.4byte	0x13f
+ 206 00b5 05       		.uleb128 0x5
+ 207 00b6 0E000000 		.4byte	.LVL2
+ 208 00ba 4A010000 		.4byte	0x14a
+ 209 00be 05       		.uleb128 0x5
+ 210 00bf 12000000 		.4byte	.LVL3
+ 211 00c3 56010000 		.4byte	0x156
+ 212 00c7 00       		.byte	0
+ 213 00c8 04       		.uleb128 0x4
+ 214 00c9 AB000000 		.4byte	.LASF15
+ 215 00cd 01       		.byte	0x1
+ 216 00ce 10       		.byte	0x10
+ 217 00cf 00000000 		.4byte	.LFB35
+ 218 00d3 28000000 		.4byte	.LFE35-.LFB35
+ 219 00d7 01       		.uleb128 0x1
+ 220 00d8 9C       		.byte	0x9c
+ 221 00d9 16010000 		.4byte	0x116
+ 222 00dd 06       		.uleb128 0x6
+ 223 00de 08000000 		.4byte	.LVL4
+ 224 00e2 62010000 		.4byte	0x162
+ 225 00e6 F0000000 		.4byte	0xf0
+ 226 00ea 07       		.uleb128 0x7
+ 227 00eb 01       		.uleb128 0x1
+ 228 00ec 50       		.byte	0x50
+ 229 00ed 01       		.uleb128 0x1
+ 230 00ee 30       		.byte	0x30
+ 231 00ef 00       		.byte	0
+ 232 00f0 06       		.uleb128 0x6
+ 233 00f1 12000000 		.4byte	.LVL5
+ 234 00f5 62010000 		.4byte	0x162
+ 235 00f9 03010000 		.4byte	0x103
+ 236 00fd 07       		.uleb128 0x7
+ 237 00fe 01       		.uleb128 0x1
+ 238 00ff 50       		.byte	0x50
+ 239 0100 01       		.uleb128 0x1
+ 240 0101 31       		.byte	0x31
+ 241 0102 00       		.byte	0
+ 242 0103 05       		.uleb128 0x5
+ 243 0104 1A000000 		.4byte	.LVL6
+ 244 0108 6D010000 		.4byte	0x16d
+ 245 010c 05       		.uleb128 0x5
+ 246 010d 20000000 		.4byte	.LVL7
+ 247 0111 79010000 		.4byte	0x179
+ 248 0115 00       		.byte	0
+ 249 0116 08       		.uleb128 0x8
+ 250 0117 7900     		.ascii	"y\000"
+ 251 0119 01       		.byte	0x1
+ 252 011a 04       		.byte	0x4
+ 253 011b 5D000000 		.4byte	0x5d
+ 254 011f 05       		.uleb128 0x5
+ 255 0120 03       		.byte	0x3
+ 256 0121 00000000 		.4byte	y
+ 257 0125 08       		.uleb128 0x8
+ 258 0126 7800     		.ascii	"x\000"
+ 259 0128 01       		.byte	0x1
+ 260 0129 05       		.byte	0x5
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccH8STYW.s 			page 6
+
+
+ 261 012a 5D000000 		.4byte	0x5d
+ 262 012e 05       		.uleb128 0x5
+ 263 012f 03       		.byte	0x3
+ 264 0130 00000000 		.4byte	x
+ 265 0134 09       		.uleb128 0x9
+ 266 0135 C5010000 		.4byte	.LASF16
+ 267 0139 C5010000 		.4byte	.LASF16
+ 268 013d 02       		.byte	0x2
+ 269 013e 99       		.byte	0x99
+ 270 013f 09       		.uleb128 0x9
+ 271 0140 97010000 		.4byte	.LASF17
+ 272 0144 97010000 		.4byte	.LASF17
+ 273 0148 02       		.byte	0x2
+ 274 0149 9D       		.byte	0x9d
+ 275 014a 0A       		.uleb128 0xa
+ 276 014b 3E000000 		.4byte	.LASF18
+ 277 014f 3E000000 		.4byte	.LASF18
+ 278 0153 03       		.byte	0x3
+ 279 0154 3201     		.2byte	0x132
+ 280 0156 0A       		.uleb128 0xa
+ 281 0157 91000000 		.4byte	.LASF19
+ 282 015b 91000000 		.4byte	.LASF19
+ 283 015f 04       		.byte	0x4
+ 284 0160 3201     		.2byte	0x132
+ 285 0162 09       		.uleb128 0x9
+ 286 0163 C0000000 		.4byte	.LASF20
+ 287 0167 C0000000 		.4byte	.LASF20
+ 288 016b 02       		.byte	0x2
+ 289 016c A0       		.byte	0xa0
+ 290 016d 0A       		.uleb128 0xa
+ 291 016e 84010000 		.4byte	.LASF21
+ 292 0172 84010000 		.4byte	.LASF21
+ 293 0176 03       		.byte	0x3
+ 294 0177 5501     		.2byte	0x155
+ 295 0179 0A       		.uleb128 0xa
+ 296 017a 1B000000 		.4byte	.LASF22
+ 297 017e 1B000000 		.4byte	.LASF22
+ 298 0182 04       		.byte	0x4
+ 299 0183 5501     		.2byte	0x155
+ 300 0185 00       		.byte	0
+ 301              		.section	.debug_abbrev,"",%progbits
+ 302              	.Ldebug_abbrev0:
+ 303 0000 01       		.uleb128 0x1
+ 304 0001 11       		.uleb128 0x11
+ 305 0002 01       		.byte	0x1
+ 306 0003 25       		.uleb128 0x25
+ 307 0004 0E       		.uleb128 0xe
+ 308 0005 13       		.uleb128 0x13
+ 309 0006 0B       		.uleb128 0xb
+ 310 0007 03       		.uleb128 0x3
+ 311 0008 0E       		.uleb128 0xe
+ 312 0009 1B       		.uleb128 0x1b
+ 313 000a 0E       		.uleb128 0xe
+ 314 000b 55       		.uleb128 0x55
+ 315 000c 17       		.uleb128 0x17
+ 316 000d 11       		.uleb128 0x11
+ 317 000e 01       		.uleb128 0x1
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccH8STYW.s 			page 7
+
+
+ 318 000f 10       		.uleb128 0x10
+ 319 0010 17       		.uleb128 0x17
+ 320 0011 00       		.byte	0
+ 321 0012 00       		.byte	0
+ 322 0013 02       		.uleb128 0x2
+ 323 0014 24       		.uleb128 0x24
+ 324 0015 00       		.byte	0
+ 325 0016 0B       		.uleb128 0xb
+ 326 0017 0B       		.uleb128 0xb
+ 327 0018 3E       		.uleb128 0x3e
+ 328 0019 0B       		.uleb128 0xb
+ 329 001a 03       		.uleb128 0x3
+ 330 001b 0E       		.uleb128 0xe
+ 331 001c 00       		.byte	0
+ 332 001d 00       		.byte	0
+ 333 001e 03       		.uleb128 0x3
+ 334 001f 24       		.uleb128 0x24
+ 335 0020 00       		.byte	0
+ 336 0021 0B       		.uleb128 0xb
+ 337 0022 0B       		.uleb128 0xb
+ 338 0023 3E       		.uleb128 0x3e
+ 339 0024 0B       		.uleb128 0xb
+ 340 0025 03       		.uleb128 0x3
+ 341 0026 08       		.uleb128 0x8
+ 342 0027 00       		.byte	0
+ 343 0028 00       		.byte	0
+ 344 0029 04       		.uleb128 0x4
+ 345 002a 2E       		.uleb128 0x2e
+ 346 002b 01       		.byte	0x1
+ 347 002c 3F       		.uleb128 0x3f
+ 348 002d 19       		.uleb128 0x19
+ 349 002e 03       		.uleb128 0x3
+ 350 002f 0E       		.uleb128 0xe
+ 351 0030 3A       		.uleb128 0x3a
+ 352 0031 0B       		.uleb128 0xb
+ 353 0032 3B       		.uleb128 0x3b
+ 354 0033 0B       		.uleb128 0xb
+ 355 0034 27       		.uleb128 0x27
+ 356 0035 19       		.uleb128 0x19
+ 357 0036 11       		.uleb128 0x11
+ 358 0037 01       		.uleb128 0x1
+ 359 0038 12       		.uleb128 0x12
+ 360 0039 06       		.uleb128 0x6
+ 361 003a 40       		.uleb128 0x40
+ 362 003b 18       		.uleb128 0x18
+ 363 003c 9742     		.uleb128 0x2117
+ 364 003e 19       		.uleb128 0x19
+ 365 003f 01       		.uleb128 0x1
+ 366 0040 13       		.uleb128 0x13
+ 367 0041 00       		.byte	0
+ 368 0042 00       		.byte	0
+ 369 0043 05       		.uleb128 0x5
+ 370 0044 898201   		.uleb128 0x4109
+ 371 0047 00       		.byte	0
+ 372 0048 11       		.uleb128 0x11
+ 373 0049 01       		.uleb128 0x1
+ 374 004a 31       		.uleb128 0x31
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccH8STYW.s 			page 8
+
+
+ 375 004b 13       		.uleb128 0x13
+ 376 004c 00       		.byte	0
+ 377 004d 00       		.byte	0
+ 378 004e 06       		.uleb128 0x6
+ 379 004f 898201   		.uleb128 0x4109
+ 380 0052 01       		.byte	0x1
+ 381 0053 11       		.uleb128 0x11
+ 382 0054 01       		.uleb128 0x1
+ 383 0055 31       		.uleb128 0x31
+ 384 0056 13       		.uleb128 0x13
+ 385 0057 01       		.uleb128 0x1
+ 386 0058 13       		.uleb128 0x13
+ 387 0059 00       		.byte	0
+ 388 005a 00       		.byte	0
+ 389 005b 07       		.uleb128 0x7
+ 390 005c 8A8201   		.uleb128 0x410a
+ 391 005f 00       		.byte	0
+ 392 0060 02       		.uleb128 0x2
+ 393 0061 18       		.uleb128 0x18
+ 394 0062 9142     		.uleb128 0x2111
+ 395 0064 18       		.uleb128 0x18
+ 396 0065 00       		.byte	0
+ 397 0066 00       		.byte	0
+ 398 0067 08       		.uleb128 0x8
+ 399 0068 34       		.uleb128 0x34
+ 400 0069 00       		.byte	0
+ 401 006a 03       		.uleb128 0x3
+ 402 006b 08       		.uleb128 0x8
+ 403 006c 3A       		.uleb128 0x3a
+ 404 006d 0B       		.uleb128 0xb
+ 405 006e 3B       		.uleb128 0x3b
+ 406 006f 0B       		.uleb128 0xb
+ 407 0070 49       		.uleb128 0x49
+ 408 0071 13       		.uleb128 0x13
+ 409 0072 3F       		.uleb128 0x3f
+ 410 0073 19       		.uleb128 0x19
+ 411 0074 02       		.uleb128 0x2
+ 412 0075 18       		.uleb128 0x18
+ 413 0076 00       		.byte	0
+ 414 0077 00       		.byte	0
+ 415 0078 09       		.uleb128 0x9
+ 416 0079 2E       		.uleb128 0x2e
+ 417 007a 00       		.byte	0
+ 418 007b 3F       		.uleb128 0x3f
+ 419 007c 19       		.uleb128 0x19
+ 420 007d 3C       		.uleb128 0x3c
+ 421 007e 19       		.uleb128 0x19
+ 422 007f 6E       		.uleb128 0x6e
+ 423 0080 0E       		.uleb128 0xe
+ 424 0081 03       		.uleb128 0x3
+ 425 0082 0E       		.uleb128 0xe
+ 426 0083 3A       		.uleb128 0x3a
+ 427 0084 0B       		.uleb128 0xb
+ 428 0085 3B       		.uleb128 0x3b
+ 429 0086 0B       		.uleb128 0xb
+ 430 0087 00       		.byte	0
+ 431 0088 00       		.byte	0
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccH8STYW.s 			page 9
+
+
+ 432 0089 0A       		.uleb128 0xa
+ 433 008a 2E       		.uleb128 0x2e
+ 434 008b 00       		.byte	0
+ 435 008c 3F       		.uleb128 0x3f
+ 436 008d 19       		.uleb128 0x19
+ 437 008e 3C       		.uleb128 0x3c
+ 438 008f 19       		.uleb128 0x19
+ 439 0090 6E       		.uleb128 0x6e
+ 440 0091 0E       		.uleb128 0xe
+ 441 0092 03       		.uleb128 0x3
+ 442 0093 0E       		.uleb128 0xe
+ 443 0094 3A       		.uleb128 0x3a
+ 444 0095 0B       		.uleb128 0xb
+ 445 0096 3B       		.uleb128 0x3b
+ 446 0097 05       		.uleb128 0x5
+ 447 0098 00       		.byte	0
+ 448 0099 00       		.byte	0
+ 449 009a 00       		.byte	0
+ 450              		.section	.debug_aranges,"",%progbits
+ 451 0000 24000000 		.4byte	0x24
+ 452 0004 0200     		.2byte	0x2
+ 453 0006 00000000 		.4byte	.Ldebug_info0
+ 454 000a 04       		.byte	0x4
+ 455 000b 00       		.byte	0
+ 456 000c 0000     		.2byte	0
+ 457 000e 0000     		.2byte	0
+ 458 0010 00000000 		.4byte	.LFB34
+ 459 0014 14000000 		.4byte	.LFE34-.LFB34
+ 460 0018 00000000 		.4byte	.LFB35
+ 461 001c 28000000 		.4byte	.LFE35-.LFB35
+ 462 0020 00000000 		.4byte	0
+ 463 0024 00000000 		.4byte	0
+ 464              		.section	.debug_ranges,"",%progbits
+ 465              	.Ldebug_ranges0:
+ 466 0000 00000000 		.4byte	.LFB34
+ 467 0004 14000000 		.4byte	.LFE34
+ 468 0008 00000000 		.4byte	.LFB35
+ 469 000c 28000000 		.4byte	.LFE35
+ 470 0010 00000000 		.4byte	0
+ 471 0014 00000000 		.4byte	0
+ 472              		.section	.debug_line,"",%progbits
+ 473              	.Ldebug_line0:
+ 474 0000 89000000 		.section	.debug_str,"MS",%progbits,1
+ 474      02005D00 
+ 474      00000201 
+ 474      FB0E0D00 
+ 474      01010101 
+ 475              	.LASF6:
+ 476 0000 6C6F6E67 		.ascii	"long long int\000"
+ 476      206C6F6E 
+ 476      6720696E 
+ 476      7400
+ 477              	.LASF8:
+ 478 000e 756E7369 		.ascii	"unsigned int\000"
+ 478      676E6564 
+ 478      20696E74 
+ 478      00
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccH8STYW.s 			page 10
+
+
+ 479              	.LASF22:
+ 480 001b 50574D5F 		.ascii	"PWM_Y_WriteCompare\000"
+ 480      595F5772 
+ 480      69746543 
+ 480      6F6D7061 
+ 480      726500
+ 481              	.LASF25:
+ 482 002e 443A5C4C 		.ascii	"D:\\Lab4_V.cydsn\000"
+ 482      6162345F 
+ 482      562E6379 
+ 482      64736E00 
+ 483              	.LASF18:
+ 484 003e 50574D5F 		.ascii	"PWM_X_Start\000"
+ 484      585F5374 
+ 484      61727400 
+ 485              	.LASF5:
+ 486 004a 6C6F6E67 		.ascii	"long unsigned int\000"
+ 486      20756E73 
+ 486      69676E65 
+ 486      6420696E 
+ 486      7400
+ 487              	.LASF2:
+ 488 005c 73686F72 		.ascii	"short int\000"
+ 488      7420696E 
+ 488      7400
+ 489              	.LASF7:
+ 490 0066 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 490      206C6F6E 
+ 490      6720756E 
+ 490      7369676E 
+ 490      65642069 
+ 491              	.LASF9:
+ 492 007d 666C6F61 		.ascii	"float\000"
+ 492      7400
+ 493              	.LASF1:
+ 494 0083 756E7369 		.ascii	"unsigned char\000"
+ 494      676E6564 
+ 494      20636861 
+ 494      7200
+ 495              	.LASF19:
+ 496 0091 50574D5F 		.ascii	"PWM_Y_Start\000"
+ 496      595F5374 
+ 496      61727400 
+ 497              	.LASF11:
+ 498 009d 63686172 		.ascii	"char\000"
+ 498      00
+ 499              	.LASF4:
+ 500 00a2 6C6F6E67 		.ascii	"long int\000"
+ 500      20696E74 
+ 500      00
+ 501              	.LASF15:
+ 502 00ab 6164635F 		.ascii	"adc_get_led_position\000"
+ 502      6765745F 
+ 502      6C65645F 
+ 502      706F7369 
+ 502      74696F6E 
+ 503              	.LASF20:
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccH8STYW.s 			page 11
+
+
+ 504 00c0 4144435F 		.ascii	"ADC_GetResult16\000"
+ 504      47657452 
+ 504      6573756C 
+ 504      74313600 
+ 505              	.LASF10:
+ 506 00d0 646F7562 		.ascii	"double\000"
+ 506      6C6500
+ 507              	.LASF23:
+ 508 00d7 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 508      43313120 
+ 508      352E342E 
+ 508      31203230 
+ 508      31363036 
+ 509 010a 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 509      20726576 
+ 509      6973696F 
+ 509      6E203233 
+ 509      37373135 
+ 510 013d 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 510      66756E63 
+ 510      74696F6E 
+ 510      2D736563 
+ 510      74696F6E 
+ 511              	.LASF3:
+ 512 0165 73686F72 		.ascii	"short unsigned int\000"
+ 512      7420756E 
+ 512      7369676E 
+ 512      65642069 
+ 512      6E7400
+ 513              	.LASF0:
+ 514 0178 7369676E 		.ascii	"signed char\000"
+ 514      65642063 
+ 514      68617200 
+ 515              	.LASF21:
+ 516 0184 50574D5F 		.ascii	"PWM_X_WriteCompare\000"
+ 516      585F5772 
+ 516      69746543 
+ 516      6F6D7061 
+ 516      726500
+ 517              	.LASF17:
+ 518 0197 4144435F 		.ascii	"ADC_StartConvert\000"
+ 518      53746172 
+ 518      74436F6E 
+ 518      76657274 
+ 518      00
+ 519              	.LASF24:
+ 520 01a8 6164635F 		.ascii	"adc_validation.c\000"
+ 520      76616C69 
+ 520      64617469 
+ 520      6F6E2E63 
+ 520      00
+ 521              	.LASF12:
+ 522 01b9 6C6F6E67 		.ascii	"long double\000"
+ 522      20646F75 
+ 522      626C6500 
+ 523              	.LASF16:
+ 524 01c5 4144435F 		.ascii	"ADC_Start\000"
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccH8STYW.s 			page 12
+
+
+ 524      53746172 
+ 524      7400
+ 525              	.LASF14:
+ 526 01cf 6164635F 		.ascii	"adc_validation_init\000"
+ 526      76616C69 
+ 526      64617469 
+ 526      6F6E5F69 
+ 526      6E697400 
+ 527              	.LASF13:
+ 528 01e3 73697A65 		.ascii	"sizetype\000"
+ 528      74797065 
+ 528      00
+ 529              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

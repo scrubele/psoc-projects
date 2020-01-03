@@ -1,0 +1,2504 @@
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"lcd_traffic_light.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.Enc_Sw_Handler,"ax",%progbits
+  20              		.align	2
+  21              		.global	Enc_Sw_Handler
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	Enc_Sw_Handler, %function
+  25              	Enc_Sw_Handler:
+  26              	.LFB35:
+  27              		.file 1 "lcd_traffic_light.c"
+   1:lcd_traffic_light.c **** #include "lab.h"
+   2:lcd_traffic_light.c **** #include "stdio.h"
+   3:lcd_traffic_light.c **** 
+   4:lcd_traffic_light.c **** //Експорт зміних
+   5:lcd_traffic_light.c **** extern uint8 sum_time1;
+   6:lcd_traffic_light.c **** extern uint8 sum_time2;
+   7:lcd_traffic_light.c **** 
+   8:lcd_traffic_light.c **** //Масив чарів для запису в кожну стрічку LCD
+   9:lcd_traffic_light.c **** static char buf1[17];
+  10:lcd_traffic_light.c **** static char buf2[17];
+  11:lcd_traffic_light.c **** 
+  12:lcd_traffic_light.c **** extern volatile uint8 time;
+  13:lcd_traffic_light.c **** extern volatile uint8 number_algorithm;
+  14:lcd_traffic_light.c **** volatile uint8 status_set_color = 0; 
+  15:lcd_traffic_light.c **** 
+  16:lcd_traffic_light.c **** //Час кожного кольору
+  17:lcd_traffic_light.c **** uint8 time_red = 0;
+  18:lcd_traffic_light.c **** uint8 time_yellow = 0;
+  19:lcd_traffic_light.c **** uint8 time_green = 0;
+  20:lcd_traffic_light.c **** 
+  21:lcd_traffic_light.c **** //Прототипи функцій
+  22:lcd_traffic_light.c **** void lcd_time_color(void);
+  23:lcd_traffic_light.c **** void lcd_set_red(void);
+  24:lcd_traffic_light.c **** void lcd_set_yellow(void);
+  25:lcd_traffic_light.c **** void lcd_set_green(void);
+  26:lcd_traffic_light.c **** uint8 set_time(void);
+  27:lcd_traffic_light.c **** 
+  28:lcd_traffic_light.c **** //Кнопка енкодера яка встановлює екран ,такий який кол�
+  29:lcd_traffic_light.c **** CY_ISR(Enc_Sw_Handler){
+  28              		.loc 1 29 0
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 2
+
+
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+  30:lcd_traffic_light.c ****     status_set_color++;
+  36              		.loc 1 30 0
+  37 0002 044A     		ldr	r2, .L2
+  38 0004 1378     		ldrb	r3, [r2]
+  39 0006 0133     		adds	r3, r3, #1
+  40 0008 DBB2     		uxtb	r3, r3
+  41 000a 1370     		strb	r3, [r2]
+  31:lcd_traffic_light.c ****     Enc_Sw_ClearInterrupt();
+  42              		.loc 1 31 0
+  43 000c FFF7FEFF 		bl	Enc_Sw_ClearInterrupt
+  44              	.LVL0:
+  32:lcd_traffic_light.c **** }
+  45              		.loc 1 32 0
+  46              		@ sp needed
+  47 0010 10BD     		pop	{r4, pc}
+  48              	.L3:
+  49 0012 C046     		.align	2
+  50              	.L2:
+  51 0014 00000000 		.word	.LANCHOR0
+  52              		.cfi_endproc
+  53              	.LFE35:
+  54              		.size	Enc_Sw_Handler, .-Enc_Sw_Handler
+  55              		.section	.text.lcd_init,"ax",%progbits
+  56              		.align	2
+  57              		.global	lcd_init
+  58              		.code	16
+  59              		.thumb_func
+  60              		.type	lcd_init, %function
+  61              	lcd_init:
+  62              	.LFB36:
+  33:lcd_traffic_light.c **** 
+  34:lcd_traffic_light.c **** //Ініціалізація LCD перший вивід
+  35:lcd_traffic_light.c **** void lcd_init(void){
+  63              		.loc 1 35 0
+  64              		.cfi_startproc
+  65              		@ args = 0, pretend = 0, frame = 0
+  66              		@ frame_needed = 0, uses_anonymous_args = 0
+  67 0000 70B5     		push	{r4, r5, r6, lr}
+  68              		.cfi_def_cfa_offset 16
+  69              		.cfi_offset 4, -16
+  70              		.cfi_offset 5, -12
+  71              		.cfi_offset 6, -8
+  72              		.cfi_offset 14, -4
+  36:lcd_traffic_light.c ****     LCD_Start();
+  73              		.loc 1 36 0
+  74 0002 FFF7FEFF 		bl	LCD_Start
+  75              	.LVL1:
+  37:lcd_traffic_light.c ****     LCD_ClearDisplay();
+  76              		.loc 1 37 0
+  77 0006 0120     		movs	r0, #1
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 3
+
+
+  78 0008 FFF7FEFF 		bl	LCD_WriteControl
+  79              	.LVL2:
+  38:lcd_traffic_light.c ****     sprintf(buf1,"Author");
+  80              		.loc 1 38 0
+  81 000c 0F4C     		ldr	r4, .L5
+  82 000e 251D     		adds	r5, r4, #4
+  83 0010 0F4B     		ldr	r3, .L5+4
+  84 0012 1A68     		ldr	r2, [r3]
+  85 0014 6260     		str	r2, [r4, #4]
+  86 0016 9A88     		ldrh	r2, [r3, #4]
+  87 0018 2281     		strh	r2, [r4, #8]
+  88 001a 9B79     		ldrb	r3, [r3, #6]
+  89 001c A372     		strb	r3, [r4, #10]
+  39:lcd_traffic_light.c ****     LCD_Position(0, 0);
+  90              		.loc 1 39 0
+  91 001e 0021     		movs	r1, #0
+  92 0020 0020     		movs	r0, #0
+  93 0022 FFF7FEFF 		bl	LCD_Position
+  94              	.LVL3:
+  40:lcd_traffic_light.c ****     LCD_PrintString(buf1);
+  95              		.loc 1 40 0
+  96 0026 2800     		movs	r0, r5
+  97 0028 FFF7FEFF 		bl	LCD_PrintString
+  98              	.LVL4:
+  41:lcd_traffic_light.c ****     //Тут виводиться імя автора лаболаторної
+  42:lcd_traffic_light.c ****     sprintf(buf2," ");
+  99              		.loc 1 42 0
+ 100 002c 2500     		movs	r5, r4
+ 101 002e 1835     		adds	r5, r5, #24
+ 102 0030 2023     		movs	r3, #32
+ 103 0032 2383     		strh	r3, [r4, #24]
+  43:lcd_traffic_light.c ****     LCD_Position(1, 0);
+ 104              		.loc 1 43 0
+ 105 0034 0021     		movs	r1, #0
+ 106 0036 0120     		movs	r0, #1
+ 107 0038 FFF7FEFF 		bl	LCD_Position
+ 108              	.LVL5:
+  44:lcd_traffic_light.c ****     LCD_PrintString(buf2);
+ 109              		.loc 1 44 0
+ 110 003c 2800     		movs	r0, r5
+ 111 003e FFF7FEFF 		bl	LCD_PrintString
+ 112              	.LVL6:
+  45:lcd_traffic_light.c ****     CyDelay(6000);
+ 113              		.loc 1 45 0
+ 114 0042 0448     		ldr	r0, .L5+8
+ 115 0044 FFF7FEFF 		bl	CyDelay
+ 116              	.LVL7:
+  46:lcd_traffic_light.c **** }
+ 117              		.loc 1 46 0
+ 118              		@ sp needed
+ 119 0048 70BD     		pop	{r4, r5, r6, pc}
+ 120              	.L6:
+ 121 004a C046     		.align	2
+ 122              	.L5:
+ 123 004c 00000000 		.word	.LANCHOR0
+ 124 0050 00000000 		.word	.LC2
+ 125 0054 70170000 		.word	6000
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 4
+
+
+ 126              		.cfi_endproc
+ 127              	.LFE36:
+ 128              		.size	lcd_init, .-lcd_init
+ 129              		.section	.text.enc_init,"ax",%progbits
+ 130              		.align	2
+ 131              		.global	enc_init
+ 132              		.code	16
+ 133              		.thumb_func
+ 134              		.type	enc_init, %function
+ 135              	enc_init:
+ 136              	.LFB37:
+  47:lcd_traffic_light.c **** 
+  48:lcd_traffic_light.c **** //Ініціалізація енкодера
+  49:lcd_traffic_light.c **** void enc_init(void){
+ 137              		.loc 1 49 0
+ 138              		.cfi_startproc
+ 139              		@ args = 0, pretend = 0, frame = 0
+ 140              		@ frame_needed = 0, uses_anonymous_args = 0
+ 141 0000 10B5     		push	{r4, lr}
+ 142              		.cfi_def_cfa_offset 8
+ 143              		.cfi_offset 4, -8
+ 144              		.cfi_offset 14, -4
+  50:lcd_traffic_light.c ****     QuadDec_Start();
+ 145              		.loc 1 50 0
+ 146 0002 FFF7FEFF 		bl	QuadDec_Start
+ 147              	.LVL8:
+  51:lcd_traffic_light.c ****     QuadDec_WriteCounter(0);  
+ 148              		.loc 1 51 0
+ 149 0006 0020     		movs	r0, #0
+ 150 0008 FFF7FEFF 		bl	QuadDec_WriteCounter
+ 151              	.LVL9:
+  52:lcd_traffic_light.c ****     Enc_Sw_Int_StartEx(Enc_Sw_Handler);
+ 152              		.loc 1 52 0
+ 153 000c 0148     		ldr	r0, .L8
+ 154 000e FFF7FEFF 		bl	Enc_Sw_Int_StartEx
+ 155              	.LVL10:
+  53:lcd_traffic_light.c **** }
+ 156              		.loc 1 53 0
+ 157              		@ sp needed
+ 158 0012 10BD     		pop	{r4, pc}
+ 159              	.L9:
+ 160              		.align	2
+ 161              	.L8:
+ 162 0014 00000000 		.word	Enc_Sw_Handler
+ 163              		.cfi_endproc
+ 164              	.LFE37:
+ 165              		.size	enc_init, .-enc_init
+ 166              		.section	.text.lcd_time_color,"ax",%progbits
+ 167              		.align	2
+ 168              		.global	lcd_time_color
+ 169              		.code	16
+ 170              		.thumb_func
+ 171              		.type	lcd_time_color, %function
+ 172              	lcd_time_color:
+ 173              	.LFB38:
+  54:lcd_traffic_light.c **** 
+  55:lcd_traffic_light.c **** //Вивід першого екрану кольорів
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 5
+
+
+  56:lcd_traffic_light.c **** //Під конжним кольор виводиться час світіння ,після на�
+  57:lcd_traffic_light.c **** void lcd_time_color(void){
+ 174              		.loc 1 57 0
+ 175              		.cfi_startproc
+ 176              		@ args = 0, pretend = 0, frame = 0
+ 177              		@ frame_needed = 0, uses_anonymous_args = 0
+ 178 0000 70B5     		push	{r4, r5, r6, lr}
+ 179              		.cfi_def_cfa_offset 16
+ 180              		.cfi_offset 4, -16
+ 181              		.cfi_offset 5, -12
+ 182              		.cfi_offset 6, -8
+ 183              		.cfi_offset 14, -4
+  58:lcd_traffic_light.c ****     LCD_ClearDisplay();
+ 184              		.loc 1 58 0
+ 185 0002 0120     		movs	r0, #1
+ 186 0004 FFF7FEFF 		bl	LCD_WriteControl
+ 187              	.LVL11:
+  59:lcd_traffic_light.c ****     sprintf(buf1,"Red Yellow Green");
+ 188              		.loc 1 59 0
+ 189 0008 344C     		ldr	r4, .L14
+ 190 000a 354A     		ldr	r2, .L14+4
+ 191 000c 231D     		adds	r3, r4, #4
+ 192 000e 23CA     		ldmia	r2!, {r0, r1, r5}
+ 193 0010 23C3     		stmia	r3!, {r0, r1, r5}
+ 194 0012 1100     		movs	r1, r2
+ 195 0014 1268     		ldr	r2, [r2]
+ 196 0016 1A60     		str	r2, [r3]
+ 197 0018 0A79     		ldrb	r2, [r1, #4]
+ 198 001a 1A71     		strb	r2, [r3, #4]
+  60:lcd_traffic_light.c ****     LCD_Position(0, 0);
+ 199              		.loc 1 60 0
+ 200 001c 0021     		movs	r1, #0
+ 201 001e 0020     		movs	r0, #0
+ 202 0020 FFF7FEFF 		bl	LCD_Position
+ 203              	.LVL12:
+  61:lcd_traffic_light.c ****     LCD_PrintString(buf1);
+ 204              		.loc 1 61 0
+ 205 0024 201D     		adds	r0, r4, #4
+ 206 0026 FFF7FEFF 		bl	LCD_PrintString
+ 207              	.LVL13:
+  62:lcd_traffic_light.c ****     //Виводиться тільки після нажаття кнопки переключен
+  63:lcd_traffic_light.c ****     if(0 == number_algorithm){  
+ 208              		.loc 1 63 0
+ 209 002a 2E4B     		ldr	r3, .L14+8
+ 210 002c 1B78     		ldrb	r3, [r3]
+ 211 002e 002B     		cmp	r3, #0
+ 212 0030 53D1     		bne	.L10
+  64:lcd_traffic_light.c ****         if(time < time_red){
+ 213              		.loc 1 64 0
+ 214 0032 2D4B     		ldr	r3, .L14+12
+ 215 0034 1B78     		ldrb	r3, [r3]
+ 216 0036 DBB2     		uxtb	r3, r3
+ 217 0038 2922     		movs	r2, #41
+ 218 003a 2849     		ldr	r1, .L14
+ 219 003c 8A5C     		ldrb	r2, [r1, r2]
+ 220 003e 9342     		cmp	r3, r2
+ 221 0040 10D2     		bcs	.L12
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 6
+
+
+  65:lcd_traffic_light.c ****             sprintf(buf2,"%2d",time_red-time);
+ 222              		.loc 1 65 0
+ 223 0042 294B     		ldr	r3, .L14+12
+ 224 0044 1B78     		ldrb	r3, [r3]
+ 225 0046 D21A     		subs	r2, r2, r3
+ 226 0048 0C00     		movs	r4, r1
+ 227 004a 1834     		adds	r4, r4, #24
+ 228 004c 2749     		ldr	r1, .L14+16
+ 229 004e 2000     		movs	r0, r4
+ 230 0050 FFF7FEFF 		bl	sprintf
+ 231              	.LVL14:
+  66:lcd_traffic_light.c ****             LCD_Position(1, 0);
+ 232              		.loc 1 66 0
+ 233 0054 0021     		movs	r1, #0
+ 234 0056 0120     		movs	r0, #1
+ 235 0058 FFF7FEFF 		bl	LCD_Position
+ 236              	.LVL15:
+  67:lcd_traffic_light.c ****             LCD_PrintString(buf2);
+ 237              		.loc 1 67 0
+ 238 005c 2000     		movs	r0, r4
+ 239 005e FFF7FEFF 		bl	LCD_PrintString
+ 240              	.LVL16:
+ 241 0062 3AE0     		b	.L10
+ 242              	.L12:
+  68:lcd_traffic_light.c ****         }else if(time_red <= time && time < sum_time1) {
+ 243              		.loc 1 68 0
+ 244 0064 204B     		ldr	r3, .L14+12
+ 245 0066 1B78     		ldrb	r3, [r3]
+ 246 0068 DBB2     		uxtb	r3, r3
+ 247 006a 9A42     		cmp	r2, r3
+ 248 006c 17D8     		bhi	.L13
+ 249              		.loc 1 68 0 is_stmt 0 discriminator 1
+ 250 006e 1E4B     		ldr	r3, .L14+12
+ 251 0070 1B78     		ldrb	r3, [r3]
+ 252 0072 DBB2     		uxtb	r3, r3
+ 253 0074 1E4A     		ldr	r2, .L14+20
+ 254 0076 1278     		ldrb	r2, [r2]
+ 255 0078 9342     		cmp	r3, r2
+ 256 007a 10D2     		bcs	.L13
+  69:lcd_traffic_light.c ****             sprintf(buf2,"%6d",sum_time1-time);
+ 257              		.loc 1 69 0 is_stmt 1
+ 258 007c 1A4B     		ldr	r3, .L14+12
+ 259 007e 1B78     		ldrb	r3, [r3]
+ 260 0080 D21A     		subs	r2, r2, r3
+ 261 0082 164C     		ldr	r4, .L14
+ 262 0084 1834     		adds	r4, r4, #24
+ 263 0086 1B49     		ldr	r1, .L14+24
+ 264 0088 2000     		movs	r0, r4
+ 265 008a FFF7FEFF 		bl	sprintf
+ 266              	.LVL17:
+  70:lcd_traffic_light.c ****             LCD_Position(1, 0);
+ 267              		.loc 1 70 0
+ 268 008e 0021     		movs	r1, #0
+ 269 0090 0120     		movs	r0, #1
+ 270 0092 FFF7FEFF 		bl	LCD_Position
+ 271              	.LVL18:
+  71:lcd_traffic_light.c ****             LCD_PrintString(buf2);
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 7
+
+
+ 272              		.loc 1 71 0
+ 273 0096 2000     		movs	r0, r4
+ 274 0098 FFF7FEFF 		bl	LCD_PrintString
+ 275              	.LVL19:
+ 276 009c 1DE0     		b	.L10
+ 277              	.L13:
+  72:lcd_traffic_light.c ****         }else if(sum_time1 <= time && time < sum_time2) {
+ 278              		.loc 1 72 0
+ 279 009e 144B     		ldr	r3, .L14+20
+ 280 00a0 1A78     		ldrb	r2, [r3]
+ 281 00a2 114B     		ldr	r3, .L14+12
+ 282 00a4 1B78     		ldrb	r3, [r3]
+ 283 00a6 DBB2     		uxtb	r3, r3
+ 284 00a8 9A42     		cmp	r2, r3
+ 285 00aa 16D8     		bhi	.L10
+ 286              		.loc 1 72 0 is_stmt 0 discriminator 1
+ 287 00ac 0E4B     		ldr	r3, .L14+12
+ 288 00ae 1B78     		ldrb	r3, [r3]
+ 289 00b0 DBB2     		uxtb	r3, r3
+ 290 00b2 114A     		ldr	r2, .L14+28
+ 291 00b4 1278     		ldrb	r2, [r2]
+ 292 00b6 9342     		cmp	r3, r2
+ 293 00b8 0FD2     		bcs	.L10
+  73:lcd_traffic_light.c ****             sprintf(buf2,"%13d",sum_time2-time);
+ 294              		.loc 1 73 0 is_stmt 1
+ 295 00ba 0B4B     		ldr	r3, .L14+12
+ 296 00bc 1B78     		ldrb	r3, [r3]
+ 297 00be D21A     		subs	r2, r2, r3
+ 298 00c0 064C     		ldr	r4, .L14
+ 299 00c2 1834     		adds	r4, r4, #24
+ 300 00c4 0D49     		ldr	r1, .L14+32
+ 301 00c6 2000     		movs	r0, r4
+ 302 00c8 FFF7FEFF 		bl	sprintf
+ 303              	.LVL20:
+  74:lcd_traffic_light.c ****             LCD_Position(1, 0);
+ 304              		.loc 1 74 0
+ 305 00cc 0021     		movs	r1, #0
+ 306 00ce 0120     		movs	r0, #1
+ 307 00d0 FFF7FEFF 		bl	LCD_Position
+ 308              	.LVL21:
+  75:lcd_traffic_light.c ****             LCD_PrintString(buf2);
+ 309              		.loc 1 75 0
+ 310 00d4 2000     		movs	r0, r4
+ 311 00d6 FFF7FEFF 		bl	LCD_PrintString
+ 312              	.LVL22:
+ 313              	.L10:
+  76:lcd_traffic_light.c ****         }
+  77:lcd_traffic_light.c ****     }
+  78:lcd_traffic_light.c **** }
+ 314              		.loc 1 78 0
+ 315              		@ sp needed
+ 316 00da 70BD     		pop	{r4, r5, r6, pc}
+ 317              	.L15:
+ 318              		.align	2
+ 319              	.L14:
+ 320 00dc 00000000 		.word	.LANCHOR0
+ 321 00e0 18000000 		.word	.LC8
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 8
+
+
+ 322 00e4 00000000 		.word	number_algorithm
+ 323 00e8 00000000 		.word	time
+ 324 00ec 08000000 		.word	.LC12
+ 325 00f0 00000000 		.word	sum_time1
+ 326 00f4 0C000000 		.word	.LC15
+ 327 00f8 00000000 		.word	sum_time2
+ 328 00fc 10000000 		.word	.LC18
+ 329              		.cfi_endproc
+ 330              	.LFE38:
+ 331              		.size	lcd_time_color, .-lcd_time_color
+ 332              		.section	.text.lcd_set_red,"ax",%progbits
+ 333              		.align	2
+ 334              		.global	lcd_set_red
+ 335              		.code	16
+ 336              		.thumb_func
+ 337              		.type	lcd_set_red, %function
+ 338              	lcd_set_red:
+ 339              	.LFB39:
+  79:lcd_traffic_light.c **** 
+  80:lcd_traffic_light.c **** //Виводиться після першого нажаття на кнопку енкодера
+  81:lcd_traffic_light.c **** //Через дрибіщання кнопки може перескакувати по меню і
+  82:lcd_traffic_light.c **** void lcd_set_red(void){
+ 340              		.loc 1 82 0
+ 341              		.cfi_startproc
+ 342              		@ args = 0, pretend = 0, frame = 0
+ 343              		@ frame_needed = 0, uses_anonymous_args = 0
+ 344 0000 70B5     		push	{r4, r5, r6, lr}
+ 345              		.cfi_def_cfa_offset 16
+ 346              		.cfi_offset 4, -16
+ 347              		.cfi_offset 5, -12
+ 348              		.cfi_offset 6, -8
+ 349              		.cfi_offset 14, -4
+  83:lcd_traffic_light.c ****     LCD_ClearDisplay();
+ 350              		.loc 1 83 0
+ 351 0002 0120     		movs	r0, #1
+ 352 0004 FFF7FEFF 		bl	LCD_WriteControl
+ 353              	.LVL23:
+  84:lcd_traffic_light.c ****     sprintf(buf1,"Set red time");
+ 354              		.loc 1 84 0
+ 355 0008 0E4C     		ldr	r4, .L17
+ 356 000a 251D     		adds	r5, r4, #4
+ 357 000c 0E4B     		ldr	r3, .L17+4
+ 358 000e 2A00     		movs	r2, r5
+ 359 0010 43CB     		ldmia	r3!, {r0, r1, r6}
+ 360 0012 43C2     		stmia	r2!, {r0, r1, r6}
+ 361 0014 1B78     		ldrb	r3, [r3]
+ 362 0016 1370     		strb	r3, [r2]
+  85:lcd_traffic_light.c ****     LCD_Position(0, 0);
+ 363              		.loc 1 85 0
+ 364 0018 0021     		movs	r1, #0
+ 365 001a 0020     		movs	r0, #0
+ 366 001c FFF7FEFF 		bl	LCD_Position
+ 367              	.LVL24:
+  86:lcd_traffic_light.c ****     LCD_PrintString(buf1);
+ 368              		.loc 1 86 0
+ 369 0020 2800     		movs	r0, r5
+ 370 0022 FFF7FEFF 		bl	LCD_PrintString
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 9
+
+
+ 371              	.LVL25:
+  87:lcd_traffic_light.c ****     sprintf(buf2,"Time = %d",time_red);
+ 372              		.loc 1 87 0
+ 373 0026 2923     		movs	r3, #41
+ 374 0028 E25C     		ldrb	r2, [r4, r3]
+ 375 002a 1834     		adds	r4, r4, #24
+ 376 002c 0749     		ldr	r1, .L17+8
+ 377 002e 2000     		movs	r0, r4
+ 378 0030 FFF7FEFF 		bl	sprintf
+ 379              	.LVL26:
+  88:lcd_traffic_light.c ****     LCD_Position(1, 0);
+ 380              		.loc 1 88 0
+ 381 0034 0021     		movs	r1, #0
+ 382 0036 0120     		movs	r0, #1
+ 383 0038 FFF7FEFF 		bl	LCD_Position
+ 384              	.LVL27:
+  89:lcd_traffic_light.c ****     LCD_PrintString(buf2);
+ 385              		.loc 1 89 0
+ 386 003c 2000     		movs	r0, r4
+ 387 003e FFF7FEFF 		bl	LCD_PrintString
+ 388              	.LVL28:
+  90:lcd_traffic_light.c **** }
+ 389              		.loc 1 90 0
+ 390              		@ sp needed
+ 391 0042 70BD     		pop	{r4, r5, r6, pc}
+ 392              	.L18:
+ 393              		.align	2
+ 394              	.L17:
+ 395 0044 00000000 		.word	.LANCHOR0
+ 396 0048 2C000000 		.word	.LC23
+ 397 004c 3C000000 		.word	.LC25
+ 398              		.cfi_endproc
+ 399              	.LFE39:
+ 400              		.size	lcd_set_red, .-lcd_set_red
+ 401              		.section	.text.lcd_set_green,"ax",%progbits
+ 402              		.align	2
+ 403              		.global	lcd_set_green
+ 404              		.code	16
+ 405              		.thumb_func
+ 406              		.type	lcd_set_green, %function
+ 407              	lcd_set_green:
+ 408              	.LFB40:
+  91:lcd_traffic_light.c **** 
+  92:lcd_traffic_light.c **** //Виводиться після третього нажаття на кнопку енкодер�
+  93:lcd_traffic_light.c **** void lcd_set_green(void){
+ 409              		.loc 1 93 0
+ 410              		.cfi_startproc
+ 411              		@ args = 0, pretend = 0, frame = 0
+ 412              		@ frame_needed = 0, uses_anonymous_args = 0
+ 413 0000 70B5     		push	{r4, r5, r6, lr}
+ 414              		.cfi_def_cfa_offset 16
+ 415              		.cfi_offset 4, -16
+ 416              		.cfi_offset 5, -12
+ 417              		.cfi_offset 6, -8
+ 418              		.cfi_offset 14, -4
+  94:lcd_traffic_light.c ****     LCD_ClearDisplay();
+ 419              		.loc 1 94 0
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 10
+
+
+ 420 0002 0120     		movs	r0, #1
+ 421 0004 FFF7FEFF 		bl	LCD_WriteControl
+ 422              	.LVL29:
+  95:lcd_traffic_light.c ****     sprintf(buf1,"Set green time:");
+ 423              		.loc 1 95 0
+ 424 0008 0E4C     		ldr	r4, .L20
+ 425 000a 251D     		adds	r5, r4, #4
+ 426 000c 0E4B     		ldr	r3, .L20+4
+ 427 000e 2A00     		movs	r2, r5
+ 428 0010 43CB     		ldmia	r3!, {r0, r1, r6}
+ 429 0012 43C2     		stmia	r2!, {r0, r1, r6}
+ 430 0014 1B68     		ldr	r3, [r3]
+ 431 0016 1360     		str	r3, [r2]
+  96:lcd_traffic_light.c ****     LCD_Position(0, 0);
+ 432              		.loc 1 96 0
+ 433 0018 0021     		movs	r1, #0
+ 434 001a 0020     		movs	r0, #0
+ 435 001c FFF7FEFF 		bl	LCD_Position
+ 436              	.LVL30:
+  97:lcd_traffic_light.c ****     LCD_PrintString(buf1);
+ 437              		.loc 1 97 0
+ 438 0020 2800     		movs	r0, r5
+ 439 0022 FFF7FEFF 		bl	LCD_PrintString
+ 440              	.LVL31:
+  98:lcd_traffic_light.c ****     sprintf(buf2,"Time = %d",time_green);
+ 441              		.loc 1 98 0
+ 442 0026 2A23     		movs	r3, #42
+ 443 0028 E25C     		ldrb	r2, [r4, r3]
+ 444 002a 1834     		adds	r4, r4, #24
+ 445 002c 0749     		ldr	r1, .L20+8
+ 446 002e 2000     		movs	r0, r4
+ 447 0030 FFF7FEFF 		bl	sprintf
+ 448              	.LVL32:
+  99:lcd_traffic_light.c ****     LCD_Position(1, 0);
+ 449              		.loc 1 99 0
+ 450 0034 0021     		movs	r1, #0
+ 451 0036 0120     		movs	r0, #1
+ 452 0038 FFF7FEFF 		bl	LCD_Position
+ 453              	.LVL33:
+ 100:lcd_traffic_light.c ****     LCD_PrintString(buf2);
+ 454              		.loc 1 100 0
+ 455 003c 2000     		movs	r0, r4
+ 456 003e FFF7FEFF 		bl	LCD_PrintString
+ 457              	.LVL34:
+ 101:lcd_traffic_light.c **** }
+ 458              		.loc 1 101 0
+ 459              		@ sp needed
+ 460 0042 70BD     		pop	{r4, r5, r6, pc}
+ 461              	.L21:
+ 462              		.align	2
+ 463              	.L20:
+ 464 0044 00000000 		.word	.LANCHOR0
+ 465 0048 48000000 		.word	.LC30
+ 466 004c 3C000000 		.word	.LC25
+ 467              		.cfi_endproc
+ 468              	.LFE40:
+ 469              		.size	lcd_set_green, .-lcd_set_green
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 11
+
+
+ 470              		.section	.text.lcd_set_yellow,"ax",%progbits
+ 471              		.align	2
+ 472              		.global	lcd_set_yellow
+ 473              		.code	16
+ 474              		.thumb_func
+ 475              		.type	lcd_set_yellow, %function
+ 476              	lcd_set_yellow:
+ 477              	.LFB41:
+ 102:lcd_traffic_light.c **** 
+ 103:lcd_traffic_light.c **** //Виводиться після другого нажаття на кнопку енкодера
+ 104:lcd_traffic_light.c **** void lcd_set_yellow(void){
+ 478              		.loc 1 104 0
+ 479              		.cfi_startproc
+ 480              		@ args = 0, pretend = 0, frame = 0
+ 481              		@ frame_needed = 0, uses_anonymous_args = 0
+ 482 0000 70B5     		push	{r4, r5, r6, lr}
+ 483              		.cfi_def_cfa_offset 16
+ 484              		.cfi_offset 4, -16
+ 485              		.cfi_offset 5, -12
+ 486              		.cfi_offset 6, -8
+ 487              		.cfi_offset 14, -4
+ 105:lcd_traffic_light.c ****     LCD_ClearDisplay();
+ 488              		.loc 1 105 0
+ 489 0002 0120     		movs	r0, #1
+ 490 0004 FFF7FEFF 		bl	LCD_WriteControl
+ 491              	.LVL35:
+ 106:lcd_traffic_light.c ****     sprintf(buf1,"Set yellow time:");
+ 492              		.loc 1 106 0
+ 493 0008 0F4C     		ldr	r4, .L23
+ 494 000a 104A     		ldr	r2, .L23+4
+ 495 000c 231D     		adds	r3, r4, #4
+ 496 000e 23CA     		ldmia	r2!, {r0, r1, r5}
+ 497 0010 23C3     		stmia	r3!, {r0, r1, r5}
+ 498 0012 1100     		movs	r1, r2
+ 499 0014 1268     		ldr	r2, [r2]
+ 500 0016 1A60     		str	r2, [r3]
+ 501 0018 0A79     		ldrb	r2, [r1, #4]
+ 502 001a 1A71     		strb	r2, [r3, #4]
+ 107:lcd_traffic_light.c ****     LCD_Position(0, 0);
+ 503              		.loc 1 107 0
+ 504 001c 0021     		movs	r1, #0
+ 505 001e 0020     		movs	r0, #0
+ 506 0020 FFF7FEFF 		bl	LCD_Position
+ 507              	.LVL36:
+ 108:lcd_traffic_light.c ****     LCD_PrintString(buf1);
+ 508              		.loc 1 108 0
+ 509 0024 201D     		adds	r0, r4, #4
+ 510 0026 FFF7FEFF 		bl	LCD_PrintString
+ 511              	.LVL37:
+ 109:lcd_traffic_light.c ****     sprintf(buf2,"Time = %d",time_yellow);   
+ 512              		.loc 1 109 0
+ 513 002a 2B23     		movs	r3, #43
+ 514 002c E25C     		ldrb	r2, [r4, r3]
+ 515 002e 1834     		adds	r4, r4, #24
+ 516 0030 0749     		ldr	r1, .L23+8
+ 517 0032 2000     		movs	r0, r4
+ 518 0034 FFF7FEFF 		bl	sprintf
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 12
+
+
+ 519              	.LVL38:
+ 110:lcd_traffic_light.c ****     LCD_Position(1, 0);
+ 520              		.loc 1 110 0
+ 521 0038 0021     		movs	r1, #0
+ 522 003a 0120     		movs	r0, #1
+ 523 003c FFF7FEFF 		bl	LCD_Position
+ 524              	.LVL39:
+ 111:lcd_traffic_light.c ****     LCD_PrintString(buf2);
+ 525              		.loc 1 111 0
+ 526 0040 2000     		movs	r0, r4
+ 527 0042 FFF7FEFF 		bl	LCD_PrintString
+ 528              	.LVL40:
+ 112:lcd_traffic_light.c **** }
+ 529              		.loc 1 112 0
+ 530              		@ sp needed
+ 531 0046 70BD     		pop	{r4, r5, r6, pc}
+ 532              	.L24:
+ 533              		.align	2
+ 534              	.L23:
+ 535 0048 00000000 		.word	.LANCHOR0
+ 536 004c 58000000 		.word	.LC36
+ 537 0050 3C000000 		.word	.LC25
+ 538              		.cfi_endproc
+ 539              	.LFE41:
+ 540              		.size	lcd_set_yellow, .-lcd_set_yellow
+ 541              		.section	.text.set_time,"ax",%progbits
+ 542              		.align	2
+ 543              		.global	set_time
+ 544              		.code	16
+ 545              		.thumb_func
+ 546              		.type	set_time, %function
+ 547              	set_time:
+ 548              	.LFB42:
+ 113:lcd_traffic_light.c **** 
+ 114:lcd_traffic_light.c **** //Алгорим повернення значення з енкодера ,який встанов
+ 115:lcd_traffic_light.c **** uint8 set_time(void){
+ 549              		.loc 1 115 0
+ 550              		.cfi_startproc
+ 551              		@ args = 0, pretend = 0, frame = 0
+ 552              		@ frame_needed = 0, uses_anonymous_args = 0
+ 553 0000 10B5     		push	{r4, lr}
+ 554              		.cfi_def_cfa_offset 8
+ 555              		.cfi_offset 4, -8
+ 556              		.cfi_offset 14, -4
+ 557              	.LVL41:
+ 116:lcd_traffic_light.c ****     uint8 value_encoder = 0;
+ 117:lcd_traffic_light.c ****     //Зчитування значення з енкодера
+ 118:lcd_traffic_light.c ****     value_encoder = QuadDec_ReadCounter();
+ 558              		.loc 1 118 0
+ 559 0002 FFF7FEFF 		bl	QuadDec_ReadCounter
+ 560              	.LVL42:
+ 561 0006 C0B2     		uxtb	r0, r0
+ 562              	.LVL43:
+ 119:lcd_traffic_light.c ****     //Обмеження значень
+ 120:lcd_traffic_light.c ****     if(20 < value_encoder && 100 > value_encoder){
+ 563              		.loc 1 120 0
+ 564 0008 0300     		movs	r3, r0
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 13
+
+
+ 565 000a 153B     		subs	r3, r3, #21
+ 566 000c DBB2     		uxtb	r3, r3
+ 567 000e 4E2B     		cmp	r3, #78
+ 568 0010 03D8     		bhi	.L26
+ 569              	.LVL44:
+ 121:lcd_traffic_light.c ****         value_encoder = 20;
+ 122:lcd_traffic_light.c ****         QuadDec_WriteCounter(20);
+ 570              		.loc 1 122 0
+ 571 0012 1420     		movs	r0, #20
+ 572 0014 FFF7FEFF 		bl	QuadDec_WriteCounter
+ 573              	.LVL45:
+ 121:lcd_traffic_light.c ****         value_encoder = 20;
+ 574              		.loc 1 121 0
+ 575 0018 1420     		movs	r0, #20
+ 576              	.LVL46:
+ 577              	.L26:
+ 123:lcd_traffic_light.c ****     }
+ 124:lcd_traffic_light.c ****     if(100 < value_encoder){
+ 578              		.loc 1 124 0
+ 579 001a 6428     		cmp	r0, #100
+ 580 001c 03D9     		bls	.L27
+ 581              	.LVL47:
+ 125:lcd_traffic_light.c ****         value_encoder = 0;
+ 126:lcd_traffic_light.c ****         QuadDec_WriteCounter(0); 
+ 582              		.loc 1 126 0
+ 583 001e 0020     		movs	r0, #0
+ 584 0020 FFF7FEFF 		bl	QuadDec_WriteCounter
+ 585              	.LVL48:
+ 125:lcd_traffic_light.c ****         value_encoder = 0;
+ 586              		.loc 1 125 0
+ 587 0024 0020     		movs	r0, #0
+ 588              	.LVL49:
+ 589              	.L27:
+ 127:lcd_traffic_light.c ****     }    
+ 128:lcd_traffic_light.c ****     return value_encoder;
+ 129:lcd_traffic_light.c **** }
+ 590              		.loc 1 129 0
+ 591              		@ sp needed
+ 592 0026 10BD     		pop	{r4, pc}
+ 593              		.cfi_endproc
+ 594              	.LFE42:
+ 595              		.size	set_time, .-set_time
+ 596              		.section	.text.definition_set_color,"ax",%progbits
+ 597              		.align	2
+ 598              		.global	definition_set_color
+ 599              		.code	16
+ 600              		.thumb_func
+ 601              		.type	definition_set_color, %function
+ 602              	definition_set_color:
+ 603              	.LFB43:
+ 130:lcd_traffic_light.c **** 
+ 131:lcd_traffic_light.c **** //Функція для визначення виводу екрану через нажаття к
+ 132:lcd_traffic_light.c **** //Також в функції відбувається призначення часу кожно�
+ 133:lcd_traffic_light.c **** void definition_set_color(void){
+ 604              		.loc 1 133 0
+ 605              		.cfi_startproc
+ 606              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 14
+
+
+ 607              		@ frame_needed = 0, uses_anonymous_args = 0
+ 608 0000 10B5     		push	{r4, lr}
+ 609              		.cfi_def_cfa_offset 8
+ 610              		.cfi_offset 4, -8
+ 611              		.cfi_offset 14, -4
+ 134:lcd_traffic_light.c ****     if(0 == status_set_color){
+ 612              		.loc 1 134 0
+ 613 0002 174B     		ldr	r3, .L34
+ 614 0004 1B78     		ldrb	r3, [r3]
+ 615 0006 002B     		cmp	r3, #0
+ 616 0008 02D1     		bne	.L29
+ 135:lcd_traffic_light.c ****         lcd_time_color();
+ 617              		.loc 1 135 0
+ 618 000a FFF7FEFF 		bl	lcd_time_color
+ 619              	.LVL50:
+ 620 000e 26E0     		b	.L28
+ 621              	.L29:
+ 136:lcd_traffic_light.c ****     }else if(1 == status_set_color){
+ 622              		.loc 1 136 0
+ 623 0010 134B     		ldr	r3, .L34
+ 624 0012 1B78     		ldrb	r3, [r3]
+ 625 0014 012B     		cmp	r3, #1
+ 626 0016 07D1     		bne	.L31
+ 137:lcd_traffic_light.c ****         time_red = set_time();
+ 627              		.loc 1 137 0
+ 628 0018 FFF7FEFF 		bl	set_time
+ 629              	.LVL51:
+ 630 001c 2923     		movs	r3, #41
+ 631 001e 104A     		ldr	r2, .L34
+ 632 0020 D054     		strb	r0, [r2, r3]
+ 138:lcd_traffic_light.c ****         lcd_set_red();
+ 633              		.loc 1 138 0
+ 634 0022 FFF7FEFF 		bl	lcd_set_red
+ 635              	.LVL52:
+ 636 0026 1AE0     		b	.L28
+ 637              	.L31:
+ 139:lcd_traffic_light.c ****     }else if(2 == status_set_color){
+ 638              		.loc 1 139 0
+ 639 0028 0D4B     		ldr	r3, .L34
+ 640 002a 1B78     		ldrb	r3, [r3]
+ 641 002c 022B     		cmp	r3, #2
+ 642 002e 07D1     		bne	.L32
+ 140:lcd_traffic_light.c ****         time_yellow = set_time();
+ 643              		.loc 1 140 0
+ 644 0030 FFF7FEFF 		bl	set_time
+ 645              	.LVL53:
+ 646 0034 2B23     		movs	r3, #43
+ 647 0036 0A4A     		ldr	r2, .L34
+ 648 0038 D054     		strb	r0, [r2, r3]
+ 141:lcd_traffic_light.c ****         lcd_set_yellow();
+ 649              		.loc 1 141 0
+ 650 003a FFF7FEFF 		bl	lcd_set_yellow
+ 651              	.LVL54:
+ 652 003e 0EE0     		b	.L28
+ 653              	.L32:
+ 142:lcd_traffic_light.c ****     }else if(3 == status_set_color){
+ 654              		.loc 1 142 0
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 15
+
+
+ 655 0040 074B     		ldr	r3, .L34
+ 656 0042 1B78     		ldrb	r3, [r3]
+ 657 0044 032B     		cmp	r3, #3
+ 658 0046 07D1     		bne	.L33
+ 143:lcd_traffic_light.c ****         time_green = set_time();
+ 659              		.loc 1 143 0
+ 660 0048 FFF7FEFF 		bl	set_time
+ 661              	.LVL55:
+ 662 004c 2A23     		movs	r3, #42
+ 663 004e 044A     		ldr	r2, .L34
+ 664 0050 D054     		strb	r0, [r2, r3]
+ 144:lcd_traffic_light.c ****         lcd_set_green();
+ 665              		.loc 1 144 0
+ 666 0052 FFF7FEFF 		bl	lcd_set_green
+ 667              	.LVL56:
+ 668 0056 02E0     		b	.L28
+ 669              	.L33:
+ 145:lcd_traffic_light.c ****     }else{
+ 146:lcd_traffic_light.c ****         status_set_color = 0;
+ 670              		.loc 1 146 0
+ 671 0058 0022     		movs	r2, #0
+ 672 005a 014B     		ldr	r3, .L34
+ 673 005c 1A70     		strb	r2, [r3]
+ 674              	.L28:
+ 147:lcd_traffic_light.c ****     } 
+ 148:lcd_traffic_light.c **** }...
+ 675              		.loc 1 148 0
+ 676              		@ sp needed
+ 677 005e 10BD     		pop	{r4, pc}
+ 678              	.L35:
+ 679              		.align	2
+ 680              	.L34:
+ 681 0060 00000000 		.word	.LANCHOR0
+ 682              		.cfi_endproc
+ 683              	.LFE43:
+ 684              		.size	definition_set_color, .-definition_set_color
+ 685              		.global	time_green
+ 686              		.global	time_yellow
+ 687              		.global	time_red
+ 688              		.global	status_set_color
+ 689              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 690              		.align	2
+ 691              	.LC2:
+ 692 0000 41757468 		.ascii	"Author\000"
+ 692      6F7200
+ 693 0007 00       		.space	1
+ 694              	.LC12:
+ 695 0008 25326400 		.ascii	"%2d\000"
+ 696              	.LC15:
+ 697 000c 25366400 		.ascii	"%6d\000"
+ 698              	.LC18:
+ 699 0010 25313364 		.ascii	"%13d\000"
+ 699      00
+ 700 0015 000000   		.space	3
+ 701              	.LC8:
+ 702 0018 52656420 		.ascii	"Red Yellow Green\000"
+ 702      59656C6C 
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 16
+
+
+ 702      6F772047 
+ 702      7265656E 
+ 702      00
+ 703 0029 000000   		.space	3
+ 704              	.LC23:
+ 705 002c 53657420 		.ascii	"Set red time\000"
+ 705      72656420 
+ 705      74696D65 
+ 705      00
+ 706 0039 000000   		.space	3
+ 707              	.LC25:
+ 708 003c 54696D65 		.ascii	"Time = %d\000"
+ 708      203D2025 
+ 708      6400
+ 709 0046 0000     		.space	2
+ 710              	.LC30:
+ 711 0048 53657420 		.ascii	"Set green time:\000"
+ 711      67726565 
+ 711      6E207469 
+ 711      6D653A00 
+ 712              	.LC36:
+ 713 0058 53657420 		.ascii	"Set yellow time:\000"
+ 713      79656C6C 
+ 713      6F772074 
+ 713      696D653A 
+ 713      00
+ 714              		.bss
+ 715              		.align	2
+ 716              		.set	.LANCHOR0,. + 0
+ 717              		.type	status_set_color, %object
+ 718              		.size	status_set_color, 1
+ 719              	status_set_color:
+ 720 0000 00       		.space	1
+ 721 0001 000000   		.space	3
+ 722              		.type	buf1, %object
+ 723              		.size	buf1, 17
+ 724              	buf1:
+ 725 0004 00000000 		.space	17
+ 725      00000000 
+ 725      00000000 
+ 725      00000000 
+ 725      00
+ 726 0015 000000   		.space	3
+ 727              		.type	buf2, %object
+ 728              		.size	buf2, 17
+ 729              	buf2:
+ 730 0018 00000000 		.space	17
+ 730      00000000 
+ 730      00000000 
+ 730      00000000 
+ 730      00
+ 731              		.type	time_red, %object
+ 732              		.size	time_red, 1
+ 733              	time_red:
+ 734 0029 00       		.space	1
+ 735              		.type	time_green, %object
+ 736              		.size	time_green, 1
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 17
+
+
+ 737              	time_green:
+ 738 002a 00       		.space	1
+ 739              		.type	time_yellow, %object
+ 740              		.size	time_yellow, 1
+ 741              	time_yellow:
+ 742 002b 00       		.space	1
+ 743              		.text
+ 744              	.Letext0:
+ 745              		.file 2 "Generated_Source\\PSoC4/Enc_Sw.h"
+ 746              		.file 3 "Generated_Source\\PSoC4/LCD.h"
+ 747              		.file 4 "Generated_Source\\PSoC4/CyLib.h"
+ 748              		.file 5 "Generated_Source\\PSoC4/QuadDec.h"
+ 749              		.file 6 "Generated_Source\\PSoC4/Enc_Sw_Int.h"
+ 750              		.file 7 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 751              		.file 8 "Generated_Source\\PSoC4/cytypes.h"
+ 752              		.section	.debug_info,"",%progbits
+ 753              	.Ldebug_info0:
+ 754 0000 5C060000 		.4byte	0x65c
+ 755 0004 0400     		.2byte	0x4
+ 756 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 757 000a 04       		.byte	0x4
+ 758 000b 01       		.uleb128 0x1
+ 759 000c BF010000 		.4byte	.LASF44
+ 760 0010 0C       		.byte	0xc
+ 761 0011 CF000000 		.4byte	.LASF45
+ 762 0015 8F000000 		.4byte	.LASF46
+ 763 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 764 001d 00000000 		.4byte	0
+ 765 0021 00000000 		.4byte	.Ldebug_line0
+ 766 0025 02       		.uleb128 0x2
+ 767 0026 01       		.byte	0x1
+ 768 0027 06       		.byte	0x6
+ 769 0028 E4020000 		.4byte	.LASF0
+ 770 002c 02       		.uleb128 0x2
+ 771 002d 01       		.byte	0x1
+ 772 002e 08       		.byte	0x8
+ 773 002f 81000000 		.4byte	.LASF1
+ 774 0033 02       		.uleb128 0x2
+ 775 0034 02       		.byte	0x2
+ 776 0035 05       		.byte	0x5
+ 777 0036 7A020000 		.4byte	.LASF2
+ 778 003a 02       		.uleb128 0x2
+ 779 003b 02       		.byte	0x2
+ 780 003c 07       		.byte	0x7
+ 781 003d FE000000 		.4byte	.LASF3
+ 782 0041 02       		.uleb128 0x2
+ 783 0042 04       		.byte	0x4
+ 784 0043 05       		.byte	0x5
+ 785 0044 C5020000 		.4byte	.LASF4
+ 786 0048 02       		.uleb128 0x2
+ 787 0049 04       		.byte	0x4
+ 788 004a 07       		.byte	0x7
+ 789 004b E3000000 		.4byte	.LASF5
+ 790 004f 02       		.uleb128 0x2
+ 791 0050 08       		.byte	0x8
+ 792 0051 05       		.byte	0x5
+ 793 0052 67020000 		.4byte	.LASF6
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 18
+
+
+ 794 0056 02       		.uleb128 0x2
+ 795 0057 08       		.byte	0x8
+ 796 0058 07       		.byte	0x7
+ 797 0059 74010000 		.4byte	.LASF7
+ 798 005d 03       		.uleb128 0x3
+ 799 005e 04       		.byte	0x4
+ 800 005f 05       		.byte	0x5
+ 801 0060 696E7400 		.ascii	"int\000"
+ 802 0064 02       		.uleb128 0x2
+ 803 0065 04       		.byte	0x4
+ 804 0066 07       		.byte	0x7
+ 805 0067 67010000 		.4byte	.LASF8
+ 806 006b 04       		.uleb128 0x4
+ 807 006c 7B000000 		.4byte	.LASF47
+ 808 0070 08       		.byte	0x8
+ 809 0071 E401     		.2byte	0x1e4
+ 810 0073 2C000000 		.4byte	0x2c
+ 811 0077 02       		.uleb128 0x2
+ 812 0078 04       		.byte	0x4
+ 813 0079 04       		.byte	0x4
+ 814 007a 6B000000 		.4byte	.LASF9
+ 815 007e 02       		.uleb128 0x2
+ 816 007f 08       		.byte	0x8
+ 817 0080 04       		.byte	0x4
+ 818 0081 41010000 		.4byte	.LASF10
+ 819 0085 02       		.uleb128 0x2
+ 820 0086 01       		.byte	0x1
+ 821 0087 08       		.byte	0x8
+ 822 0088 75020000 		.4byte	.LASF11
+ 823 008c 05       		.uleb128 0x5
+ 824 008d 6B000000 		.4byte	0x6b
+ 825 0091 02       		.uleb128 0x2
+ 826 0092 08       		.byte	0x8
+ 827 0093 04       		.byte	0x4
+ 828 0094 D8020000 		.4byte	.LASF12
+ 829 0098 02       		.uleb128 0x2
+ 830 0099 04       		.byte	0x4
+ 831 009a 07       		.byte	0x7
+ 832 009b 5E020000 		.4byte	.LASF13
+ 833 009f 06       		.uleb128 0x6
+ 834 00a0 48010000 		.4byte	.LASF14
+ 835 00a4 01       		.byte	0x1
+ 836 00a5 1D       		.byte	0x1d
+ 837 00a6 00000000 		.4byte	.LFB35
+ 838 00aa 18000000 		.4byte	.LFE35-.LFB35
+ 839 00ae 01       		.uleb128 0x1
+ 840 00af 9C       		.byte	0x9c
+ 841 00b0 BE000000 		.4byte	0xbe
+ 842 00b4 07       		.uleb128 0x7
+ 843 00b5 10000000 		.4byte	.LVL0
+ 844 00b9 E3050000 		.4byte	0x5e3
+ 845 00bd 00       		.byte	0
+ 846 00be 06       		.uleb128 0x6
+ 847 00bf F5000000 		.4byte	.LASF15
+ 848 00c3 01       		.byte	0x1
+ 849 00c4 23       		.byte	0x23
+ 850 00c5 00000000 		.4byte	.LFB36
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 19
+
+
+ 851 00c9 58000000 		.4byte	.LFE36-.LFB36
+ 852 00cd 01       		.uleb128 0x1
+ 853 00ce 9C       		.byte	0x9c
+ 854 00cf 59010000 		.4byte	0x159
+ 855 00d3 07       		.uleb128 0x7
+ 856 00d4 06000000 		.4byte	.LVL1
+ 857 00d8 EE050000 		.4byte	0x5ee
+ 858 00dc 08       		.uleb128 0x8
+ 859 00dd 0C000000 		.4byte	.LVL2
+ 860 00e1 F9050000 		.4byte	0x5f9
+ 861 00e5 EF000000 		.4byte	0xef
+ 862 00e9 09       		.uleb128 0x9
+ 863 00ea 01       		.uleb128 0x1
+ 864 00eb 50       		.byte	0x50
+ 865 00ec 01       		.uleb128 0x1
+ 866 00ed 31       		.byte	0x31
+ 867 00ee 00       		.byte	0
+ 868 00ef 08       		.uleb128 0x8
+ 869 00f0 26000000 		.4byte	.LVL3
+ 870 00f4 04060000 		.4byte	0x604
+ 871 00f8 07010000 		.4byte	0x107
+ 872 00fc 09       		.uleb128 0x9
+ 873 00fd 01       		.uleb128 0x1
+ 874 00fe 50       		.byte	0x50
+ 875 00ff 01       		.uleb128 0x1
+ 876 0100 30       		.byte	0x30
+ 877 0101 09       		.uleb128 0x9
+ 878 0102 01       		.uleb128 0x1
+ 879 0103 51       		.byte	0x51
+ 880 0104 01       		.uleb128 0x1
+ 881 0105 30       		.byte	0x30
+ 882 0106 00       		.byte	0
+ 883 0107 08       		.uleb128 0x8
+ 884 0108 2C000000 		.4byte	.LVL4
+ 885 010c 0F060000 		.4byte	0x60f
+ 886 0110 1B010000 		.4byte	0x11b
+ 887 0114 09       		.uleb128 0x9
+ 888 0115 01       		.uleb128 0x1
+ 889 0116 50       		.byte	0x50
+ 890 0117 02       		.uleb128 0x2
+ 891 0118 75       		.byte	0x75
+ 892 0119 00       		.sleb128 0
+ 893 011a 00       		.byte	0
+ 894 011b 08       		.uleb128 0x8
+ 895 011c 3C000000 		.4byte	.LVL5
+ 896 0120 04060000 		.4byte	0x604
+ 897 0124 33010000 		.4byte	0x133
+ 898 0128 09       		.uleb128 0x9
+ 899 0129 01       		.uleb128 0x1
+ 900 012a 50       		.byte	0x50
+ 901 012b 01       		.uleb128 0x1
+ 902 012c 31       		.byte	0x31
+ 903 012d 09       		.uleb128 0x9
+ 904 012e 01       		.uleb128 0x1
+ 905 012f 51       		.byte	0x51
+ 906 0130 01       		.uleb128 0x1
+ 907 0131 30       		.byte	0x30
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 20
+
+
+ 908 0132 00       		.byte	0
+ 909 0133 08       		.uleb128 0x8
+ 910 0134 42000000 		.4byte	.LVL6
+ 911 0138 0F060000 		.4byte	0x60f
+ 912 013c 47010000 		.4byte	0x147
+ 913 0140 09       		.uleb128 0x9
+ 914 0141 01       		.uleb128 0x1
+ 915 0142 50       		.byte	0x50
+ 916 0143 02       		.uleb128 0x2
+ 917 0144 75       		.byte	0x75
+ 918 0145 00       		.sleb128 0
+ 919 0146 00       		.byte	0
+ 920 0147 0A       		.uleb128 0xa
+ 921 0148 48000000 		.4byte	.LVL7
+ 922 014c 1A060000 		.4byte	0x61a
+ 923 0150 09       		.uleb128 0x9
+ 924 0151 01       		.uleb128 0x1
+ 925 0152 50       		.byte	0x50
+ 926 0153 03       		.uleb128 0x3
+ 927 0154 0A       		.byte	0xa
+ 928 0155 7017     		.2byte	0x1770
+ 929 0157 00       		.byte	0
+ 930 0158 00       		.byte	0
+ 931 0159 06       		.uleb128 0x6
+ 932 015a 11010000 		.4byte	.LASF16
+ 933 015e 01       		.byte	0x1
+ 934 015f 31       		.byte	0x31
+ 935 0160 00000000 		.4byte	.LFB37
+ 936 0164 18000000 		.4byte	.LFE37-.LFB37
+ 937 0168 01       		.uleb128 0x1
+ 938 0169 9C       		.byte	0x9c
+ 939 016a 9E010000 		.4byte	0x19e
+ 940 016e 07       		.uleb128 0x7
+ 941 016f 06000000 		.4byte	.LVL8
+ 942 0173 25060000 		.4byte	0x625
+ 943 0177 08       		.uleb128 0x8
+ 944 0178 0C000000 		.4byte	.LVL9
+ 945 017c 31060000 		.4byte	0x631
+ 946 0180 8A010000 		.4byte	0x18a
+ 947 0184 09       		.uleb128 0x9
+ 948 0185 01       		.uleb128 0x1
+ 949 0186 50       		.byte	0x50
+ 950 0187 01       		.uleb128 0x1
+ 951 0188 30       		.byte	0x30
+ 952 0189 00       		.byte	0
+ 953 018a 0A       		.uleb128 0xa
+ 954 018b 12000000 		.4byte	.LVL10
+ 955 018f 3D060000 		.4byte	0x63d
+ 956 0193 09       		.uleb128 0x9
+ 957 0194 01       		.uleb128 0x1
+ 958 0195 50       		.byte	0x50
+ 959 0196 05       		.uleb128 0x5
+ 960 0197 03       		.byte	0x3
+ 961 0198 00000000 		.4byte	Enc_Sw_Handler
+ 962 019c 00       		.byte	0
+ 963 019d 00       		.byte	0
+ 964 019e 06       		.uleb128 0x6
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 21
+
+
+ 965 019f 8B010000 		.4byte	.LASF17
+ 966 01a3 01       		.byte	0x1
+ 967 01a4 39       		.byte	0x39
+ 968 01a5 00000000 		.4byte	.LFB38
+ 969 01a9 00010000 		.4byte	.LFE38-.LFB38
+ 970 01ad 01       		.uleb128 0x1
+ 971 01ae 9C       		.byte	0x9c
+ 972 01af CA020000 		.4byte	0x2ca
+ 973 01b3 08       		.uleb128 0x8
+ 974 01b4 08000000 		.4byte	.LVL11
+ 975 01b8 F9050000 		.4byte	0x5f9
+ 976 01bc C6010000 		.4byte	0x1c6
+ 977 01c0 09       		.uleb128 0x9
+ 978 01c1 01       		.uleb128 0x1
+ 979 01c2 50       		.byte	0x50
+ 980 01c3 01       		.uleb128 0x1
+ 981 01c4 31       		.byte	0x31
+ 982 01c5 00       		.byte	0
+ 983 01c6 08       		.uleb128 0x8
+ 984 01c7 24000000 		.4byte	.LVL12
+ 985 01cb 04060000 		.4byte	0x604
+ 986 01cf DE010000 		.4byte	0x1de
+ 987 01d3 09       		.uleb128 0x9
+ 988 01d4 01       		.uleb128 0x1
+ 989 01d5 50       		.byte	0x50
+ 990 01d6 01       		.uleb128 0x1
+ 991 01d7 30       		.byte	0x30
+ 992 01d8 09       		.uleb128 0x9
+ 993 01d9 01       		.uleb128 0x1
+ 994 01da 51       		.byte	0x51
+ 995 01db 01       		.uleb128 0x1
+ 996 01dc 30       		.byte	0x30
+ 997 01dd 00       		.byte	0
+ 998 01de 08       		.uleb128 0x8
+ 999 01df 2A000000 		.4byte	.LVL13
+ 1000 01e3 0F060000 		.4byte	0x60f
+ 1001 01e7 F2010000 		.4byte	0x1f2
+ 1002 01eb 09       		.uleb128 0x9
+ 1003 01ec 01       		.uleb128 0x1
+ 1004 01ed 50       		.byte	0x50
+ 1005 01ee 02       		.uleb128 0x2
+ 1006 01ef 74       		.byte	0x74
+ 1007 01f0 04       		.sleb128 4
+ 1008 01f1 00       		.byte	0
+ 1009 01f2 08       		.uleb128 0x8
+ 1010 01f3 54000000 		.4byte	.LVL14
+ 1011 01f7 48060000 		.4byte	0x648
+ 1012 01fb 0F020000 		.4byte	0x20f
+ 1013 01ff 09       		.uleb128 0x9
+ 1014 0200 01       		.uleb128 0x1
+ 1015 0201 50       		.byte	0x50
+ 1016 0202 02       		.uleb128 0x2
+ 1017 0203 74       		.byte	0x74
+ 1018 0204 00       		.sleb128 0
+ 1019 0205 09       		.uleb128 0x9
+ 1020 0206 01       		.uleb128 0x1
+ 1021 0207 51       		.byte	0x51
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 22
+
+
+ 1022 0208 05       		.uleb128 0x5
+ 1023 0209 03       		.byte	0x3
+ 1024 020a 08000000 		.4byte	.LC12
+ 1025 020e 00       		.byte	0
+ 1026 020f 08       		.uleb128 0x8
+ 1027 0210 5C000000 		.4byte	.LVL15
+ 1028 0214 04060000 		.4byte	0x604
+ 1029 0218 27020000 		.4byte	0x227
+ 1030 021c 09       		.uleb128 0x9
+ 1031 021d 01       		.uleb128 0x1
+ 1032 021e 50       		.byte	0x50
+ 1033 021f 01       		.uleb128 0x1
+ 1034 0220 31       		.byte	0x31
+ 1035 0221 09       		.uleb128 0x9
+ 1036 0222 01       		.uleb128 0x1
+ 1037 0223 51       		.byte	0x51
+ 1038 0224 01       		.uleb128 0x1
+ 1039 0225 30       		.byte	0x30
+ 1040 0226 00       		.byte	0
+ 1041 0227 08       		.uleb128 0x8
+ 1042 0228 62000000 		.4byte	.LVL16
+ 1043 022c 0F060000 		.4byte	0x60f
+ 1044 0230 3B020000 		.4byte	0x23b
+ 1045 0234 09       		.uleb128 0x9
+ 1046 0235 01       		.uleb128 0x1
+ 1047 0236 50       		.byte	0x50
+ 1048 0237 02       		.uleb128 0x2
+ 1049 0238 74       		.byte	0x74
+ 1050 0239 00       		.sleb128 0
+ 1051 023a 00       		.byte	0
+ 1052 023b 08       		.uleb128 0x8
+ 1053 023c 8E000000 		.4byte	.LVL17
+ 1054 0240 48060000 		.4byte	0x648
+ 1055 0244 58020000 		.4byte	0x258
+ 1056 0248 09       		.uleb128 0x9
+ 1057 0249 01       		.uleb128 0x1
+ 1058 024a 50       		.byte	0x50
+ 1059 024b 02       		.uleb128 0x2
+ 1060 024c 74       		.byte	0x74
+ 1061 024d 00       		.sleb128 0
+ 1062 024e 09       		.uleb128 0x9
+ 1063 024f 01       		.uleb128 0x1
+ 1064 0250 51       		.byte	0x51
+ 1065 0251 05       		.uleb128 0x5
+ 1066 0252 03       		.byte	0x3
+ 1067 0253 0C000000 		.4byte	.LC15
+ 1068 0257 00       		.byte	0
+ 1069 0258 08       		.uleb128 0x8
+ 1070 0259 96000000 		.4byte	.LVL18
+ 1071 025d 04060000 		.4byte	0x604
+ 1072 0261 70020000 		.4byte	0x270
+ 1073 0265 09       		.uleb128 0x9
+ 1074 0266 01       		.uleb128 0x1
+ 1075 0267 50       		.byte	0x50
+ 1076 0268 01       		.uleb128 0x1
+ 1077 0269 31       		.byte	0x31
+ 1078 026a 09       		.uleb128 0x9
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 23
+
+
+ 1079 026b 01       		.uleb128 0x1
+ 1080 026c 51       		.byte	0x51
+ 1081 026d 01       		.uleb128 0x1
+ 1082 026e 30       		.byte	0x30
+ 1083 026f 00       		.byte	0
+ 1084 0270 08       		.uleb128 0x8
+ 1085 0271 9C000000 		.4byte	.LVL19
+ 1086 0275 0F060000 		.4byte	0x60f
+ 1087 0279 84020000 		.4byte	0x284
+ 1088 027d 09       		.uleb128 0x9
+ 1089 027e 01       		.uleb128 0x1
+ 1090 027f 50       		.byte	0x50
+ 1091 0280 02       		.uleb128 0x2
+ 1092 0281 74       		.byte	0x74
+ 1093 0282 00       		.sleb128 0
+ 1094 0283 00       		.byte	0
+ 1095 0284 08       		.uleb128 0x8
+ 1096 0285 CC000000 		.4byte	.LVL20
+ 1097 0289 48060000 		.4byte	0x648
+ 1098 028d A1020000 		.4byte	0x2a1
+ 1099 0291 09       		.uleb128 0x9
+ 1100 0292 01       		.uleb128 0x1
+ 1101 0293 50       		.byte	0x50
+ 1102 0294 02       		.uleb128 0x2
+ 1103 0295 74       		.byte	0x74
+ 1104 0296 00       		.sleb128 0
+ 1105 0297 09       		.uleb128 0x9
+ 1106 0298 01       		.uleb128 0x1
+ 1107 0299 51       		.byte	0x51
+ 1108 029a 05       		.uleb128 0x5
+ 1109 029b 03       		.byte	0x3
+ 1110 029c 10000000 		.4byte	.LC18
+ 1111 02a0 00       		.byte	0
+ 1112 02a1 08       		.uleb128 0x8
+ 1113 02a2 D4000000 		.4byte	.LVL21
+ 1114 02a6 04060000 		.4byte	0x604
+ 1115 02aa B9020000 		.4byte	0x2b9
+ 1116 02ae 09       		.uleb128 0x9
+ 1117 02af 01       		.uleb128 0x1
+ 1118 02b0 50       		.byte	0x50
+ 1119 02b1 01       		.uleb128 0x1
+ 1120 02b2 31       		.byte	0x31
+ 1121 02b3 09       		.uleb128 0x9
+ 1122 02b4 01       		.uleb128 0x1
+ 1123 02b5 51       		.byte	0x51
+ 1124 02b6 01       		.uleb128 0x1
+ 1125 02b7 30       		.byte	0x30
+ 1126 02b8 00       		.byte	0
+ 1127 02b9 0A       		.uleb128 0xa
+ 1128 02ba DA000000 		.4byte	.LVL22
+ 1129 02be 0F060000 		.4byte	0x60f
+ 1130 02c2 09       		.uleb128 0x9
+ 1131 02c3 01       		.uleb128 0x1
+ 1132 02c4 50       		.byte	0x50
+ 1133 02c5 02       		.uleb128 0x2
+ 1134 02c6 74       		.byte	0x74
+ 1135 02c7 00       		.sleb128 0
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 24
+
+
+ 1136 02c8 00       		.byte	0
+ 1137 02c9 00       		.byte	0
+ 1138 02ca 06       		.uleb128 0x6
+ 1139 02cb 53000000 		.4byte	.LASF18
+ 1140 02cf 01       		.byte	0x1
+ 1141 02d0 52       		.byte	0x52
+ 1142 02d1 00000000 		.4byte	.LFB39
+ 1143 02d5 50000000 		.4byte	.LFE39-.LFB39
+ 1144 02d9 01       		.uleb128 0x1
+ 1145 02da 9C       		.byte	0x9c
+ 1146 02db 64030000 		.4byte	0x364
+ 1147 02df 08       		.uleb128 0x8
+ 1148 02e0 08000000 		.4byte	.LVL23
+ 1149 02e4 F9050000 		.4byte	0x5f9
+ 1150 02e8 F2020000 		.4byte	0x2f2
+ 1151 02ec 09       		.uleb128 0x9
+ 1152 02ed 01       		.uleb128 0x1
+ 1153 02ee 50       		.byte	0x50
+ 1154 02ef 01       		.uleb128 0x1
+ 1155 02f0 31       		.byte	0x31
+ 1156 02f1 00       		.byte	0
+ 1157 02f2 08       		.uleb128 0x8
+ 1158 02f3 20000000 		.4byte	.LVL24
+ 1159 02f7 04060000 		.4byte	0x604
+ 1160 02fb 0A030000 		.4byte	0x30a
+ 1161 02ff 09       		.uleb128 0x9
+ 1162 0300 01       		.uleb128 0x1
+ 1163 0301 50       		.byte	0x50
+ 1164 0302 01       		.uleb128 0x1
+ 1165 0303 30       		.byte	0x30
+ 1166 0304 09       		.uleb128 0x9
+ 1167 0305 01       		.uleb128 0x1
+ 1168 0306 51       		.byte	0x51
+ 1169 0307 01       		.uleb128 0x1
+ 1170 0308 30       		.byte	0x30
+ 1171 0309 00       		.byte	0
+ 1172 030a 08       		.uleb128 0x8
+ 1173 030b 26000000 		.4byte	.LVL25
+ 1174 030f 0F060000 		.4byte	0x60f
+ 1175 0313 1E030000 		.4byte	0x31e
+ 1176 0317 09       		.uleb128 0x9
+ 1177 0318 01       		.uleb128 0x1
+ 1178 0319 50       		.byte	0x50
+ 1179 031a 02       		.uleb128 0x2
+ 1180 031b 75       		.byte	0x75
+ 1181 031c 00       		.sleb128 0
+ 1182 031d 00       		.byte	0
+ 1183 031e 08       		.uleb128 0x8
+ 1184 031f 34000000 		.4byte	.LVL26
+ 1185 0323 48060000 		.4byte	0x648
+ 1186 0327 3B030000 		.4byte	0x33b
+ 1187 032b 09       		.uleb128 0x9
+ 1188 032c 01       		.uleb128 0x1
+ 1189 032d 50       		.byte	0x50
+ 1190 032e 02       		.uleb128 0x2
+ 1191 032f 74       		.byte	0x74
+ 1192 0330 00       		.sleb128 0
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 25
+
+
+ 1193 0331 09       		.uleb128 0x9
+ 1194 0332 01       		.uleb128 0x1
+ 1195 0333 51       		.byte	0x51
+ 1196 0334 05       		.uleb128 0x5
+ 1197 0335 03       		.byte	0x3
+ 1198 0336 3C000000 		.4byte	.LC25
+ 1199 033a 00       		.byte	0
+ 1200 033b 08       		.uleb128 0x8
+ 1201 033c 3C000000 		.4byte	.LVL27
+ 1202 0340 04060000 		.4byte	0x604
+ 1203 0344 53030000 		.4byte	0x353
+ 1204 0348 09       		.uleb128 0x9
+ 1205 0349 01       		.uleb128 0x1
+ 1206 034a 50       		.byte	0x50
+ 1207 034b 01       		.uleb128 0x1
+ 1208 034c 31       		.byte	0x31
+ 1209 034d 09       		.uleb128 0x9
+ 1210 034e 01       		.uleb128 0x1
+ 1211 034f 51       		.byte	0x51
+ 1212 0350 01       		.uleb128 0x1
+ 1213 0351 30       		.byte	0x30
+ 1214 0352 00       		.byte	0
+ 1215 0353 0A       		.uleb128 0xa
+ 1216 0354 42000000 		.4byte	.LVL28
+ 1217 0358 0F060000 		.4byte	0x60f
+ 1218 035c 09       		.uleb128 0x9
+ 1219 035d 01       		.uleb128 0x1
+ 1220 035e 50       		.byte	0x50
+ 1221 035f 02       		.uleb128 0x2
+ 1222 0360 74       		.byte	0x74
+ 1223 0361 00       		.sleb128 0
+ 1224 0362 00       		.byte	0
+ 1225 0363 00       		.byte	0
+ 1226 0364 06       		.uleb128 0x6
+ 1227 0365 A3020000 		.4byte	.LASF19
+ 1228 0369 01       		.byte	0x1
+ 1229 036a 5D       		.byte	0x5d
+ 1230 036b 00000000 		.4byte	.LFB40
+ 1231 036f 50000000 		.4byte	.LFE40-.LFB40
+ 1232 0373 01       		.uleb128 0x1
+ 1233 0374 9C       		.byte	0x9c
+ 1234 0375 FE030000 		.4byte	0x3fe
+ 1235 0379 08       		.uleb128 0x8
+ 1236 037a 08000000 		.4byte	.LVL29
+ 1237 037e F9050000 		.4byte	0x5f9
+ 1238 0382 8C030000 		.4byte	0x38c
+ 1239 0386 09       		.uleb128 0x9
+ 1240 0387 01       		.uleb128 0x1
+ 1241 0388 50       		.byte	0x50
+ 1242 0389 01       		.uleb128 0x1
+ 1243 038a 31       		.byte	0x31
+ 1244 038b 00       		.byte	0
+ 1245 038c 08       		.uleb128 0x8
+ 1246 038d 20000000 		.4byte	.LVL30
+ 1247 0391 04060000 		.4byte	0x604
+ 1248 0395 A4030000 		.4byte	0x3a4
+ 1249 0399 09       		.uleb128 0x9
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 26
+
+
+ 1250 039a 01       		.uleb128 0x1
+ 1251 039b 50       		.byte	0x50
+ 1252 039c 01       		.uleb128 0x1
+ 1253 039d 30       		.byte	0x30
+ 1254 039e 09       		.uleb128 0x9
+ 1255 039f 01       		.uleb128 0x1
+ 1256 03a0 51       		.byte	0x51
+ 1257 03a1 01       		.uleb128 0x1
+ 1258 03a2 30       		.byte	0x30
+ 1259 03a3 00       		.byte	0
+ 1260 03a4 08       		.uleb128 0x8
+ 1261 03a5 26000000 		.4byte	.LVL31
+ 1262 03a9 0F060000 		.4byte	0x60f
+ 1263 03ad B8030000 		.4byte	0x3b8
+ 1264 03b1 09       		.uleb128 0x9
+ 1265 03b2 01       		.uleb128 0x1
+ 1266 03b3 50       		.byte	0x50
+ 1267 03b4 02       		.uleb128 0x2
+ 1268 03b5 75       		.byte	0x75
+ 1269 03b6 00       		.sleb128 0
+ 1270 03b7 00       		.byte	0
+ 1271 03b8 08       		.uleb128 0x8
+ 1272 03b9 34000000 		.4byte	.LVL32
+ 1273 03bd 48060000 		.4byte	0x648
+ 1274 03c1 D5030000 		.4byte	0x3d5
+ 1275 03c5 09       		.uleb128 0x9
+ 1276 03c6 01       		.uleb128 0x1
+ 1277 03c7 50       		.byte	0x50
+ 1278 03c8 02       		.uleb128 0x2
+ 1279 03c9 74       		.byte	0x74
+ 1280 03ca 00       		.sleb128 0
+ 1281 03cb 09       		.uleb128 0x9
+ 1282 03cc 01       		.uleb128 0x1
+ 1283 03cd 51       		.byte	0x51
+ 1284 03ce 05       		.uleb128 0x5
+ 1285 03cf 03       		.byte	0x3
+ 1286 03d0 3C000000 		.4byte	.LC25
+ 1287 03d4 00       		.byte	0
+ 1288 03d5 08       		.uleb128 0x8
+ 1289 03d6 3C000000 		.4byte	.LVL33
+ 1290 03da 04060000 		.4byte	0x604
+ 1291 03de ED030000 		.4byte	0x3ed
+ 1292 03e2 09       		.uleb128 0x9
+ 1293 03e3 01       		.uleb128 0x1
+ 1294 03e4 50       		.byte	0x50
+ 1295 03e5 01       		.uleb128 0x1
+ 1296 03e6 31       		.byte	0x31
+ 1297 03e7 09       		.uleb128 0x9
+ 1298 03e8 01       		.uleb128 0x1
+ 1299 03e9 51       		.byte	0x51
+ 1300 03ea 01       		.uleb128 0x1
+ 1301 03eb 30       		.byte	0x30
+ 1302 03ec 00       		.byte	0
+ 1303 03ed 0A       		.uleb128 0xa
+ 1304 03ee 42000000 		.4byte	.LVL34
+ 1305 03f2 0F060000 		.4byte	0x60f
+ 1306 03f6 09       		.uleb128 0x9
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 27
+
+
+ 1307 03f7 01       		.uleb128 0x1
+ 1308 03f8 50       		.byte	0x50
+ 1309 03f9 02       		.uleb128 0x2
+ 1310 03fa 74       		.byte	0x74
+ 1311 03fb 00       		.sleb128 0
+ 1312 03fc 00       		.byte	0
+ 1313 03fd 00       		.byte	0
+ 1314 03fe 06       		.uleb128 0x6
+ 1315 03ff 1A010000 		.4byte	.LASF20
+ 1316 0403 01       		.byte	0x1
+ 1317 0404 68       		.byte	0x68
+ 1318 0405 00000000 		.4byte	.LFB41
+ 1319 0409 54000000 		.4byte	.LFE41-.LFB41
+ 1320 040d 01       		.uleb128 0x1
+ 1321 040e 9C       		.byte	0x9c
+ 1322 040f 98040000 		.4byte	0x498
+ 1323 0413 08       		.uleb128 0x8
+ 1324 0414 08000000 		.4byte	.LVL35
+ 1325 0418 F9050000 		.4byte	0x5f9
+ 1326 041c 26040000 		.4byte	0x426
+ 1327 0420 09       		.uleb128 0x9
+ 1328 0421 01       		.uleb128 0x1
+ 1329 0422 50       		.byte	0x50
+ 1330 0423 01       		.uleb128 0x1
+ 1331 0424 31       		.byte	0x31
+ 1332 0425 00       		.byte	0
+ 1333 0426 08       		.uleb128 0x8
+ 1334 0427 24000000 		.4byte	.LVL36
+ 1335 042b 04060000 		.4byte	0x604
+ 1336 042f 3E040000 		.4byte	0x43e
+ 1337 0433 09       		.uleb128 0x9
+ 1338 0434 01       		.uleb128 0x1
+ 1339 0435 50       		.byte	0x50
+ 1340 0436 01       		.uleb128 0x1
+ 1341 0437 30       		.byte	0x30
+ 1342 0438 09       		.uleb128 0x9
+ 1343 0439 01       		.uleb128 0x1
+ 1344 043a 51       		.byte	0x51
+ 1345 043b 01       		.uleb128 0x1
+ 1346 043c 30       		.byte	0x30
+ 1347 043d 00       		.byte	0
+ 1348 043e 08       		.uleb128 0x8
+ 1349 043f 2A000000 		.4byte	.LVL37
+ 1350 0443 0F060000 		.4byte	0x60f
+ 1351 0447 52040000 		.4byte	0x452
+ 1352 044b 09       		.uleb128 0x9
+ 1353 044c 01       		.uleb128 0x1
+ 1354 044d 50       		.byte	0x50
+ 1355 044e 02       		.uleb128 0x2
+ 1356 044f 74       		.byte	0x74
+ 1357 0450 04       		.sleb128 4
+ 1358 0451 00       		.byte	0
+ 1359 0452 08       		.uleb128 0x8
+ 1360 0453 38000000 		.4byte	.LVL38
+ 1361 0457 48060000 		.4byte	0x648
+ 1362 045b 6F040000 		.4byte	0x46f
+ 1363 045f 09       		.uleb128 0x9
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 28
+
+
+ 1364 0460 01       		.uleb128 0x1
+ 1365 0461 50       		.byte	0x50
+ 1366 0462 02       		.uleb128 0x2
+ 1367 0463 74       		.byte	0x74
+ 1368 0464 00       		.sleb128 0
+ 1369 0465 09       		.uleb128 0x9
+ 1370 0466 01       		.uleb128 0x1
+ 1371 0467 51       		.byte	0x51
+ 1372 0468 05       		.uleb128 0x5
+ 1373 0469 03       		.byte	0x3
+ 1374 046a 3C000000 		.4byte	.LC25
+ 1375 046e 00       		.byte	0
+ 1376 046f 08       		.uleb128 0x8
+ 1377 0470 40000000 		.4byte	.LVL39
+ 1378 0474 04060000 		.4byte	0x604
+ 1379 0478 87040000 		.4byte	0x487
+ 1380 047c 09       		.uleb128 0x9
+ 1381 047d 01       		.uleb128 0x1
+ 1382 047e 50       		.byte	0x50
+ 1383 047f 01       		.uleb128 0x1
+ 1384 0480 31       		.byte	0x31
+ 1385 0481 09       		.uleb128 0x9
+ 1386 0482 01       		.uleb128 0x1
+ 1387 0483 51       		.byte	0x51
+ 1388 0484 01       		.uleb128 0x1
+ 1389 0485 30       		.byte	0x30
+ 1390 0486 00       		.byte	0
+ 1391 0487 0A       		.uleb128 0xa
+ 1392 0488 46000000 		.4byte	.LVL40
+ 1393 048c 0F060000 		.4byte	0x60f
+ 1394 0490 09       		.uleb128 0x9
+ 1395 0491 01       		.uleb128 0x1
+ 1396 0492 50       		.byte	0x50
+ 1397 0493 02       		.uleb128 0x2
+ 1398 0494 74       		.byte	0x74
+ 1399 0495 00       		.sleb128 0
+ 1400 0496 00       		.byte	0
+ 1401 0497 00       		.byte	0
+ 1402 0498 0B       		.uleb128 0xb
+ 1403 0499 9A020000 		.4byte	.LASF48
+ 1404 049d 01       		.byte	0x1
+ 1405 049e 73       		.byte	0x73
+ 1406 049f 6B000000 		.4byte	0x6b
+ 1407 04a3 00000000 		.4byte	.LFB42
+ 1408 04a7 28000000 		.4byte	.LFE42-.LFB42
+ 1409 04ab 01       		.uleb128 0x1
+ 1410 04ac 9C       		.byte	0x9c
+ 1411 04ad EC040000 		.4byte	0x4ec
+ 1412 04b1 0C       		.uleb128 0xc
+ 1413 04b2 29010000 		.4byte	.LASF22
+ 1414 04b6 01       		.byte	0x1
+ 1415 04b7 74       		.byte	0x74
+ 1416 04b8 6B000000 		.4byte	0x6b
+ 1417 04bc 00000000 		.4byte	.LLST0
+ 1418 04c0 07       		.uleb128 0x7
+ 1419 04c1 06000000 		.4byte	.LVL42
+ 1420 04c5 53060000 		.4byte	0x653
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 29
+
+
+ 1421 04c9 08       		.uleb128 0x8
+ 1422 04ca 18000000 		.4byte	.LVL45
+ 1423 04ce 31060000 		.4byte	0x631
+ 1424 04d2 DC040000 		.4byte	0x4dc
+ 1425 04d6 09       		.uleb128 0x9
+ 1426 04d7 01       		.uleb128 0x1
+ 1427 04d8 50       		.byte	0x50
+ 1428 04d9 01       		.uleb128 0x1
+ 1429 04da 44       		.byte	0x44
+ 1430 04db 00       		.byte	0
+ 1431 04dc 0A       		.uleb128 0xa
+ 1432 04dd 24000000 		.4byte	.LVL48
+ 1433 04e1 31060000 		.4byte	0x631
+ 1434 04e5 09       		.uleb128 0x9
+ 1435 04e6 01       		.uleb128 0x1
+ 1436 04e7 50       		.byte	0x50
+ 1437 04e8 01       		.uleb128 0x1
+ 1438 04e9 30       		.byte	0x30
+ 1439 04ea 00       		.byte	0
+ 1440 04eb 00       		.byte	0
+ 1441 04ec 06       		.uleb128 0x6
+ 1442 04ed 1F000000 		.4byte	.LASF21
+ 1443 04f1 01       		.byte	0x1
+ 1444 04f2 85       		.byte	0x85
+ 1445 04f3 00000000 		.4byte	.LFB43
+ 1446 04f7 64000000 		.4byte	.LFE43-.LFB43
+ 1447 04fb 01       		.uleb128 0x1
+ 1448 04fc 9C       		.byte	0x9c
+ 1449 04fd 41050000 		.4byte	0x541
+ 1450 0501 07       		.uleb128 0x7
+ 1451 0502 0E000000 		.4byte	.LVL50
+ 1452 0506 9E010000 		.4byte	0x19e
+ 1453 050a 07       		.uleb128 0x7
+ 1454 050b 1C000000 		.4byte	.LVL51
+ 1455 050f 98040000 		.4byte	0x498
+ 1456 0513 07       		.uleb128 0x7
+ 1457 0514 26000000 		.4byte	.LVL52
+ 1458 0518 CA020000 		.4byte	0x2ca
+ 1459 051c 07       		.uleb128 0x7
+ 1460 051d 34000000 		.4byte	.LVL53
+ 1461 0521 98040000 		.4byte	0x498
+ 1462 0525 07       		.uleb128 0x7
+ 1463 0526 3E000000 		.4byte	.LVL54
+ 1464 052a FE030000 		.4byte	0x3fe
+ 1465 052e 07       		.uleb128 0x7
+ 1466 052f 4C000000 		.4byte	.LVL55
+ 1467 0533 98040000 		.4byte	0x498
+ 1468 0537 07       		.uleb128 0x7
+ 1469 0538 56000000 		.4byte	.LVL56
+ 1470 053c 64030000 		.4byte	0x364
+ 1471 0540 00       		.byte	0
+ 1472 0541 0D       		.uleb128 0xd
+ 1473 0542 85000000 		.4byte	0x85
+ 1474 0546 51050000 		.4byte	0x551
+ 1475 054a 0E       		.uleb128 0xe
+ 1476 054b 98000000 		.4byte	0x98
+ 1477 054f 10       		.byte	0x10
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 30
+
+
+ 1478 0550 00       		.byte	0
+ 1479 0551 0F       		.uleb128 0xf
+ 1480 0552 00000000 		.4byte	.LASF23
+ 1481 0556 01       		.byte	0x1
+ 1482 0557 09       		.byte	0x9
+ 1483 0558 41050000 		.4byte	0x541
+ 1484 055c 05       		.uleb128 0x5
+ 1485 055d 03       		.byte	0x3
+ 1486 055e 04000000 		.4byte	buf1
+ 1487 0562 0F       		.uleb128 0xf
+ 1488 0563 05000000 		.4byte	.LASF24
+ 1489 0567 01       		.byte	0x1
+ 1490 0568 0A       		.byte	0xa
+ 1491 0569 41050000 		.4byte	0x541
+ 1492 056d 05       		.uleb128 0x5
+ 1493 056e 03       		.byte	0x3
+ 1494 056f 18000000 		.4byte	buf2
+ 1495 0573 10       		.uleb128 0x10
+ 1496 0574 CE020000 		.4byte	.LASF25
+ 1497 0578 01       		.byte	0x1
+ 1498 0579 05       		.byte	0x5
+ 1499 057a 6B000000 		.4byte	0x6b
+ 1500 057e 10       		.uleb128 0x10
+ 1501 057f 37010000 		.4byte	.LASF26
+ 1502 0583 01       		.byte	0x1
+ 1503 0584 06       		.byte	0x6
+ 1504 0585 6B000000 		.4byte	0x6b
+ 1505 0589 10       		.uleb128 0x10
+ 1506 058a BA010000 		.4byte	.LASF27
+ 1507 058e 01       		.byte	0x1
+ 1508 058f 0C       		.byte	0xc
+ 1509 0590 8C000000 		.4byte	0x8c
+ 1510 0594 10       		.uleb128 0x10
+ 1511 0595 F9020000 		.4byte	.LASF28
+ 1512 0599 01       		.byte	0x1
+ 1513 059a 0D       		.byte	0xd
+ 1514 059b 8C000000 		.4byte	0x8c
+ 1515 059f 11       		.uleb128 0x11
+ 1516 05a0 4D020000 		.4byte	.LASF29
+ 1517 05a4 01       		.byte	0x1
+ 1518 05a5 0E       		.byte	0xe
+ 1519 05a6 8C000000 		.4byte	0x8c
+ 1520 05aa 05       		.uleb128 0x5
+ 1521 05ab 03       		.byte	0x3
+ 1522 05ac 00000000 		.4byte	status_set_color
+ 1523 05b0 11       		.uleb128 0x11
+ 1524 05b1 F0020000 		.4byte	.LASF30
+ 1525 05b5 01       		.byte	0x1
+ 1526 05b6 11       		.byte	0x11
+ 1527 05b7 6B000000 		.4byte	0x6b
+ 1528 05bb 05       		.uleb128 0x5
+ 1529 05bc 03       		.byte	0x3
+ 1530 05bd 00000000 		.4byte	time_red
+ 1531 05c1 11       		.uleb128 0x11
+ 1532 05c2 5F000000 		.4byte	.LASF31
+ 1533 05c6 01       		.byte	0x1
+ 1534 05c7 12       		.byte	0x12
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 31
+
+
+ 1535 05c8 6B000000 		.4byte	0x6b
+ 1536 05cc 05       		.uleb128 0x5
+ 1537 05cd 03       		.byte	0x3
+ 1538 05ce 00000000 		.4byte	time_yellow
+ 1539 05d2 11       		.uleb128 0x11
+ 1540 05d3 1A030000 		.4byte	.LASF32
+ 1541 05d7 01       		.byte	0x1
+ 1542 05d8 13       		.byte	0x13
+ 1543 05d9 6B000000 		.4byte	0x6b
+ 1544 05dd 05       		.uleb128 0x5
+ 1545 05de 03       		.byte	0x3
+ 1546 05df 00000000 		.4byte	time_green
+ 1547 05e3 12       		.uleb128 0x12
+ 1548 05e4 84020000 		.4byte	.LASF33
+ 1549 05e8 84020000 		.4byte	.LASF33
+ 1550 05ec 02       		.byte	0x2
+ 1551 05ed 39       		.byte	0x39
+ 1552 05ee 12       		.uleb128 0x12
+ 1553 05ef 71000000 		.4byte	.LASF34
+ 1554 05f3 71000000 		.4byte	.LASF34
+ 1555 05f7 03       		.byte	0x3
+ 1556 05f8 38       		.byte	0x38
+ 1557 05f9 12       		.uleb128 0x12
+ 1558 05fa 34000000 		.4byte	.LASF35
+ 1559 05fe 34000000 		.4byte	.LASF35
+ 1560 0602 03       		.byte	0x3
+ 1561 0603 3A       		.byte	0x3a
+ 1562 0604 12       		.uleb128 0x12
+ 1563 0605 9A010000 		.4byte	.LASF36
+ 1564 0609 9A010000 		.4byte	.LASF36
+ 1565 060d 03       		.byte	0x3
+ 1566 060e 3D       		.byte	0x3d
+ 1567 060f 12       		.uleb128 0x12
+ 1568 0610 57010000 		.4byte	.LASF37
+ 1569 0614 57010000 		.4byte	.LASF37
+ 1570 0618 03       		.byte	0x3
+ 1571 0619 3C       		.byte	0x3c
+ 1572 061a 12       		.uleb128 0x12
+ 1573 061b 12030000 		.4byte	.LASF38
+ 1574 061f 12030000 		.4byte	.LASF38
+ 1575 0623 04       		.byte	0x4
+ 1576 0624 D9       		.byte	0xd9
+ 1577 0625 13       		.uleb128 0x13
+ 1578 0626 45000000 		.4byte	.LASF39
+ 1579 062a 45000000 		.4byte	.LASF39
+ 1580 062e 05       		.byte	0x5
+ 1581 062f 3201     		.2byte	0x132
+ 1582 0631 13       		.uleb128 0x13
+ 1583 0632 0A000000 		.4byte	.LASF40
+ 1584 0636 0A000000 		.4byte	.LASF40
+ 1585 063a 05       		.byte	0x5
+ 1586 063b 4A01     		.2byte	0x14a
+ 1587 063d 12       		.uleb128 0x12
+ 1588 063e A7010000 		.4byte	.LASF41
+ 1589 0642 A7010000 		.4byte	.LASF41
+ 1590 0646 06       		.byte	0x6
+ 1591 0647 18       		.byte	0x18
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 32
+
+
+ 1592 0648 12       		.uleb128 0x12
+ 1593 0649 0A030000 		.4byte	.LASF42
+ 1594 064d 0A030000 		.4byte	.LASF42
+ 1595 0651 07       		.byte	0x7
+ 1596 0652 E7       		.byte	0xe7
+ 1597 0653 13       		.uleb128 0x13
+ 1598 0654 B1020000 		.4byte	.LASF43
+ 1599 0658 B1020000 		.4byte	.LASF43
+ 1600 065c 05       		.byte	0x5
+ 1601 065d 4B01     		.2byte	0x14b
+ 1602 065f 00       		.byte	0
+ 1603              		.section	.debug_abbrev,"",%progbits
+ 1604              	.Ldebug_abbrev0:
+ 1605 0000 01       		.uleb128 0x1
+ 1606 0001 11       		.uleb128 0x11
+ 1607 0002 01       		.byte	0x1
+ 1608 0003 25       		.uleb128 0x25
+ 1609 0004 0E       		.uleb128 0xe
+ 1610 0005 13       		.uleb128 0x13
+ 1611 0006 0B       		.uleb128 0xb
+ 1612 0007 03       		.uleb128 0x3
+ 1613 0008 0E       		.uleb128 0xe
+ 1614 0009 1B       		.uleb128 0x1b
+ 1615 000a 0E       		.uleb128 0xe
+ 1616 000b 55       		.uleb128 0x55
+ 1617 000c 17       		.uleb128 0x17
+ 1618 000d 11       		.uleb128 0x11
+ 1619 000e 01       		.uleb128 0x1
+ 1620 000f 10       		.uleb128 0x10
+ 1621 0010 17       		.uleb128 0x17
+ 1622 0011 00       		.byte	0
+ 1623 0012 00       		.byte	0
+ 1624 0013 02       		.uleb128 0x2
+ 1625 0014 24       		.uleb128 0x24
+ 1626 0015 00       		.byte	0
+ 1627 0016 0B       		.uleb128 0xb
+ 1628 0017 0B       		.uleb128 0xb
+ 1629 0018 3E       		.uleb128 0x3e
+ 1630 0019 0B       		.uleb128 0xb
+ 1631 001a 03       		.uleb128 0x3
+ 1632 001b 0E       		.uleb128 0xe
+ 1633 001c 00       		.byte	0
+ 1634 001d 00       		.byte	0
+ 1635 001e 03       		.uleb128 0x3
+ 1636 001f 24       		.uleb128 0x24
+ 1637 0020 00       		.byte	0
+ 1638 0021 0B       		.uleb128 0xb
+ 1639 0022 0B       		.uleb128 0xb
+ 1640 0023 3E       		.uleb128 0x3e
+ 1641 0024 0B       		.uleb128 0xb
+ 1642 0025 03       		.uleb128 0x3
+ 1643 0026 08       		.uleb128 0x8
+ 1644 0027 00       		.byte	0
+ 1645 0028 00       		.byte	0
+ 1646 0029 04       		.uleb128 0x4
+ 1647 002a 16       		.uleb128 0x16
+ 1648 002b 00       		.byte	0
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 33
+
+
+ 1649 002c 03       		.uleb128 0x3
+ 1650 002d 0E       		.uleb128 0xe
+ 1651 002e 3A       		.uleb128 0x3a
+ 1652 002f 0B       		.uleb128 0xb
+ 1653 0030 3B       		.uleb128 0x3b
+ 1654 0031 05       		.uleb128 0x5
+ 1655 0032 49       		.uleb128 0x49
+ 1656 0033 13       		.uleb128 0x13
+ 1657 0034 00       		.byte	0
+ 1658 0035 00       		.byte	0
+ 1659 0036 05       		.uleb128 0x5
+ 1660 0037 35       		.uleb128 0x35
+ 1661 0038 00       		.byte	0
+ 1662 0039 49       		.uleb128 0x49
+ 1663 003a 13       		.uleb128 0x13
+ 1664 003b 00       		.byte	0
+ 1665 003c 00       		.byte	0
+ 1666 003d 06       		.uleb128 0x6
+ 1667 003e 2E       		.uleb128 0x2e
+ 1668 003f 01       		.byte	0x1
+ 1669 0040 3F       		.uleb128 0x3f
+ 1670 0041 19       		.uleb128 0x19
+ 1671 0042 03       		.uleb128 0x3
+ 1672 0043 0E       		.uleb128 0xe
+ 1673 0044 3A       		.uleb128 0x3a
+ 1674 0045 0B       		.uleb128 0xb
+ 1675 0046 3B       		.uleb128 0x3b
+ 1676 0047 0B       		.uleb128 0xb
+ 1677 0048 27       		.uleb128 0x27
+ 1678 0049 19       		.uleb128 0x19
+ 1679 004a 11       		.uleb128 0x11
+ 1680 004b 01       		.uleb128 0x1
+ 1681 004c 12       		.uleb128 0x12
+ 1682 004d 06       		.uleb128 0x6
+ 1683 004e 40       		.uleb128 0x40
+ 1684 004f 18       		.uleb128 0x18
+ 1685 0050 9742     		.uleb128 0x2117
+ 1686 0052 19       		.uleb128 0x19
+ 1687 0053 01       		.uleb128 0x1
+ 1688 0054 13       		.uleb128 0x13
+ 1689 0055 00       		.byte	0
+ 1690 0056 00       		.byte	0
+ 1691 0057 07       		.uleb128 0x7
+ 1692 0058 898201   		.uleb128 0x4109
+ 1693 005b 00       		.byte	0
+ 1694 005c 11       		.uleb128 0x11
+ 1695 005d 01       		.uleb128 0x1
+ 1696 005e 31       		.uleb128 0x31
+ 1697 005f 13       		.uleb128 0x13
+ 1698 0060 00       		.byte	0
+ 1699 0061 00       		.byte	0
+ 1700 0062 08       		.uleb128 0x8
+ 1701 0063 898201   		.uleb128 0x4109
+ 1702 0066 01       		.byte	0x1
+ 1703 0067 11       		.uleb128 0x11
+ 1704 0068 01       		.uleb128 0x1
+ 1705 0069 31       		.uleb128 0x31
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 34
+
+
+ 1706 006a 13       		.uleb128 0x13
+ 1707 006b 01       		.uleb128 0x1
+ 1708 006c 13       		.uleb128 0x13
+ 1709 006d 00       		.byte	0
+ 1710 006e 00       		.byte	0
+ 1711 006f 09       		.uleb128 0x9
+ 1712 0070 8A8201   		.uleb128 0x410a
+ 1713 0073 00       		.byte	0
+ 1714 0074 02       		.uleb128 0x2
+ 1715 0075 18       		.uleb128 0x18
+ 1716 0076 9142     		.uleb128 0x2111
+ 1717 0078 18       		.uleb128 0x18
+ 1718 0079 00       		.byte	0
+ 1719 007a 00       		.byte	0
+ 1720 007b 0A       		.uleb128 0xa
+ 1721 007c 898201   		.uleb128 0x4109
+ 1722 007f 01       		.byte	0x1
+ 1723 0080 11       		.uleb128 0x11
+ 1724 0081 01       		.uleb128 0x1
+ 1725 0082 31       		.uleb128 0x31
+ 1726 0083 13       		.uleb128 0x13
+ 1727 0084 00       		.byte	0
+ 1728 0085 00       		.byte	0
+ 1729 0086 0B       		.uleb128 0xb
+ 1730 0087 2E       		.uleb128 0x2e
+ 1731 0088 01       		.byte	0x1
+ 1732 0089 3F       		.uleb128 0x3f
+ 1733 008a 19       		.uleb128 0x19
+ 1734 008b 03       		.uleb128 0x3
+ 1735 008c 0E       		.uleb128 0xe
+ 1736 008d 3A       		.uleb128 0x3a
+ 1737 008e 0B       		.uleb128 0xb
+ 1738 008f 3B       		.uleb128 0x3b
+ 1739 0090 0B       		.uleb128 0xb
+ 1740 0091 27       		.uleb128 0x27
+ 1741 0092 19       		.uleb128 0x19
+ 1742 0093 49       		.uleb128 0x49
+ 1743 0094 13       		.uleb128 0x13
+ 1744 0095 11       		.uleb128 0x11
+ 1745 0096 01       		.uleb128 0x1
+ 1746 0097 12       		.uleb128 0x12
+ 1747 0098 06       		.uleb128 0x6
+ 1748 0099 40       		.uleb128 0x40
+ 1749 009a 18       		.uleb128 0x18
+ 1750 009b 9742     		.uleb128 0x2117
+ 1751 009d 19       		.uleb128 0x19
+ 1752 009e 01       		.uleb128 0x1
+ 1753 009f 13       		.uleb128 0x13
+ 1754 00a0 00       		.byte	0
+ 1755 00a1 00       		.byte	0
+ 1756 00a2 0C       		.uleb128 0xc
+ 1757 00a3 34       		.uleb128 0x34
+ 1758 00a4 00       		.byte	0
+ 1759 00a5 03       		.uleb128 0x3
+ 1760 00a6 0E       		.uleb128 0xe
+ 1761 00a7 3A       		.uleb128 0x3a
+ 1762 00a8 0B       		.uleb128 0xb
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 35
+
+
+ 1763 00a9 3B       		.uleb128 0x3b
+ 1764 00aa 0B       		.uleb128 0xb
+ 1765 00ab 49       		.uleb128 0x49
+ 1766 00ac 13       		.uleb128 0x13
+ 1767 00ad 02       		.uleb128 0x2
+ 1768 00ae 17       		.uleb128 0x17
+ 1769 00af 00       		.byte	0
+ 1770 00b0 00       		.byte	0
+ 1771 00b1 0D       		.uleb128 0xd
+ 1772 00b2 01       		.uleb128 0x1
+ 1773 00b3 01       		.byte	0x1
+ 1774 00b4 49       		.uleb128 0x49
+ 1775 00b5 13       		.uleb128 0x13
+ 1776 00b6 01       		.uleb128 0x1
+ 1777 00b7 13       		.uleb128 0x13
+ 1778 00b8 00       		.byte	0
+ 1779 00b9 00       		.byte	0
+ 1780 00ba 0E       		.uleb128 0xe
+ 1781 00bb 21       		.uleb128 0x21
+ 1782 00bc 00       		.byte	0
+ 1783 00bd 49       		.uleb128 0x49
+ 1784 00be 13       		.uleb128 0x13
+ 1785 00bf 2F       		.uleb128 0x2f
+ 1786 00c0 0B       		.uleb128 0xb
+ 1787 00c1 00       		.byte	0
+ 1788 00c2 00       		.byte	0
+ 1789 00c3 0F       		.uleb128 0xf
+ 1790 00c4 34       		.uleb128 0x34
+ 1791 00c5 00       		.byte	0
+ 1792 00c6 03       		.uleb128 0x3
+ 1793 00c7 0E       		.uleb128 0xe
+ 1794 00c8 3A       		.uleb128 0x3a
+ 1795 00c9 0B       		.uleb128 0xb
+ 1796 00ca 3B       		.uleb128 0x3b
+ 1797 00cb 0B       		.uleb128 0xb
+ 1798 00cc 49       		.uleb128 0x49
+ 1799 00cd 13       		.uleb128 0x13
+ 1800 00ce 02       		.uleb128 0x2
+ 1801 00cf 18       		.uleb128 0x18
+ 1802 00d0 00       		.byte	0
+ 1803 00d1 00       		.byte	0
+ 1804 00d2 10       		.uleb128 0x10
+ 1805 00d3 34       		.uleb128 0x34
+ 1806 00d4 00       		.byte	0
+ 1807 00d5 03       		.uleb128 0x3
+ 1808 00d6 0E       		.uleb128 0xe
+ 1809 00d7 3A       		.uleb128 0x3a
+ 1810 00d8 0B       		.uleb128 0xb
+ 1811 00d9 3B       		.uleb128 0x3b
+ 1812 00da 0B       		.uleb128 0xb
+ 1813 00db 49       		.uleb128 0x49
+ 1814 00dc 13       		.uleb128 0x13
+ 1815 00dd 3F       		.uleb128 0x3f
+ 1816 00de 19       		.uleb128 0x19
+ 1817 00df 3C       		.uleb128 0x3c
+ 1818 00e0 19       		.uleb128 0x19
+ 1819 00e1 00       		.byte	0
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 36
+
+
+ 1820 00e2 00       		.byte	0
+ 1821 00e3 11       		.uleb128 0x11
+ 1822 00e4 34       		.uleb128 0x34
+ 1823 00e5 00       		.byte	0
+ 1824 00e6 03       		.uleb128 0x3
+ 1825 00e7 0E       		.uleb128 0xe
+ 1826 00e8 3A       		.uleb128 0x3a
+ 1827 00e9 0B       		.uleb128 0xb
+ 1828 00ea 3B       		.uleb128 0x3b
+ 1829 00eb 0B       		.uleb128 0xb
+ 1830 00ec 49       		.uleb128 0x49
+ 1831 00ed 13       		.uleb128 0x13
+ 1832 00ee 3F       		.uleb128 0x3f
+ 1833 00ef 19       		.uleb128 0x19
+ 1834 00f0 02       		.uleb128 0x2
+ 1835 00f1 18       		.uleb128 0x18
+ 1836 00f2 00       		.byte	0
+ 1837 00f3 00       		.byte	0
+ 1838 00f4 12       		.uleb128 0x12
+ 1839 00f5 2E       		.uleb128 0x2e
+ 1840 00f6 00       		.byte	0
+ 1841 00f7 3F       		.uleb128 0x3f
+ 1842 00f8 19       		.uleb128 0x19
+ 1843 00f9 3C       		.uleb128 0x3c
+ 1844 00fa 19       		.uleb128 0x19
+ 1845 00fb 6E       		.uleb128 0x6e
+ 1846 00fc 0E       		.uleb128 0xe
+ 1847 00fd 03       		.uleb128 0x3
+ 1848 00fe 0E       		.uleb128 0xe
+ 1849 00ff 3A       		.uleb128 0x3a
+ 1850 0100 0B       		.uleb128 0xb
+ 1851 0101 3B       		.uleb128 0x3b
+ 1852 0102 0B       		.uleb128 0xb
+ 1853 0103 00       		.byte	0
+ 1854 0104 00       		.byte	0
+ 1855 0105 13       		.uleb128 0x13
+ 1856 0106 2E       		.uleb128 0x2e
+ 1857 0107 00       		.byte	0
+ 1858 0108 3F       		.uleb128 0x3f
+ 1859 0109 19       		.uleb128 0x19
+ 1860 010a 3C       		.uleb128 0x3c
+ 1861 010b 19       		.uleb128 0x19
+ 1862 010c 6E       		.uleb128 0x6e
+ 1863 010d 0E       		.uleb128 0xe
+ 1864 010e 03       		.uleb128 0x3
+ 1865 010f 0E       		.uleb128 0xe
+ 1866 0110 3A       		.uleb128 0x3a
+ 1867 0111 0B       		.uleb128 0xb
+ 1868 0112 3B       		.uleb128 0x3b
+ 1869 0113 05       		.uleb128 0x5
+ 1870 0114 00       		.byte	0
+ 1871 0115 00       		.byte	0
+ 1872 0116 00       		.byte	0
+ 1873              		.section	.debug_loc,"",%progbits
+ 1874              	.Ldebug_loc0:
+ 1875              	.LLST0:
+ 1876 0000 02000000 		.4byte	.LVL41
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 37
+
+
+ 1877 0004 08000000 		.4byte	.LVL43
+ 1878 0008 0200     		.2byte	0x2
+ 1879 000a 30       		.byte	0x30
+ 1880 000b 9F       		.byte	0x9f
+ 1881 000c 08000000 		.4byte	.LVL43
+ 1882 0010 12000000 		.4byte	.LVL44
+ 1883 0014 0100     		.2byte	0x1
+ 1884 0016 50       		.byte	0x50
+ 1885 0017 12000000 		.4byte	.LVL44
+ 1886 001b 1A000000 		.4byte	.LVL46
+ 1887 001f 0200     		.2byte	0x2
+ 1888 0021 44       		.byte	0x44
+ 1889 0022 9F       		.byte	0x9f
+ 1890 0023 1A000000 		.4byte	.LVL46
+ 1891 0027 1E000000 		.4byte	.LVL47
+ 1892 002b 0100     		.2byte	0x1
+ 1893 002d 50       		.byte	0x50
+ 1894 002e 1E000000 		.4byte	.LVL47
+ 1895 0032 26000000 		.4byte	.LVL49
+ 1896 0036 0200     		.2byte	0x2
+ 1897 0038 30       		.byte	0x30
+ 1898 0039 9F       		.byte	0x9f
+ 1899 003a 26000000 		.4byte	.LVL49
+ 1900 003e 28000000 		.4byte	.LFE42
+ 1901 0042 0100     		.2byte	0x1
+ 1902 0044 50       		.byte	0x50
+ 1903 0045 00000000 		.4byte	0
+ 1904 0049 00000000 		.4byte	0
+ 1905              		.section	.debug_aranges,"",%progbits
+ 1906 0000 5C000000 		.4byte	0x5c
+ 1907 0004 0200     		.2byte	0x2
+ 1908 0006 00000000 		.4byte	.Ldebug_info0
+ 1909 000a 04       		.byte	0x4
+ 1910 000b 00       		.byte	0
+ 1911 000c 0000     		.2byte	0
+ 1912 000e 0000     		.2byte	0
+ 1913 0010 00000000 		.4byte	.LFB35
+ 1914 0014 18000000 		.4byte	.LFE35-.LFB35
+ 1915 0018 00000000 		.4byte	.LFB36
+ 1916 001c 58000000 		.4byte	.LFE36-.LFB36
+ 1917 0020 00000000 		.4byte	.LFB37
+ 1918 0024 18000000 		.4byte	.LFE37-.LFB37
+ 1919 0028 00000000 		.4byte	.LFB38
+ 1920 002c 00010000 		.4byte	.LFE38-.LFB38
+ 1921 0030 00000000 		.4byte	.LFB39
+ 1922 0034 50000000 		.4byte	.LFE39-.LFB39
+ 1923 0038 00000000 		.4byte	.LFB40
+ 1924 003c 50000000 		.4byte	.LFE40-.LFB40
+ 1925 0040 00000000 		.4byte	.LFB41
+ 1926 0044 54000000 		.4byte	.LFE41-.LFB41
+ 1927 0048 00000000 		.4byte	.LFB42
+ 1928 004c 28000000 		.4byte	.LFE42-.LFB42
+ 1929 0050 00000000 		.4byte	.LFB43
+ 1930 0054 64000000 		.4byte	.LFE43-.LFB43
+ 1931 0058 00000000 		.4byte	0
+ 1932 005c 00000000 		.4byte	0
+ 1933              		.section	.debug_ranges,"",%progbits
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 38
+
+
+ 1934              	.Ldebug_ranges0:
+ 1935 0000 00000000 		.4byte	.LFB35
+ 1936 0004 18000000 		.4byte	.LFE35
+ 1937 0008 00000000 		.4byte	.LFB36
+ 1938 000c 58000000 		.4byte	.LFE36
+ 1939 0010 00000000 		.4byte	.LFB37
+ 1940 0014 18000000 		.4byte	.LFE37
+ 1941 0018 00000000 		.4byte	.LFB38
+ 1942 001c 00010000 		.4byte	.LFE38
+ 1943 0020 00000000 		.4byte	.LFB39
+ 1944 0024 50000000 		.4byte	.LFE39
+ 1945 0028 00000000 		.4byte	.LFB40
+ 1946 002c 50000000 		.4byte	.LFE40
+ 1947 0030 00000000 		.4byte	.LFB41
+ 1948 0034 54000000 		.4byte	.LFE41
+ 1949 0038 00000000 		.4byte	.LFB42
+ 1950 003c 28000000 		.4byte	.LFE42
+ 1951 0040 00000000 		.4byte	.LFB43
+ 1952 0044 64000000 		.4byte	.LFE43
+ 1953 0048 00000000 		.4byte	0
+ 1954 004c 00000000 		.4byte	0
+ 1955              		.section	.debug_line,"",%progbits
+ 1956              	.Ldebug_line0:
+ 1957 0000 EE010000 		.section	.debug_str,"MS",%progbits,1
+ 1957      0200FE00 
+ 1957      00000201 
+ 1957      FB0E0D00 
+ 1957      01010101 
+ 1958              	.LASF23:
+ 1959 0000 62756631 		.ascii	"buf1\000"
+ 1959      00
+ 1960              	.LASF24:
+ 1961 0005 62756632 		.ascii	"buf2\000"
+ 1961      00
+ 1962              	.LASF40:
+ 1963 000a 51756164 		.ascii	"QuadDec_WriteCounter\000"
+ 1963      4465635F 
+ 1963      57726974 
+ 1963      65436F75 
+ 1963      6E746572 
+ 1964              	.LASF21:
+ 1965 001f 64656669 		.ascii	"definition_set_color\000"
+ 1965      6E697469 
+ 1965      6F6E5F73 
+ 1965      65745F63 
+ 1965      6F6C6F72 
+ 1966              	.LASF35:
+ 1967 0034 4C43445F 		.ascii	"LCD_WriteControl\000"
+ 1967      57726974 
+ 1967      65436F6E 
+ 1967      74726F6C 
+ 1967      00
+ 1968              	.LASF39:
+ 1969 0045 51756164 		.ascii	"QuadDec_Start\000"
+ 1969      4465635F 
+ 1969      53746172 
+ 1969      7400
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 39
+
+
+ 1970              	.LASF18:
+ 1971 0053 6C63645F 		.ascii	"lcd_set_red\000"
+ 1971      7365745F 
+ 1971      72656400 
+ 1972              	.LASF31:
+ 1973 005f 74696D65 		.ascii	"time_yellow\000"
+ 1973      5F79656C 
+ 1973      6C6F7700 
+ 1974              	.LASF9:
+ 1975 006b 666C6F61 		.ascii	"float\000"
+ 1975      7400
+ 1976              	.LASF34:
+ 1977 0071 4C43445F 		.ascii	"LCD_Start\000"
+ 1977      53746172 
+ 1977      7400
+ 1978              	.LASF47:
+ 1979 007b 75696E74 		.ascii	"uint8\000"
+ 1979      3800
+ 1980              	.LASF1:
+ 1981 0081 756E7369 		.ascii	"unsigned char\000"
+ 1981      676E6564 
+ 1981      20636861 
+ 1981      7200
+ 1982              	.LASF46:
+ 1983 008f 443A5C75 		.ascii	"D:\\university-files\\5th semester\\microcontroller"
+ 1983      6E697665 
+ 1983      72736974 
+ 1983      792D6669 
+ 1983      6C65735C 
+ 1984 00bf 735C4C61 		.ascii	"s\\Lab3_V3.cydsn\000"
+ 1984      62335F56 
+ 1984      332E6379 
+ 1984      64736E00 
+ 1985              	.LASF45:
+ 1986 00cf 6C63645F 		.ascii	"lcd_traffic_light.c\000"
+ 1986      74726166 
+ 1986      6669635F 
+ 1986      6C696768 
+ 1986      742E6300 
+ 1987              	.LASF5:
+ 1988 00e3 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1988      20756E73 
+ 1988      69676E65 
+ 1988      6420696E 
+ 1988      7400
+ 1989              	.LASF15:
+ 1990 00f5 6C63645F 		.ascii	"lcd_init\000"
+ 1990      696E6974 
+ 1990      00
+ 1991              	.LASF3:
+ 1992 00fe 73686F72 		.ascii	"short unsigned int\000"
+ 1992      7420756E 
+ 1992      7369676E 
+ 1992      65642069 
+ 1992      6E7400
+ 1993              	.LASF16:
+ 1994 0111 656E635F 		.ascii	"enc_init\000"
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 40
+
+
+ 1994      696E6974 
+ 1994      00
+ 1995              	.LASF20:
+ 1996 011a 6C63645F 		.ascii	"lcd_set_yellow\000"
+ 1996      7365745F 
+ 1996      79656C6C 
+ 1996      6F7700
+ 1997              	.LASF22:
+ 1998 0129 76616C75 		.ascii	"value_encoder\000"
+ 1998      655F656E 
+ 1998      636F6465 
+ 1998      7200
+ 1999              	.LASF26:
+ 2000 0137 73756D5F 		.ascii	"sum_time2\000"
+ 2000      74696D65 
+ 2000      3200
+ 2001              	.LASF10:
+ 2002 0141 646F7562 		.ascii	"double\000"
+ 2002      6C6500
+ 2003              	.LASF14:
+ 2004 0148 456E635F 		.ascii	"Enc_Sw_Handler\000"
+ 2004      53775F48 
+ 2004      616E646C 
+ 2004      657200
+ 2005              	.LASF37:
+ 2006 0157 4C43445F 		.ascii	"LCD_PrintString\000"
+ 2006      5072696E 
+ 2006      74537472 
+ 2006      696E6700 
+ 2007              	.LASF8:
+ 2008 0167 756E7369 		.ascii	"unsigned int\000"
+ 2008      676E6564 
+ 2008      20696E74 
+ 2008      00
+ 2009              	.LASF7:
+ 2010 0174 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2010      206C6F6E 
+ 2010      6720756E 
+ 2010      7369676E 
+ 2010      65642069 
+ 2011              	.LASF17:
+ 2012 018b 6C63645F 		.ascii	"lcd_time_color\000"
+ 2012      74696D65 
+ 2012      5F636F6C 
+ 2012      6F7200
+ 2013              	.LASF36:
+ 2014 019a 4C43445F 		.ascii	"LCD_Position\000"
+ 2014      506F7369 
+ 2014      74696F6E 
+ 2014      00
+ 2015              	.LASF41:
+ 2016 01a7 456E635F 		.ascii	"Enc_Sw_Int_StartEx\000"
+ 2016      53775F49 
+ 2016      6E745F53 
+ 2016      74617274 
+ 2016      457800
+ 2017              	.LASF27:
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 41
+
+
+ 2018 01ba 74696D65 		.ascii	"time\000"
+ 2018      00
+ 2019              	.LASF44:
+ 2020 01bf 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2020      43313120 
+ 2020      352E342E 
+ 2020      31203230 
+ 2020      31363036 
+ 2021 01f2 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 2021      20726576 
+ 2021      6973696F 
+ 2021      6E203233 
+ 2021      37373135 
+ 2022 0225 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 2022      66756E63 
+ 2022      74696F6E 
+ 2022      2D736563 
+ 2022      74696F6E 
+ 2023              	.LASF29:
+ 2024 024d 73746174 		.ascii	"status_set_color\000"
+ 2024      75735F73 
+ 2024      65745F63 
+ 2024      6F6C6F72 
+ 2024      00
+ 2025              	.LASF13:
+ 2026 025e 73697A65 		.ascii	"sizetype\000"
+ 2026      74797065 
+ 2026      00
+ 2027              	.LASF6:
+ 2028 0267 6C6F6E67 		.ascii	"long long int\000"
+ 2028      206C6F6E 
+ 2028      6720696E 
+ 2028      7400
+ 2029              	.LASF11:
+ 2030 0275 63686172 		.ascii	"char\000"
+ 2030      00
+ 2031              	.LASF2:
+ 2032 027a 73686F72 		.ascii	"short int\000"
+ 2032      7420696E 
+ 2032      7400
+ 2033              	.LASF33:
+ 2034 0284 456E635F 		.ascii	"Enc_Sw_ClearInterrupt\000"
+ 2034      53775F43 
+ 2034      6C656172 
+ 2034      496E7465 
+ 2034      72727570 
+ 2035              	.LASF48:
+ 2036 029a 7365745F 		.ascii	"set_time\000"
+ 2036      74696D65 
+ 2036      00
+ 2037              	.LASF19:
+ 2038 02a3 6C63645F 		.ascii	"lcd_set_green\000"
+ 2038      7365745F 
+ 2038      67726565 
+ 2038      6E00
+ 2039              	.LASF43:
+ 2040 02b1 51756164 		.ascii	"QuadDec_ReadCounter\000"
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccz0K0nb.s 			page 42
+
+
+ 2040      4465635F 
+ 2040      52656164 
+ 2040      436F756E 
+ 2040      74657200 
+ 2041              	.LASF4:
+ 2042 02c5 6C6F6E67 		.ascii	"long int\000"
+ 2042      20696E74 
+ 2042      00
+ 2043              	.LASF25:
+ 2044 02ce 73756D5F 		.ascii	"sum_time1\000"
+ 2044      74696D65 
+ 2044      3100
+ 2045              	.LASF12:
+ 2046 02d8 6C6F6E67 		.ascii	"long double\000"
+ 2046      20646F75 
+ 2046      626C6500 
+ 2047              	.LASF0:
+ 2048 02e4 7369676E 		.ascii	"signed char\000"
+ 2048      65642063 
+ 2048      68617200 
+ 2049              	.LASF30:
+ 2050 02f0 74696D65 		.ascii	"time_red\000"
+ 2050      5F726564 
+ 2050      00
+ 2051              	.LASF28:
+ 2052 02f9 6E756D62 		.ascii	"number_algorithm\000"
+ 2052      65725F61 
+ 2052      6C676F72 
+ 2052      6974686D 
+ 2052      00
+ 2053              	.LASF42:
+ 2054 030a 73707269 		.ascii	"sprintf\000"
+ 2054      6E746600 
+ 2055              	.LASF38:
+ 2056 0312 43794465 		.ascii	"CyDelay\000"
+ 2056      6C617900 
+ 2057              	.LASF32:
+ 2058 031a 74696D65 		.ascii	"time_green\000"
+ 2058      5F677265 
+ 2058      656E00
+ 2059              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

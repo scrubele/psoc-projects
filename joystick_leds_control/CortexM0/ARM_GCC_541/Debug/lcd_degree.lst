@@ -1,0 +1,790 @@
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccm0MUGa.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"lcd_degree.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.lcd_init,"ax",%progbits
+  20              		.align	2
+  21              		.global	lcd_init
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	lcd_init, %function
+  25              	lcd_init:
+  26              	.LFB35:
+  27              		.file 1 "lcd_degree.c"
+   1:lcd_degree.c  **** #include "lab.h"
+   2:lcd_degree.c  **** #include "stdio.h"
+   3:lcd_degree.c  **** 
+   4:lcd_degree.c  **** //Масив чарів для запису в кожну стрічку LCD
+   5:lcd_degree.c  **** static char buf1[17];
+   6:lcd_degree.c  **** static char buf2[17];
+   7:lcd_degree.c  **** 
+   8:lcd_degree.c  **** //Підтягування змінив з іншого файлу
+   9:lcd_degree.c  **** extern int x;
+  10:lcd_degree.c  **** extern int y;
+  11:lcd_degree.c  **** 
+  12:lcd_degree.c  **** //Ініціалізація LCD компоненти
+  13:lcd_degree.c  **** void lcd_init(void){
+  28              		.loc 1 13 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+  14:lcd_degree.c  ****     LCD_Start();
+  36              		.loc 1 14 0
+  37 0002 FFF7FEFF 		bl	LCD_Start
+  38              	.LVL0:
+  15:lcd_degree.c  ****     LCD_ClearDisplay();
+  39              		.loc 1 15 0
+  40 0006 0120     		movs	r0, #1
+  41 0008 FFF7FEFF 		bl	LCD_WriteControl
+  42              	.LVL1:
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccm0MUGa.s 			page 2
+
+
+  16:lcd_degree.c  **** }
+  43              		.loc 1 16 0
+  44              		@ sp needed
+  45 000c 10BD     		pop	{r4, pc}
+  46              		.cfi_endproc
+  47              	.LFE35:
+  48              		.size	lcd_init, .-lcd_init
+  49 000e C046     		.section	.text.lcd_degree,"ax",%progbits
+  50              		.align	2
+  51              		.global	lcd_degree
+  52              		.code	16
+  53              		.thumb_func
+  54              		.type	lcd_degree, %function
+  55              	lcd_degree:
+  56              	.LFB36:
+  17:lcd_degree.c  **** 
+  18:lcd_degree.c  **** //Вивід значення зчитаних з ADC
+  19:lcd_degree.c  **** void lcd_degree(void){
+  57              		.loc 1 19 0
+  58              		.cfi_startproc
+  59              		@ args = 0, pretend = 0, frame = 0
+  60              		@ frame_needed = 0, uses_anonymous_args = 0
+  61 0000 10B5     		push	{r4, lr}
+  62              		.cfi_def_cfa_offset 8
+  63              		.cfi_offset 4, -8
+  64              		.cfi_offset 14, -4
+  20:lcd_degree.c  ****     LCD_ClearDisplay();
+  65              		.loc 1 20 0
+  66 0002 0120     		movs	r0, #1
+  67 0004 FFF7FEFF 		bl	LCD_WriteControl
+  68              	.LVL2:
+  21:lcd_degree.c  ****     sprintf(buf1,"Degrees");
+  69              		.loc 1 21 0
+  70 0008 0E4C     		ldr	r4, .L3
+  71 000a 0F4B     		ldr	r3, .L3+4
+  72 000c 2200     		movs	r2, r4
+  73 000e 03CB     		ldmia	r3!, {r0, r1}
+  74 0010 03C2     		stmia	r2!, {r0, r1}
+  22:lcd_degree.c  ****     LCD_Position(0, 0);
+  75              		.loc 1 22 0
+  76 0012 0021     		movs	r1, #0
+  77 0014 0020     		movs	r0, #0
+  78 0016 FFF7FEFF 		bl	LCD_Position
+  79              	.LVL3:
+  23:lcd_degree.c  ****     LCD_PrintString(buf1);
+  80              		.loc 1 23 0
+  81 001a 2000     		movs	r0, r4
+  82 001c FFF7FEFF 		bl	LCD_PrintString
+  83              	.LVL4:
+  24:lcd_degree.c  ****     sprintf(buf2,"x=%d y=%d",x,y);
+  84              		.loc 1 24 0
+  85 0020 0A4B     		ldr	r3, .L3+8
+  86 0022 1B68     		ldr	r3, [r3]
+  87 0024 0A4A     		ldr	r2, .L3+12
+  88 0026 1268     		ldr	r2, [r2]
+  89 0028 1434     		adds	r4, r4, #20
+  90 002a 0A49     		ldr	r1, .L3+16
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccm0MUGa.s 			page 3
+
+
+  91 002c 2000     		movs	r0, r4
+  92 002e FFF7FEFF 		bl	sprintf
+  93              	.LVL5:
+  25:lcd_degree.c  ****     LCD_Position(1, 0);
+  94              		.loc 1 25 0
+  95 0032 0021     		movs	r1, #0
+  96 0034 0120     		movs	r0, #1
+  97 0036 FFF7FEFF 		bl	LCD_Position
+  98              	.LVL6:
+  26:lcd_degree.c  ****     LCD_PrintString(buf2);
+  99              		.loc 1 26 0
+ 100 003a 2000     		movs	r0, r4
+ 101 003c FFF7FEFF 		bl	LCD_PrintString
+ 102              	.LVL7:
+  27:lcd_degree.c  **** }...
+ 103              		.loc 1 27 0
+ 104              		@ sp needed
+ 105 0040 10BD     		pop	{r4, pc}
+ 106              	.L4:
+ 107 0042 C046     		.align	2
+ 108              	.L3:
+ 109 0044 00000000 		.word	.LANCHOR0
+ 110 0048 00000000 		.word	.LC1
+ 111 004c 00000000 		.word	y
+ 112 0050 00000000 		.word	x
+ 113 0054 08000000 		.word	.LC5
+ 114              		.cfi_endproc
+ 115              	.LFE36:
+ 116              		.size	lcd_degree, .-lcd_degree
+ 117              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 118              		.align	2
+ 119              	.LC1:
+ 120 0000 44656772 		.ascii	"Degrees\000"
+ 120      65657300 
+ 121              	.LC5:
+ 122 0008 783D2564 		.ascii	"x=%d y=%d\000"
+ 122      20793D25 
+ 122      6400
+ 123              		.bss
+ 124              		.align	2
+ 125              		.set	.LANCHOR0,. + 0
+ 126              		.type	buf1, %object
+ 127              		.size	buf1, 17
+ 128              	buf1:
+ 129 0000 00000000 		.space	17
+ 129      00000000 
+ 129      00000000 
+ 129      00000000 
+ 129      00
+ 130 0011 000000   		.space	3
+ 131              		.type	buf2, %object
+ 132              		.size	buf2, 17
+ 133              	buf2:
+ 134 0014 00000000 		.space	17
+ 134      00000000 
+ 134      00000000 
+ 134      00000000 
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccm0MUGa.s 			page 4
+
+
+ 134      00
+ 135              		.text
+ 136              	.Letext0:
+ 137              		.file 2 "Generated_Source\\PSoC4/LCD.h"
+ 138              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 139              		.section	.debug_info,"",%progbits
+ 140              	.Ldebug_info0:
+ 141 0000 CE010000 		.4byte	0x1ce
+ 142 0004 0400     		.2byte	0x4
+ 143 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 144 000a 04       		.byte	0x4
+ 145 000b 01       		.uleb128 0x1
+ 146 000c BE000000 		.4byte	.LASF23
+ 147 0010 0C       		.byte	0xc
+ 148 0011 0E000000 		.4byte	.LASF24
+ 149 0015 35000000 		.4byte	.LASF25
+ 150 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 151 001d 00000000 		.4byte	0
+ 152 0021 00000000 		.4byte	.Ldebug_line0
+ 153 0025 02       		.uleb128 0x2
+ 154 0026 01       		.byte	0x1
+ 155 0027 06       		.byte	0x6
+ 156 0028 5F010000 		.4byte	.LASF0
+ 157 002c 02       		.uleb128 0x2
+ 158 002d 01       		.byte	0x1
+ 159 002e 08       		.byte	0x8
+ 160 002f 89000000 		.4byte	.LASF1
+ 161 0033 02       		.uleb128 0x2
+ 162 0034 02       		.byte	0x2
+ 163 0035 05       		.byte	0x5
+ 164 0036 86010000 		.4byte	.LASF2
+ 165 003a 02       		.uleb128 0x2
+ 166 003b 02       		.byte	0x2
+ 167 003c 07       		.byte	0x7
+ 168 003d 4C010000 		.4byte	.LASF3
+ 169 0041 02       		.uleb128 0x2
+ 170 0042 04       		.byte	0x4
+ 171 0043 05       		.byte	0x5
+ 172 0044 A1000000 		.4byte	.LASF4
+ 173 0048 02       		.uleb128 0x2
+ 174 0049 04       		.byte	0x4
+ 175 004a 07       		.byte	0x7
+ 176 004b 45000000 		.4byte	.LASF5
+ 177 004f 02       		.uleb128 0x2
+ 178 0050 08       		.byte	0x8
+ 179 0051 05       		.byte	0x5
+ 180 0052 00000000 		.4byte	.LASF6
+ 181 0056 02       		.uleb128 0x2
+ 182 0057 08       		.byte	0x8
+ 183 0058 07       		.byte	0x7
+ 184 0059 57000000 		.4byte	.LASF7
+ 185 005d 03       		.uleb128 0x3
+ 186 005e 04       		.byte	0x4
+ 187 005f 05       		.byte	0x5
+ 188 0060 696E7400 		.ascii	"int\000"
+ 189 0064 02       		.uleb128 0x2
+ 190 0065 04       		.byte	0x4
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccm0MUGa.s 			page 5
+
+
+ 191 0066 07       		.byte	0x7
+ 192 0067 1B000000 		.4byte	.LASF8
+ 193 006b 02       		.uleb128 0x2
+ 194 006c 04       		.byte	0x4
+ 195 006d 04       		.byte	0x4
+ 196 006e 80010000 		.4byte	.LASF9
+ 197 0072 02       		.uleb128 0x2
+ 198 0073 08       		.byte	0x8
+ 199 0074 04       		.byte	0x4
+ 200 0075 AA000000 		.4byte	.LASF10
+ 201 0079 02       		.uleb128 0x2
+ 202 007a 01       		.byte	0x1
+ 203 007b 08       		.byte	0x8
+ 204 007c 97000000 		.4byte	.LASF11
+ 205 0080 02       		.uleb128 0x2
+ 206 0081 08       		.byte	0x8
+ 207 0082 04       		.byte	0x4
+ 208 0083 6B010000 		.4byte	.LASF12
+ 209 0087 02       		.uleb128 0x2
+ 210 0088 04       		.byte	0x4
+ 211 0089 07       		.byte	0x7
+ 212 008a 9B010000 		.4byte	.LASF13
+ 213 008e 04       		.uleb128 0x4
+ 214 008f 77010000 		.4byte	.LASF14
+ 215 0093 01       		.byte	0x1
+ 216 0094 0D       		.byte	0xd
+ 217 0095 00000000 		.4byte	.LFB35
+ 218 0099 0E000000 		.4byte	.LFE35-.LFB35
+ 219 009d 01       		.uleb128 0x1
+ 220 009e 9C       		.byte	0x9c
+ 221 009f BC000000 		.4byte	0xbc
+ 222 00a3 05       		.uleb128 0x5
+ 223 00a4 06000000 		.4byte	.LVL0
+ 224 00a8 9A010000 		.4byte	0x19a
+ 225 00ac 06       		.uleb128 0x6
+ 226 00ad 0C000000 		.4byte	.LVL1
+ 227 00b1 A5010000 		.4byte	0x1a5
+ 228 00b5 07       		.uleb128 0x7
+ 229 00b6 01       		.uleb128 0x1
+ 230 00b7 50       		.byte	0x50
+ 231 00b8 01       		.uleb128 0x1
+ 232 00b9 31       		.byte	0x31
+ 233 00ba 00       		.byte	0
+ 234 00bb 00       		.byte	0
+ 235 00bc 04       		.uleb128 0x4
+ 236 00bd 90010000 		.4byte	.LASF15
+ 237 00c1 01       		.byte	0x1
+ 238 00c2 13       		.byte	0x13
+ 239 00c3 00000000 		.4byte	.LFB36
+ 240 00c7 58000000 		.4byte	.LFE36-.LFB36
+ 241 00cb 01       		.uleb128 0x1
+ 242 00cc 9C       		.byte	0x9c
+ 243 00cd 56010000 		.4byte	0x156
+ 244 00d1 08       		.uleb128 0x8
+ 245 00d2 08000000 		.4byte	.LVL2
+ 246 00d6 A5010000 		.4byte	0x1a5
+ 247 00da E4000000 		.4byte	0xe4
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccm0MUGa.s 			page 6
+
+
+ 248 00de 07       		.uleb128 0x7
+ 249 00df 01       		.uleb128 0x1
+ 250 00e0 50       		.byte	0x50
+ 251 00e1 01       		.uleb128 0x1
+ 252 00e2 31       		.byte	0x31
+ 253 00e3 00       		.byte	0
+ 254 00e4 08       		.uleb128 0x8
+ 255 00e5 1A000000 		.4byte	.LVL3
+ 256 00e9 B0010000 		.4byte	0x1b0
+ 257 00ed FC000000 		.4byte	0xfc
+ 258 00f1 07       		.uleb128 0x7
+ 259 00f2 01       		.uleb128 0x1
+ 260 00f3 50       		.byte	0x50
+ 261 00f4 01       		.uleb128 0x1
+ 262 00f5 30       		.byte	0x30
+ 263 00f6 07       		.uleb128 0x7
+ 264 00f7 01       		.uleb128 0x1
+ 265 00f8 51       		.byte	0x51
+ 266 00f9 01       		.uleb128 0x1
+ 267 00fa 30       		.byte	0x30
+ 268 00fb 00       		.byte	0
+ 269 00fc 08       		.uleb128 0x8
+ 270 00fd 20000000 		.4byte	.LVL4
+ 271 0101 BB010000 		.4byte	0x1bb
+ 272 0105 10010000 		.4byte	0x110
+ 273 0109 07       		.uleb128 0x7
+ 274 010a 01       		.uleb128 0x1
+ 275 010b 50       		.byte	0x50
+ 276 010c 02       		.uleb128 0x2
+ 277 010d 74       		.byte	0x74
+ 278 010e 00       		.sleb128 0
+ 279 010f 00       		.byte	0
+ 280 0110 08       		.uleb128 0x8
+ 281 0111 32000000 		.4byte	.LVL5
+ 282 0115 C6010000 		.4byte	0x1c6
+ 283 0119 2D010000 		.4byte	0x12d
+ 284 011d 07       		.uleb128 0x7
+ 285 011e 01       		.uleb128 0x1
+ 286 011f 50       		.byte	0x50
+ 287 0120 02       		.uleb128 0x2
+ 288 0121 74       		.byte	0x74
+ 289 0122 00       		.sleb128 0
+ 290 0123 07       		.uleb128 0x7
+ 291 0124 01       		.uleb128 0x1
+ 292 0125 51       		.byte	0x51
+ 293 0126 05       		.uleb128 0x5
+ 294 0127 03       		.byte	0x3
+ 295 0128 08000000 		.4byte	.LC5
+ 296 012c 00       		.byte	0
+ 297 012d 08       		.uleb128 0x8
+ 298 012e 3A000000 		.4byte	.LVL6
+ 299 0132 B0010000 		.4byte	0x1b0
+ 300 0136 45010000 		.4byte	0x145
+ 301 013a 07       		.uleb128 0x7
+ 302 013b 01       		.uleb128 0x1
+ 303 013c 50       		.byte	0x50
+ 304 013d 01       		.uleb128 0x1
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccm0MUGa.s 			page 7
+
+
+ 305 013e 31       		.byte	0x31
+ 306 013f 07       		.uleb128 0x7
+ 307 0140 01       		.uleb128 0x1
+ 308 0141 51       		.byte	0x51
+ 309 0142 01       		.uleb128 0x1
+ 310 0143 30       		.byte	0x30
+ 311 0144 00       		.byte	0
+ 312 0145 06       		.uleb128 0x6
+ 313 0146 40000000 		.4byte	.LVL7
+ 314 014a BB010000 		.4byte	0x1bb
+ 315 014e 07       		.uleb128 0x7
+ 316 014f 01       		.uleb128 0x1
+ 317 0150 50       		.byte	0x50
+ 318 0151 02       		.uleb128 0x2
+ 319 0152 74       		.byte	0x74
+ 320 0153 00       		.sleb128 0
+ 321 0154 00       		.byte	0
+ 322 0155 00       		.byte	0
+ 323 0156 09       		.uleb128 0x9
+ 324 0157 79000000 		.4byte	0x79
+ 325 015b 66010000 		.4byte	0x166
+ 326 015f 0A       		.uleb128 0xa
+ 327 0160 87000000 		.4byte	0x87
+ 328 0164 10       		.byte	0x10
+ 329 0165 00       		.byte	0
+ 330 0166 0B       		.uleb128 0xb
+ 331 0167 9C000000 		.4byte	.LASF16
+ 332 016b 01       		.byte	0x1
+ 333 016c 05       		.byte	0x5
+ 334 016d 56010000 		.4byte	0x156
+ 335 0171 05       		.uleb128 0x5
+ 336 0172 03       		.byte	0x3
+ 337 0173 00000000 		.4byte	buf1
+ 338 0177 0B       		.uleb128 0xb
+ 339 0178 28000000 		.4byte	.LASF17
+ 340 017c 01       		.byte	0x1
+ 341 017d 06       		.byte	0x6
+ 342 017e 56010000 		.4byte	0x156
+ 343 0182 05       		.uleb128 0x5
+ 344 0183 03       		.byte	0x3
+ 345 0184 14000000 		.4byte	buf2
+ 346 0188 0C       		.uleb128 0xc
+ 347 0189 7800     		.ascii	"x\000"
+ 348 018b 01       		.byte	0x1
+ 349 018c 09       		.byte	0x9
+ 350 018d 5D000000 		.4byte	0x5d
+ 351 0191 0C       		.uleb128 0xc
+ 352 0192 7900     		.ascii	"y\000"
+ 353 0194 01       		.byte	0x1
+ 354 0195 0A       		.byte	0xa
+ 355 0196 5D000000 		.4byte	0x5d
+ 356 019a 0D       		.uleb128 0xd
+ 357 019b 6E000000 		.4byte	.LASF18
+ 358 019f 6E000000 		.4byte	.LASF18
+ 359 01a3 02       		.byte	0x2
+ 360 01a4 38       		.byte	0x38
+ 361 01a5 0D       		.uleb128 0xd
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccm0MUGa.s 			page 8
+
+
+ 362 01a6 78000000 		.4byte	.LASF19
+ 363 01aa 78000000 		.4byte	.LASF19
+ 364 01ae 02       		.byte	0x2
+ 365 01af 3A       		.byte	0x3a
+ 366 01b0 0D       		.uleb128 0xd
+ 367 01b1 B1000000 		.4byte	.LASF20
+ 368 01b5 B1000000 		.4byte	.LASF20
+ 369 01b9 02       		.byte	0x2
+ 370 01ba 3D       		.byte	0x3d
+ 371 01bb 0D       		.uleb128 0xd
+ 372 01bc A4010000 		.4byte	.LASF21
+ 373 01c0 A4010000 		.4byte	.LASF21
+ 374 01c4 02       		.byte	0x2
+ 375 01c5 3C       		.byte	0x3c
+ 376 01c6 0D       		.uleb128 0xd
+ 377 01c7 2D000000 		.4byte	.LASF22
+ 378 01cb 2D000000 		.4byte	.LASF22
+ 379 01cf 03       		.byte	0x3
+ 380 01d0 E7       		.byte	0xe7
+ 381 01d1 00       		.byte	0
+ 382              		.section	.debug_abbrev,"",%progbits
+ 383              	.Ldebug_abbrev0:
+ 384 0000 01       		.uleb128 0x1
+ 385 0001 11       		.uleb128 0x11
+ 386 0002 01       		.byte	0x1
+ 387 0003 25       		.uleb128 0x25
+ 388 0004 0E       		.uleb128 0xe
+ 389 0005 13       		.uleb128 0x13
+ 390 0006 0B       		.uleb128 0xb
+ 391 0007 03       		.uleb128 0x3
+ 392 0008 0E       		.uleb128 0xe
+ 393 0009 1B       		.uleb128 0x1b
+ 394 000a 0E       		.uleb128 0xe
+ 395 000b 55       		.uleb128 0x55
+ 396 000c 17       		.uleb128 0x17
+ 397 000d 11       		.uleb128 0x11
+ 398 000e 01       		.uleb128 0x1
+ 399 000f 10       		.uleb128 0x10
+ 400 0010 17       		.uleb128 0x17
+ 401 0011 00       		.byte	0
+ 402 0012 00       		.byte	0
+ 403 0013 02       		.uleb128 0x2
+ 404 0014 24       		.uleb128 0x24
+ 405 0015 00       		.byte	0
+ 406 0016 0B       		.uleb128 0xb
+ 407 0017 0B       		.uleb128 0xb
+ 408 0018 3E       		.uleb128 0x3e
+ 409 0019 0B       		.uleb128 0xb
+ 410 001a 03       		.uleb128 0x3
+ 411 001b 0E       		.uleb128 0xe
+ 412 001c 00       		.byte	0
+ 413 001d 00       		.byte	0
+ 414 001e 03       		.uleb128 0x3
+ 415 001f 24       		.uleb128 0x24
+ 416 0020 00       		.byte	0
+ 417 0021 0B       		.uleb128 0xb
+ 418 0022 0B       		.uleb128 0xb
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccm0MUGa.s 			page 9
+
+
+ 419 0023 3E       		.uleb128 0x3e
+ 420 0024 0B       		.uleb128 0xb
+ 421 0025 03       		.uleb128 0x3
+ 422 0026 08       		.uleb128 0x8
+ 423 0027 00       		.byte	0
+ 424 0028 00       		.byte	0
+ 425 0029 04       		.uleb128 0x4
+ 426 002a 2E       		.uleb128 0x2e
+ 427 002b 01       		.byte	0x1
+ 428 002c 3F       		.uleb128 0x3f
+ 429 002d 19       		.uleb128 0x19
+ 430 002e 03       		.uleb128 0x3
+ 431 002f 0E       		.uleb128 0xe
+ 432 0030 3A       		.uleb128 0x3a
+ 433 0031 0B       		.uleb128 0xb
+ 434 0032 3B       		.uleb128 0x3b
+ 435 0033 0B       		.uleb128 0xb
+ 436 0034 27       		.uleb128 0x27
+ 437 0035 19       		.uleb128 0x19
+ 438 0036 11       		.uleb128 0x11
+ 439 0037 01       		.uleb128 0x1
+ 440 0038 12       		.uleb128 0x12
+ 441 0039 06       		.uleb128 0x6
+ 442 003a 40       		.uleb128 0x40
+ 443 003b 18       		.uleb128 0x18
+ 444 003c 9742     		.uleb128 0x2117
+ 445 003e 19       		.uleb128 0x19
+ 446 003f 01       		.uleb128 0x1
+ 447 0040 13       		.uleb128 0x13
+ 448 0041 00       		.byte	0
+ 449 0042 00       		.byte	0
+ 450 0043 05       		.uleb128 0x5
+ 451 0044 898201   		.uleb128 0x4109
+ 452 0047 00       		.byte	0
+ 453 0048 11       		.uleb128 0x11
+ 454 0049 01       		.uleb128 0x1
+ 455 004a 31       		.uleb128 0x31
+ 456 004b 13       		.uleb128 0x13
+ 457 004c 00       		.byte	0
+ 458 004d 00       		.byte	0
+ 459 004e 06       		.uleb128 0x6
+ 460 004f 898201   		.uleb128 0x4109
+ 461 0052 01       		.byte	0x1
+ 462 0053 11       		.uleb128 0x11
+ 463 0054 01       		.uleb128 0x1
+ 464 0055 31       		.uleb128 0x31
+ 465 0056 13       		.uleb128 0x13
+ 466 0057 00       		.byte	0
+ 467 0058 00       		.byte	0
+ 468 0059 07       		.uleb128 0x7
+ 469 005a 8A8201   		.uleb128 0x410a
+ 470 005d 00       		.byte	0
+ 471 005e 02       		.uleb128 0x2
+ 472 005f 18       		.uleb128 0x18
+ 473 0060 9142     		.uleb128 0x2111
+ 474 0062 18       		.uleb128 0x18
+ 475 0063 00       		.byte	0
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccm0MUGa.s 			page 10
+
+
+ 476 0064 00       		.byte	0
+ 477 0065 08       		.uleb128 0x8
+ 478 0066 898201   		.uleb128 0x4109
+ 479 0069 01       		.byte	0x1
+ 480 006a 11       		.uleb128 0x11
+ 481 006b 01       		.uleb128 0x1
+ 482 006c 31       		.uleb128 0x31
+ 483 006d 13       		.uleb128 0x13
+ 484 006e 01       		.uleb128 0x1
+ 485 006f 13       		.uleb128 0x13
+ 486 0070 00       		.byte	0
+ 487 0071 00       		.byte	0
+ 488 0072 09       		.uleb128 0x9
+ 489 0073 01       		.uleb128 0x1
+ 490 0074 01       		.byte	0x1
+ 491 0075 49       		.uleb128 0x49
+ 492 0076 13       		.uleb128 0x13
+ 493 0077 01       		.uleb128 0x1
+ 494 0078 13       		.uleb128 0x13
+ 495 0079 00       		.byte	0
+ 496 007a 00       		.byte	0
+ 497 007b 0A       		.uleb128 0xa
+ 498 007c 21       		.uleb128 0x21
+ 499 007d 00       		.byte	0
+ 500 007e 49       		.uleb128 0x49
+ 501 007f 13       		.uleb128 0x13
+ 502 0080 2F       		.uleb128 0x2f
+ 503 0081 0B       		.uleb128 0xb
+ 504 0082 00       		.byte	0
+ 505 0083 00       		.byte	0
+ 506 0084 0B       		.uleb128 0xb
+ 507 0085 34       		.uleb128 0x34
+ 508 0086 00       		.byte	0
+ 509 0087 03       		.uleb128 0x3
+ 510 0088 0E       		.uleb128 0xe
+ 511 0089 3A       		.uleb128 0x3a
+ 512 008a 0B       		.uleb128 0xb
+ 513 008b 3B       		.uleb128 0x3b
+ 514 008c 0B       		.uleb128 0xb
+ 515 008d 49       		.uleb128 0x49
+ 516 008e 13       		.uleb128 0x13
+ 517 008f 02       		.uleb128 0x2
+ 518 0090 18       		.uleb128 0x18
+ 519 0091 00       		.byte	0
+ 520 0092 00       		.byte	0
+ 521 0093 0C       		.uleb128 0xc
+ 522 0094 34       		.uleb128 0x34
+ 523 0095 00       		.byte	0
+ 524 0096 03       		.uleb128 0x3
+ 525 0097 08       		.uleb128 0x8
+ 526 0098 3A       		.uleb128 0x3a
+ 527 0099 0B       		.uleb128 0xb
+ 528 009a 3B       		.uleb128 0x3b
+ 529 009b 0B       		.uleb128 0xb
+ 530 009c 49       		.uleb128 0x49
+ 531 009d 13       		.uleb128 0x13
+ 532 009e 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccm0MUGa.s 			page 11
+
+
+ 533 009f 19       		.uleb128 0x19
+ 534 00a0 3C       		.uleb128 0x3c
+ 535 00a1 19       		.uleb128 0x19
+ 536 00a2 00       		.byte	0
+ 537 00a3 00       		.byte	0
+ 538 00a4 0D       		.uleb128 0xd
+ 539 00a5 2E       		.uleb128 0x2e
+ 540 00a6 00       		.byte	0
+ 541 00a7 3F       		.uleb128 0x3f
+ 542 00a8 19       		.uleb128 0x19
+ 543 00a9 3C       		.uleb128 0x3c
+ 544 00aa 19       		.uleb128 0x19
+ 545 00ab 6E       		.uleb128 0x6e
+ 546 00ac 0E       		.uleb128 0xe
+ 547 00ad 03       		.uleb128 0x3
+ 548 00ae 0E       		.uleb128 0xe
+ 549 00af 3A       		.uleb128 0x3a
+ 550 00b0 0B       		.uleb128 0xb
+ 551 00b1 3B       		.uleb128 0x3b
+ 552 00b2 0B       		.uleb128 0xb
+ 553 00b3 00       		.byte	0
+ 554 00b4 00       		.byte	0
+ 555 00b5 00       		.byte	0
+ 556              		.section	.debug_aranges,"",%progbits
+ 557 0000 24000000 		.4byte	0x24
+ 558 0004 0200     		.2byte	0x2
+ 559 0006 00000000 		.4byte	.Ldebug_info0
+ 560 000a 04       		.byte	0x4
+ 561 000b 00       		.byte	0
+ 562 000c 0000     		.2byte	0
+ 563 000e 0000     		.2byte	0
+ 564 0010 00000000 		.4byte	.LFB35
+ 565 0014 0E000000 		.4byte	.LFE35-.LFB35
+ 566 0018 00000000 		.4byte	.LFB36
+ 567 001c 58000000 		.4byte	.LFE36-.LFB36
+ 568 0020 00000000 		.4byte	0
+ 569 0024 00000000 		.4byte	0
+ 570              		.section	.debug_ranges,"",%progbits
+ 571              	.Ldebug_ranges0:
+ 572 0000 00000000 		.4byte	.LFB35
+ 573 0004 0E000000 		.4byte	.LFE35
+ 574 0008 00000000 		.4byte	.LFB36
+ 575 000c 58000000 		.4byte	.LFE36
+ 576 0010 00000000 		.4byte	0
+ 577 0014 00000000 		.4byte	0
+ 578              		.section	.debug_line,"",%progbits
+ 579              	.Ldebug_line0:
+ 580 0000 E5000000 		.section	.debug_str,"MS",%progbits,1
+ 580      0200B600 
+ 580      00000201 
+ 580      FB0E0D00 
+ 580      01010101 
+ 581              	.LASF6:
+ 582 0000 6C6F6E67 		.ascii	"long long int\000"
+ 582      206C6F6E 
+ 582      6720696E 
+ 582      7400
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccm0MUGa.s 			page 12
+
+
+ 583              	.LASF24:
+ 584 000e 6C63645F 		.ascii	"lcd_degree.c\000"
+ 584      64656772 
+ 584      65652E63 
+ 584      00
+ 585              	.LASF8:
+ 586 001b 756E7369 		.ascii	"unsigned int\000"
+ 586      676E6564 
+ 586      20696E74 
+ 586      00
+ 587              	.LASF17:
+ 588 0028 62756632 		.ascii	"buf2\000"
+ 588      00
+ 589              	.LASF22:
+ 590 002d 73707269 		.ascii	"sprintf\000"
+ 590      6E746600 
+ 591              	.LASF25:
+ 592 0035 443A5C4C 		.ascii	"D:\\Lab4_V.cydsn\000"
+ 592      6162345F 
+ 592      562E6379 
+ 592      64736E00 
+ 593              	.LASF5:
+ 594 0045 6C6F6E67 		.ascii	"long unsigned int\000"
+ 594      20756E73 
+ 594      69676E65 
+ 594      6420696E 
+ 594      7400
+ 595              	.LASF7:
+ 596 0057 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 596      206C6F6E 
+ 596      6720756E 
+ 596      7369676E 
+ 596      65642069 
+ 597              	.LASF18:
+ 598 006e 4C43445F 		.ascii	"LCD_Start\000"
+ 598      53746172 
+ 598      7400
+ 599              	.LASF19:
+ 600 0078 4C43445F 		.ascii	"LCD_WriteControl\000"
+ 600      57726974 
+ 600      65436F6E 
+ 600      74726F6C 
+ 600      00
+ 601              	.LASF1:
+ 602 0089 756E7369 		.ascii	"unsigned char\000"
+ 602      676E6564 
+ 602      20636861 
+ 602      7200
+ 603              	.LASF11:
+ 604 0097 63686172 		.ascii	"char\000"
+ 604      00
+ 605              	.LASF16:
+ 606 009c 62756631 		.ascii	"buf1\000"
+ 606      00
+ 607              	.LASF4:
+ 608 00a1 6C6F6E67 		.ascii	"long int\000"
+ 608      20696E74 
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccm0MUGa.s 			page 13
+
+
+ 608      00
+ 609              	.LASF10:
+ 610 00aa 646F7562 		.ascii	"double\000"
+ 610      6C6500
+ 611              	.LASF20:
+ 612 00b1 4C43445F 		.ascii	"LCD_Position\000"
+ 612      506F7369 
+ 612      74696F6E 
+ 612      00
+ 613              	.LASF23:
+ 614 00be 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 614      43313120 
+ 614      352E342E 
+ 614      31203230 
+ 614      31363036 
+ 615 00f1 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 615      20726576 
+ 615      6973696F 
+ 615      6E203233 
+ 615      37373135 
+ 616 0124 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 616      66756E63 
+ 616      74696F6E 
+ 616      2D736563 
+ 616      74696F6E 
+ 617              	.LASF3:
+ 618 014c 73686F72 		.ascii	"short unsigned int\000"
+ 618      7420756E 
+ 618      7369676E 
+ 618      65642069 
+ 618      6E7400
+ 619              	.LASF0:
+ 620 015f 7369676E 		.ascii	"signed char\000"
+ 620      65642063 
+ 620      68617200 
+ 621              	.LASF12:
+ 622 016b 6C6F6E67 		.ascii	"long double\000"
+ 622      20646F75 
+ 622      626C6500 
+ 623              	.LASF14:
+ 624 0177 6C63645F 		.ascii	"lcd_init\000"
+ 624      696E6974 
+ 624      00
+ 625              	.LASF9:
+ 626 0180 666C6F61 		.ascii	"float\000"
+ 626      7400
+ 627              	.LASF2:
+ 628 0186 73686F72 		.ascii	"short int\000"
+ 628      7420696E 
+ 628      7400
+ 629              	.LASF15:
+ 630 0190 6C63645F 		.ascii	"lcd_degree\000"
+ 630      64656772 
+ 630      656500
+ 631              	.LASF13:
+ 632 019b 73697A65 		.ascii	"sizetype\000"
+ 632      74797065 
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccm0MUGa.s 			page 14
+
+
+ 632      00
+ 633              	.LASF21:
+ 634 01a4 4C43445F 		.ascii	"LCD_PrintString\000"
+ 634      5072696E 
+ 634      74537472 
+ 634      696E6700 
+ 635              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

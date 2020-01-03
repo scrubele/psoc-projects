@@ -1,0 +1,22 @@
+# Lab3_V3
+# 2019-12-10 07:11:53Z
+
+# IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 2
+# IO_3@[IOP=(3)][IoId=(3)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 3
+set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
+set_io "Pin_Red(0)" iocell 3 7
+set_io "SW(0)" iocell 0 7
+set_io "Pin_Green(0)" iocell 3 5
+set_io "\LCD:LCDPort(0)\" iocell 2 0
+set_io "\LCD:LCDPort(1)\" iocell 2 1
+set_io "\LCD:LCDPort(2)\" iocell 2 2
+set_io "\LCD:LCDPort(3)\" iocell 2 3
+set_io "\LCD:LCDPort(4)\" iocell 2 4
+set_io "\LCD:LCDPort(5)\" iocell 2 5
+set_io "\LCD:LCDPort(6)\" iocell 2 6
+set_io "phiA(0)" iocell 0 0
+set_io "phiB(0)" iocell 0 1
+set_io "Enc_Sw(0)" iocell 1 0
+set_io "Pin_Yellow(0)" iocell 3 6

@@ -1,0 +1,230 @@
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/ADC.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/ADC.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/ADC.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLib.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/ADC.c : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/ADC.h : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLFClk.h : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLib.h : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/ADC_INT.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/ADC.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/ADC_INT.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLib.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h D:/Lab4_V.cydsn/cyapicallbacks.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/ADC_INT.c : 
+
+D:/Lab4_V.cydsn/cyapicallbacks.h : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/ADC_IRQ.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/ADC_IRQ.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/ADC_IRQ.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLib.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h D:/Lab4_V.cydsn/cyapicallbacks.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/ADC_IRQ.c : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/ADC_IRQ.h : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/ADC_PM.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/ADC.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/ADC_PM.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLib.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/ADC_PM.c : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/ADC_intClock.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/ADC_intClock.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/ADC_intClock.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/ADC_intClock.c : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/ADC_intClock.h : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/Clock_1.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/Clock_1.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/Clock_1.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/Clock_1.c : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/Clock_1.h : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/Clock_2.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/Clock_2.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/Clock_2.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/Clock_2.c : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/Clock_2.h : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/Cm0Start.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/Cm0Start.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLib.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h D:/Lab4_V.cydsn/cyapicallbacks.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/Cm0Start.c : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/CyDMA.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyDMA.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyDMA.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLib.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyDMA.c : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyDMA.h : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/CyFlash.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyFlash.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyFlash.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLib.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyFlash.c : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyFlash.h : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/CyLFClk.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLFClk.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLib.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLFClk.c : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/CyLib.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyFlash.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLib.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLib.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLib.c : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/LCD.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLib.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/LCD.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/LCD.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/LCD.c : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/LCD.h : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/LCD_LCDPort.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/LCD_LCDPort.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/LCD_LCDPort.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/LCD_LCDPort_aliases.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cypins.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/LCD_LCDPort.c : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/LCD_LCDPort.h : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/LCD_LCDPort_aliases.h : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/cypins.h : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/LCD_LCDPort_PM.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/LCD_LCDPort.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/LCD_LCDPort_PM.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/LCD_LCDPort_aliases.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cypins.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/LCD_LCDPort_PM.c : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/LCD_PM.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/LCD.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/LCD_PM.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/LCD_PM.c : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/PWM_X.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLib.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/PWM_X.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/PWM_X.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/PWM_X.c : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/PWM_X.h : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/PWM_X_PM.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLib.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/PWM_X.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/PWM_X_PM.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/PWM_X_PM.c : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/PWM_Y.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLib.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/PWM_Y.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/PWM_Y.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/PWM_Y.c : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/PWM_Y.h : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/PWM_Y_PM.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLib.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/PWM_Y.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/PWM_Y_PM.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/PWM_Y_PM.c : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/Pin_Green.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Green.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Green.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Green_aliases.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cypins.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Green.c : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Green.h : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Green_aliases.h : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/Pin_Green_PM.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Green.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Green_PM.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Green_aliases.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cypins.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Green_PM.c : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/Pin_Red.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Red.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Red.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Red_aliases.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cypins.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Red.c : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Red.h : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Red_aliases.h : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/Pin_Red_PM.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Red.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Red_PM.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Red_aliases.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cypins.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Red_PM.c : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/Pin_x.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_x.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_x.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_x_aliases.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cypins.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_x.c : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_x.h : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_x_aliases.h : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/Pin_x_PM.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_x.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_x_PM.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_x_aliases.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cypins.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_x_PM.c : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/Pin_y.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_y.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_y.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_y_aliases.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cypins.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_y.c : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_y.h : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_y_aliases.h : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/Pin_y_PM.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_y.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_y_PM.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_y_aliases.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cypins.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_y_PM.c : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/cyPm.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyFlash.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLib.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyPm.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyPm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cypins.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyPm.c : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyPm.h : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/cy_em_eeprom.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyFlash.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLib.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cy_em_eeprom.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/cy_em_eeprom.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/cy_em_eeprom.c : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/cy_em_eeprom.h : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/cyfitter_cfg.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLib.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter_cfg.c D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h D:/Lab4_V.cydsn/cyapicallbacks.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter_cfg.c : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/cymetadata.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/cymetadata.c 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/cymetadata.c : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/cyutils.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyutils.c 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyutils.c : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/adc_validation.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/cmsis_armcc.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cmsis_compiler.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cmsis_gcc.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/core_cm0.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydisabledsheets.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/project.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/ADC.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/ADC_IRQ.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/ADC_intClock.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Clock_1.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Clock_2.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyDMA.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyFlash.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLib.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/LCD.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/LCD_LCDPort.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/LCD_LCDPort_aliases.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/PWM_X.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/PWM_Y.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Green.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Green_aliases.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Red.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Red_aliases.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_x.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_x_aliases.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_y.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_y_aliases.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyPm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cy_em_eeprom.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cypins.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h D:/Lab4_V.cydsn/adc_validation.c D:/Lab4_V.cydsn/adc_validation.h D:/Lab4_V.cydsn/lab.h D:/Lab4_V.cydsn/lcd_degree.h D:/Lab4_V.cydsn/protocol.h 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/cmsis_armcc.h : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/cmsis_compiler.h : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/cmsis_gcc.h : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/core_cm0.h : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydisabledsheets.h : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/project.h : 
+
+D:/Lab4_V.cydsn/adc_validation.c : 
+
+D:/Lab4_V.cydsn/adc_validation.h : 
+
+D:/Lab4_V.cydsn/lab.h : 
+
+D:/Lab4_V.cydsn/lcd_degree.h : 
+
+D:/Lab4_V.cydsn/protocol.h : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/lcd_degree.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/cmsis_armcc.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cmsis_compiler.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cmsis_gcc.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/core_cm0.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydisabledsheets.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/project.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/ADC.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/ADC_IRQ.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/ADC_intClock.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Clock_1.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Clock_2.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyDMA.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyFlash.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLib.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/LCD.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/LCD_LCDPort.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/LCD_LCDPort_aliases.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/PWM_X.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/PWM_Y.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Green.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Green_aliases.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Red.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Red_aliases.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_x.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_x_aliases.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_y.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_y_aliases.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyPm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cy_em_eeprom.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cypins.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h D:/Lab4_V.cydsn/adc_validation.h D:/Lab4_V.cydsn/lab.h D:/Lab4_V.cydsn/lcd_degree.c D:/Lab4_V.cydsn/lcd_degree.h D:/Lab4_V.cydsn/protocol.h 
+
+D:/Lab4_V.cydsn/lcd_degree.c : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/main.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/cmsis_armcc.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cmsis_compiler.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cmsis_gcc.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/core_cm0.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydisabledsheets.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/project.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/ADC.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/ADC_IRQ.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/ADC_intClock.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Clock_1.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Clock_2.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyDMA.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyFlash.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLib.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/LCD.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/LCD_LCDPort.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/LCD_LCDPort_aliases.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/PWM_X.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/PWM_Y.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Green.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Green_aliases.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Red.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Red_aliases.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_x.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_x_aliases.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_y.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_y_aliases.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyPm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cy_em_eeprom.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cypins.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h D:/Lab4_V.cydsn/adc_validation.h D:/Lab4_V.cydsn/lab.h D:/Lab4_V.cydsn/lcd_degree.h D:/Lab4_V.cydsn/main.c D:/Lab4_V.cydsn/protocol.h 
+
+D:/Lab4_V.cydsn/main.c : 
+
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/protocol.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/cmsis_armcc.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cmsis_compiler.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cmsis_gcc.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/core_cm0.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydisabledsheets.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/project.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/ADC.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/ADC_IRQ.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/ADC_intClock.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Clock_1.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Clock_2.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyDMA.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyFlash.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyLib.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/LCD.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/LCD_LCDPort.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/LCD_LCDPort_aliases.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/PWM_X.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/PWM_Y.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Green.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Green_aliases.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Red.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_Red_aliases.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_x.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_x_aliases.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_y.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/Pin_y_aliases.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyPm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cy_em_eeprom.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cypins.h D:/Lab4_V.cydsn/Generated_Source/PSoC4/cytypes.h D:/Lab4_V.cydsn/adc_validation.h D:/Lab4_V.cydsn/lab.h D:/Lab4_V.cydsn/lcd_degree.h D:/Lab4_V.cydsn/protocol.c D:/Lab4_V.cydsn/protocol.h 
+
+D:/Lab4_V.cydsn/protocol.c : 
+

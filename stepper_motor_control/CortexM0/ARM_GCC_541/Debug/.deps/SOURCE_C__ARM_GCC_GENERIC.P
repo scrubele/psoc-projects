@@ -1,0 +1,134 @@
+D:/Lab5.cydsn/CortexM0/ARM_GCC_541/Debug/algorithm.o : D:/Lab5.cydsn/Generated_Source/PSoC4/Clock_1.h D:/Lab5.cydsn/Generated_Source/PSoC4/Clock_2.h D:/Lab5.cydsn/Generated_Source/PSoC4/Clock_3.h D:/Lab5.cydsn/Generated_Source/PSoC4/Clock_4.h D:/Lab5.cydsn/Generated_Source/PSoC4/Clock_5.h D:/Lab5.cydsn/Generated_Source/PSoC4/Clock_6.h D:/Lab5.cydsn/Generated_Source/PSoC4/Clock_7.h D:/Lab5.cydsn/Generated_Source/PSoC4/CyDMA.h D:/Lab5.cydsn/Generated_Source/PSoC4/CyFlash.h D:/Lab5.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/Lab5.cydsn/Generated_Source/PSoC4/CyLib.h D:/Lab5.cydsn/Generated_Source/PSoC4/LCD.h D:/Lab5.cydsn/Generated_Source/PSoC4/LCD_LCDPort.h D:/Lab5.cydsn/Generated_Source/PSoC4/LCD_LCDPort_aliases.h D:/Lab5.cydsn/Generated_Source/PSoC4/PWM.h D:/Lab5.cydsn/Generated_Source/PSoC4/Pin_1.h D:/Lab5.cydsn/Generated_Source/PSoC4/Pin_1_aliases.h D:/Lab5.cydsn/Generated_Source/PSoC4/Pin_2.h D:/Lab5.cydsn/Generated_Source/PSoC4/Pin_2_aliases.h D:/Lab5.cydsn/Generated_Source/PSoC4/Pin_3.h D:/Lab5.cydsn/Generated_Source/PSoC4/Pin_3_aliases.h D:/Lab5.cydsn/Generated_Source/PSoC4/Pin_4.h D:/Lab5.cydsn/Generated_Source/PSoC4/Pin_4_aliases.h D:/Lab5.cydsn/Generated_Source/PSoC4/QuadDec.h D:/Lab5.cydsn/Generated_Source/PSoC4/QuadDec_Int.h D:/Lab5.cydsn/Generated_Source/PSoC4/Rotor.h D:/Lab5.cydsn/Generated_Source/PSoC4/SW_1.h D:/Lab5.cydsn/Generated_Source/PSoC4/SW_1_aliases.h D:/Lab5.cydsn/Generated_Source/PSoC4/SW_2.h D:/Lab5.cydsn/Generated_Source/PSoC4/SW_2_aliases.h D:/Lab5.cydsn/Generated_Source/PSoC4/SW_3.h D:/Lab5.cydsn/Generated_Source/PSoC4/SW_3_aliases.h D:/Lab5.cydsn/Generated_Source/PSoC4/SW_4.h D:/Lab5.cydsn/Generated_Source/PSoC4/SW_4_aliases.h D:/Lab5.cydsn/Generated_Source/PSoC4/SW_Int_1.h D:/Lab5.cydsn/Generated_Source/PSoC4/SW_Int_2.h D:/Lab5.cydsn/Generated_Source/PSoC4/SW_Int_3.h D:/Lab5.cydsn/Generated_Source/PSoC4/SW_Int_4.h D:/Lab5.cydsn/Generated_Source/PSoC4/Timer.h D:/Lab5.cydsn/Generated_Source/PSoC4/Timer_Int.h D:/Lab5.cydsn/Generated_Source/PSoC4/cmsis_armcc.h D:/Lab5.cydsn/Generated_Source/PSoC4/cmsis_compiler.h D:/Lab5.cydsn/Generated_Source/PSoC4/cmsis_gcc.h D:/Lab5.cydsn/Generated_Source/PSoC4/core_cm0.h D:/Lab5.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h D:/Lab5.cydsn/Generated_Source/PSoC4/cyPm.h D:/Lab5.cydsn/Generated_Source/PSoC4/cy_em_eeprom.h D:/Lab5.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab5.cydsn/Generated_Source/PSoC4/cydisabledsheets.h D:/Lab5.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab5.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h D:/Lab5.cydsn/Generated_Source/PSoC4/cypins.h D:/Lab5.cydsn/Generated_Source/PSoC4/cytypes.h D:/Lab5.cydsn/Generated_Source/PSoC4/phiA.h D:/Lab5.cydsn/Generated_Source/PSoC4/phiA_aliases.h D:/Lab5.cydsn/Generated_Source/PSoC4/phiB.h D:/Lab5.cydsn/Generated_Source/PSoC4/phiB_aliases.h D:/Lab5.cydsn/Generated_Source/PSoC4/project.h D:/Lab5.cydsn/algorithm.c D:/Lab5.cydsn/algorithm.h D:/Lab5.cydsn/lab.h D:/Lab5.cydsn/lcd_status_rotor.h D:/Lab5.cydsn/protocol.h D:/Lab5.cydsn/stage_rotor.h 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/Clock_1.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/Clock_2.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/Clock_3.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/Clock_4.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/Clock_5.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/Clock_6.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/Clock_7.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/CyDMA.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/CyFlash.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/CyLFClk.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/CyLib.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/LCD.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/LCD_LCDPort.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/LCD_LCDPort_aliases.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/PWM.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/Pin_1.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/Pin_1_aliases.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/Pin_2.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/Pin_2_aliases.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/Pin_3.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/Pin_3_aliases.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/Pin_4.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/Pin_4_aliases.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/QuadDec.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/QuadDec_Int.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/Rotor.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/SW_1.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/SW_1_aliases.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/SW_2.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/SW_2_aliases.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/SW_3.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/SW_3_aliases.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/SW_4.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/SW_4_aliases.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/SW_Int_1.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/SW_Int_2.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/SW_Int_3.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/SW_Int_4.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/Timer.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/Timer_Int.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/cmsis_armcc.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/cmsis_compiler.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/cmsis_gcc.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/core_cm0.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/cyPm.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/cy_em_eeprom.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/cydevice_trm.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/cydisabledsheets.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/cyfitter.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/cypins.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/cytypes.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/phiA.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/phiA_aliases.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/phiB.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/phiB_aliases.h : 
+
+D:/Lab5.cydsn/Generated_Source/PSoC4/project.h : 
+
+D:/Lab5.cydsn/algorithm.c : 
+
+D:/Lab5.cydsn/algorithm.h : 
+
+D:/Lab5.cydsn/lab.h : 
+
+D:/Lab5.cydsn/lcd_status_rotor.h : 
+
+D:/Lab5.cydsn/protocol.h : 
+
+D:/Lab5.cydsn/stage_rotor.h : 
+
+D:/Lab5.cydsn/CortexM0/ARM_GCC_541/Debug/lcd_status_rotor.o : D:/Lab5.cydsn/Generated_Source/PSoC4/Clock_1.h D:/Lab5.cydsn/Generated_Source/PSoC4/Clock_2.h D:/Lab5.cydsn/Generated_Source/PSoC4/Clock_3.h D:/Lab5.cydsn/Generated_Source/PSoC4/Clock_4.h D:/Lab5.cydsn/Generated_Source/PSoC4/Clock_5.h D:/Lab5.cydsn/Generated_Source/PSoC4/Clock_6.h D:/Lab5.cydsn/Generated_Source/PSoC4/Clock_7.h D:/Lab5.cydsn/Generated_Source/PSoC4/CyDMA.h D:/Lab5.cydsn/Generated_Source/PSoC4/CyFlash.h D:/Lab5.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/Lab5.cydsn/Generated_Source/PSoC4/CyLib.h D:/Lab5.cydsn/Generated_Source/PSoC4/LCD.h D:/Lab5.cydsn/Generated_Source/PSoC4/LCD_LCDPort.h D:/Lab5.cydsn/Generated_Source/PSoC4/LCD_LCDPort_aliases.h D:/Lab5.cydsn/Generated_Source/PSoC4/PWM.h D:/Lab5.cydsn/Generated_Source/PSoC4/Pin_1.h D:/Lab5.cydsn/Generated_Source/PSoC4/Pin_1_aliases.h D:/Lab5.cydsn/Generated_Source/PSoC4/Pin_2.h D:/Lab5.cydsn/Generated_Source/PSoC4/Pin_2_aliases.h D:/Lab5.cydsn/Generated_Source/PSoC4/Pin_3.h D:/Lab5.cydsn/Generated_Source/PSoC4/Pin_3_aliases.h D:/Lab5.cydsn/Generated_Source/PSoC4/Pin_4.h D:/Lab5.cydsn/Generated_Source/PSoC4/Pin_4_aliases.h D:/Lab5.cydsn/Generated_Source/PSoC4/QuadDec.h D:/Lab5.cydsn/Generated_Source/PSoC4/QuadDec_Int.h D:/Lab5.cydsn/Generated_Source/PSoC4/Rotor.h D:/Lab5.cydsn/Generated_Source/PSoC4/SW_1.h D:/Lab5.cydsn/Generated_Source/PSoC4/SW_1_aliases.h D:/Lab5.cydsn/Generated_Source/PSoC4/SW_2.h D:/Lab5.cydsn/Generated_Source/PSoC4/SW_2_aliases.h D:/Lab5.cydsn/Generated_Source/PSoC4/SW_3.h D:/Lab5.cydsn/Generated_Source/PSoC4/SW_3_aliases.h D:/Lab5.cydsn/Generated_Source/PSoC4/SW_4.h D:/Lab5.cydsn/Generated_Source/PSoC4/SW_4_aliases.h D:/Lab5.cydsn/Generated_Source/PSoC4/SW_Int_1.h D:/Lab5.cydsn/Generated_Source/PSoC4/SW_Int_2.h D:/Lab5.cydsn/Generated_Source/PSoC4/SW_Int_3.h D:/Lab5.cydsn/Generated_Source/PSoC4/SW_Int_4.h D:/Lab5.cydsn/Generated_Source/PSoC4/Timer.h D:/Lab5.cydsn/Generated_Source/PSoC4/Timer_Int.h D:/Lab5.cydsn/Generated_Source/PSoC4/cmsis_armcc.h D:/Lab5.cydsn/Generated_Source/PSoC4/cmsis_compiler.h D:/Lab5.cydsn/Generated_Source/PSoC4/cmsis_gcc.h D:/Lab5.cydsn/Generated_Source/PSoC4/core_cm0.h D:/Lab5.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h D:/Lab5.cydsn/Generated_Source/PSoC4/cyPm.h D:/Lab5.cydsn/Generated_Source/PSoC4/cy_em_eeprom.h D:/Lab5.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Lab5.cydsn/Generated_Source/PSoC4/cydisabledsheets.h D:/Lab5.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Lab5.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h D:/Lab5.cydsn/Generated_Source/PSoC4/cypins.h D:/Lab5.cydsn/Generated_Source/PSoC4/cytypes.h D:/Lab5.cydsn/Generated_Source/PSoC4/phiA.h D:/Lab5.cydsn/Generated_Source/PSoC4/phiA_aliases.h D:/Lab5.cydsn/Generated_Source/PSoC4/phiB.h D:/Lab5.cydsn/Generated_Source/PSoC4/phiB_aliases.h D:/Lab5.cydsn/Generated_Source/PSoC4/project.h D:/Lab5.cydsn/algorithm.h D:/Lab5.cydsn/lab.h D:/Lab5.cydsn/lcd_status_rotor.c D:/Lab5.cydsn/lcd_status_rotor.h D:/Lab5.cydsn/protocol.h D:/Lab5.cydsn/stage_rotor.h 
+
+D:/Lab5.cydsn/lcd_status_rotor.c : 
+

@@ -1,0 +1,35 @@
+net ClockBlock_HFClk
+	term   ":m0s8clockblockcell.hfclk"
+	switch ":m0s8clockblockcell.hfclk==>:interrupt_16.clock"
+	term   ":interrupt_16.clock"
+end ClockBlock_HFClk
+net Net_228
+	term   ":m0s8tcpwmcell_1.line"
+	switch ":m0s8tcpwmcell_1.line==>Stub-:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v25+:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v27"
+	switch "OStub-:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v25+:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v27"
+	switch ":dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:27,81"
+	switch ":dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:99,81_f"
+	switch "IStub-:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v101+:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v103+:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v99"
+	switch "Stub-:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v101+:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v103+:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v99==>:ioport3:inputs2_mux.in_3"
+	switch ":ioport3:inputs2_mux.pin7__pin_input==>:ioport3:hsiom_out7.dsi"
+	switch ":ioport3:hsiom_out7.hsiom7_out==>:ioport3:pin7.pin_input"
+	term   ":ioport3:pin7.pin_input"
+end Net_228
+net Net_247
+	term   ":m0s8tcpwmcell_0.line"
+	switch ":m0s8tcpwmcell_0.line==>Stub-:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v24+:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v26"
+	switch "OStub-:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v24+:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v26"
+	switch ":dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:24,74"
+	switch ":dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:96,74_f"
+	switch "IStub-:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v92+:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v94+:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v96"
+	switch "Stub-:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v92+:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v94+:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v96==>:ioport3:inputs2_mux.in_0"
+	switch ":ioport3:inputs2_mux.pin5__pin_input==>:ioport3:hsiom_out5.dsi"
+	switch ":ioport3:hsiom_out5.hsiom5_out==>:ioport3:pin5.pin_input"
+	term   ":ioport3:pin5.pin_input"
+end Net_247
+net \ADC:Net_3112\
+	term   ":p4sarcell.irq"
+	switch ":p4sarcell.irq==>:interrupt_idmux_16.in_0"
+	switch ":interrupt_idmux_16.interrupt_idmux_16__out==>:interrupt_16.interrupt"
+	term   ":interrupt_16.interrupt"
+end \ADC:Net_3112\

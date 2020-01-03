@@ -1,0 +1,6 @@
+D:\university-files\5th semester\microcontrollers\Lab3_V3.cydsn\Lab3_V3.cyprj|b6740f2f-5bdf-4458-9c9f-bf474549fbc8
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|c94edac4-12ae-43ae-bed6-c01176bcf3b4
+C:\Users\manko\OneDrive\Документи\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|87217e98-f444-405b-8d6e-a213547a6b62
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|cd7787ce-51e8-428e-893c-9f31a2856b8a
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|9bece03b-a7c8-422c-9cc8-47a994e8f0b9
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|e295cff8-43aa-47c9-b4b4-38075aed069f

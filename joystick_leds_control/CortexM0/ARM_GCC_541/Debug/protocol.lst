@@ -1,0 +1,402 @@
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccLwx82j.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"protocol.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.protocol_init,"ax",%progbits
+  20              		.align	2
+  21              		.global	protocol_init
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	protocol_init, %function
+  25              	protocol_init:
+  26              	.LFB34:
+  27              		.file 1 "protocol.c"
+   1:protocol.c    **** #include "lab.h"
+   2:protocol.c    **** 
+   3:protocol.c    **** void protocol_init(void){
+  28              		.loc 1 3 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+   4:protocol.c    ****     adc_validation_init();
+  36              		.loc 1 4 0
+  37 0002 FFF7FEFF 		bl	adc_validation_init
+  38              	.LVL0:
+   5:protocol.c    ****     lcd_init();  
+  39              		.loc 1 5 0
+  40 0006 FFF7FEFF 		bl	lcd_init
+  41              	.LVL1:
+   6:protocol.c    **** }...
+  42              		.loc 1 6 0
+  43              		@ sp needed
+  44 000a 10BD     		pop	{r4, pc}
+  45              		.cfi_endproc
+  46              	.LFE34:
+  47              		.size	protocol_init, .-protocol_init
+  48              		.text
+  49              	.Letext0:
+  50              		.file 2 "adc_validation.h"
+  51              		.file 3 "lcd_degree.h"
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccLwx82j.s 			page 2
+
+
+  52              		.section	.debug_info,"",%progbits
+  53              	.Ldebug_info0:
+  54 0000 C9000000 		.4byte	0xc9
+  55 0004 0400     		.2byte	0x4
+  56 0006 00000000 		.4byte	.Ldebug_abbrev0
+  57 000a 04       		.byte	0x4
+  58 000b 01       		.uleb128 0x1
+  59 000c 95000000 		.4byte	.LASF16
+  60 0010 0C       		.byte	0xc
+  61 0011 6B010000 		.4byte	.LASF17
+  62 0015 1B000000 		.4byte	.LASF18
+  63 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  64 001d 00000000 		.4byte	0
+  65 0021 00000000 		.4byte	.Ldebug_line0
+  66 0025 02       		.uleb128 0x2
+  67 0026 01       		.byte	0x1
+  68 0027 06       		.byte	0x6
+  69 0028 36010000 		.4byte	.LASF0
+  70 002c 02       		.uleb128 0x2
+  71 002d 01       		.byte	0x1
+  72 002e 08       		.byte	0x8
+  73 002f 5A000000 		.4byte	.LASF1
+  74 0033 02       		.uleb128 0x2
+  75 0034 02       		.byte	0x2
+  76 0035 05       		.byte	0x5
+  77 0036 7B000000 		.4byte	.LASF2
+  78 003a 02       		.uleb128 0x2
+  79 003b 02       		.byte	0x2
+  80 003c 07       		.byte	0x7
+  81 003d 23010000 		.4byte	.LASF3
+  82 0041 02       		.uleb128 0x2
+  83 0042 04       		.byte	0x4
+  84 0043 05       		.byte	0x5
+  85 0044 8C000000 		.4byte	.LASF4
+  86 0048 02       		.uleb128 0x2
+  87 0049 04       		.byte	0x4
+  88 004a 07       		.byte	0x7
+  89 004b 2B000000 		.4byte	.LASF5
+  90 004f 02       		.uleb128 0x2
+  91 0050 08       		.byte	0x8
+  92 0051 05       		.byte	0x5
+  93 0052 00000000 		.4byte	.LASF6
+  94 0056 02       		.uleb128 0x2
+  95 0057 08       		.byte	0x8
+  96 0058 07       		.byte	0x7
+  97 0059 3D000000 		.4byte	.LASF7
+  98 005d 03       		.uleb128 0x3
+  99 005e 04       		.byte	0x4
+ 100 005f 05       		.byte	0x5
+ 101 0060 696E7400 		.ascii	"int\000"
+ 102 0064 02       		.uleb128 0x2
+ 103 0065 04       		.byte	0x4
+ 104 0066 07       		.byte	0x7
+ 105 0067 0E000000 		.4byte	.LASF8
+ 106 006b 02       		.uleb128 0x2
+ 107 006c 04       		.byte	0x4
+ 108 006d 04       		.byte	0x4
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccLwx82j.s 			page 3
+
+
+ 109 006e 54000000 		.4byte	.LASF9
+ 110 0072 02       		.uleb128 0x2
+ 111 0073 08       		.byte	0x8
+ 112 0074 04       		.byte	0x4
+ 113 0075 85000000 		.4byte	.LASF10
+ 114 0079 02       		.uleb128 0x2
+ 115 007a 01       		.byte	0x1
+ 116 007b 08       		.byte	0x8
+ 117 007c 68000000 		.4byte	.LASF11
+ 118 0080 02       		.uleb128 0x2
+ 119 0081 08       		.byte	0x8
+ 120 0082 04       		.byte	0x4
+ 121 0083 4B010000 		.4byte	.LASF12
+ 122 0087 02       		.uleb128 0x2
+ 123 0088 04       		.byte	0x4
+ 124 0089 07       		.byte	0x7
+ 125 008a 76010000 		.4byte	.LASF13
+ 126 008e 04       		.uleb128 0x4
+ 127 008f 6D000000 		.4byte	.LASF19
+ 128 0093 01       		.byte	0x1
+ 129 0094 03       		.byte	0x3
+ 130 0095 00000000 		.4byte	.LFB34
+ 131 0099 0C000000 		.4byte	.LFE34-.LFB34
+ 132 009d 01       		.uleb128 0x1
+ 133 009e 9C       		.byte	0x9c
+ 134 009f B6000000 		.4byte	0xb6
+ 135 00a3 05       		.uleb128 0x5
+ 136 00a4 06000000 		.4byte	.LVL0
+ 137 00a8 B6000000 		.4byte	0xb6
+ 138 00ac 05       		.uleb128 0x5
+ 139 00ad 0A000000 		.4byte	.LVL1
+ 140 00b1 C1000000 		.4byte	0xc1
+ 141 00b5 00       		.byte	0
+ 142 00b6 06       		.uleb128 0x6
+ 143 00b7 57010000 		.4byte	.LASF14
+ 144 00bb 57010000 		.4byte	.LASF14
+ 145 00bf 02       		.byte	0x2
+ 146 00c0 04       		.byte	0x4
+ 147 00c1 06       		.uleb128 0x6
+ 148 00c2 42010000 		.4byte	.LASF15
+ 149 00c6 42010000 		.4byte	.LASF15
+ 150 00ca 03       		.byte	0x3
+ 151 00cb 04       		.byte	0x4
+ 152 00cc 00       		.byte	0
+ 153              		.section	.debug_abbrev,"",%progbits
+ 154              	.Ldebug_abbrev0:
+ 155 0000 01       		.uleb128 0x1
+ 156 0001 11       		.uleb128 0x11
+ 157 0002 01       		.byte	0x1
+ 158 0003 25       		.uleb128 0x25
+ 159 0004 0E       		.uleb128 0xe
+ 160 0005 13       		.uleb128 0x13
+ 161 0006 0B       		.uleb128 0xb
+ 162 0007 03       		.uleb128 0x3
+ 163 0008 0E       		.uleb128 0xe
+ 164 0009 1B       		.uleb128 0x1b
+ 165 000a 0E       		.uleb128 0xe
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccLwx82j.s 			page 4
+
+
+ 166 000b 55       		.uleb128 0x55
+ 167 000c 17       		.uleb128 0x17
+ 168 000d 11       		.uleb128 0x11
+ 169 000e 01       		.uleb128 0x1
+ 170 000f 10       		.uleb128 0x10
+ 171 0010 17       		.uleb128 0x17
+ 172 0011 00       		.byte	0
+ 173 0012 00       		.byte	0
+ 174 0013 02       		.uleb128 0x2
+ 175 0014 24       		.uleb128 0x24
+ 176 0015 00       		.byte	0
+ 177 0016 0B       		.uleb128 0xb
+ 178 0017 0B       		.uleb128 0xb
+ 179 0018 3E       		.uleb128 0x3e
+ 180 0019 0B       		.uleb128 0xb
+ 181 001a 03       		.uleb128 0x3
+ 182 001b 0E       		.uleb128 0xe
+ 183 001c 00       		.byte	0
+ 184 001d 00       		.byte	0
+ 185 001e 03       		.uleb128 0x3
+ 186 001f 24       		.uleb128 0x24
+ 187 0020 00       		.byte	0
+ 188 0021 0B       		.uleb128 0xb
+ 189 0022 0B       		.uleb128 0xb
+ 190 0023 3E       		.uleb128 0x3e
+ 191 0024 0B       		.uleb128 0xb
+ 192 0025 03       		.uleb128 0x3
+ 193 0026 08       		.uleb128 0x8
+ 194 0027 00       		.byte	0
+ 195 0028 00       		.byte	0
+ 196 0029 04       		.uleb128 0x4
+ 197 002a 2E       		.uleb128 0x2e
+ 198 002b 01       		.byte	0x1
+ 199 002c 3F       		.uleb128 0x3f
+ 200 002d 19       		.uleb128 0x19
+ 201 002e 03       		.uleb128 0x3
+ 202 002f 0E       		.uleb128 0xe
+ 203 0030 3A       		.uleb128 0x3a
+ 204 0031 0B       		.uleb128 0xb
+ 205 0032 3B       		.uleb128 0x3b
+ 206 0033 0B       		.uleb128 0xb
+ 207 0034 27       		.uleb128 0x27
+ 208 0035 19       		.uleb128 0x19
+ 209 0036 11       		.uleb128 0x11
+ 210 0037 01       		.uleb128 0x1
+ 211 0038 12       		.uleb128 0x12
+ 212 0039 06       		.uleb128 0x6
+ 213 003a 40       		.uleb128 0x40
+ 214 003b 18       		.uleb128 0x18
+ 215 003c 9742     		.uleb128 0x2117
+ 216 003e 19       		.uleb128 0x19
+ 217 003f 01       		.uleb128 0x1
+ 218 0040 13       		.uleb128 0x13
+ 219 0041 00       		.byte	0
+ 220 0042 00       		.byte	0
+ 221 0043 05       		.uleb128 0x5
+ 222 0044 898201   		.uleb128 0x4109
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccLwx82j.s 			page 5
+
+
+ 223 0047 00       		.byte	0
+ 224 0048 11       		.uleb128 0x11
+ 225 0049 01       		.uleb128 0x1
+ 226 004a 31       		.uleb128 0x31
+ 227 004b 13       		.uleb128 0x13
+ 228 004c 00       		.byte	0
+ 229 004d 00       		.byte	0
+ 230 004e 06       		.uleb128 0x6
+ 231 004f 2E       		.uleb128 0x2e
+ 232 0050 00       		.byte	0
+ 233 0051 3F       		.uleb128 0x3f
+ 234 0052 19       		.uleb128 0x19
+ 235 0053 3C       		.uleb128 0x3c
+ 236 0054 19       		.uleb128 0x19
+ 237 0055 6E       		.uleb128 0x6e
+ 238 0056 0E       		.uleb128 0xe
+ 239 0057 03       		.uleb128 0x3
+ 240 0058 0E       		.uleb128 0xe
+ 241 0059 3A       		.uleb128 0x3a
+ 242 005a 0B       		.uleb128 0xb
+ 243 005b 3B       		.uleb128 0x3b
+ 244 005c 0B       		.uleb128 0xb
+ 245 005d 00       		.byte	0
+ 246 005e 00       		.byte	0
+ 247 005f 00       		.byte	0
+ 248              		.section	.debug_aranges,"",%progbits
+ 249 0000 1C000000 		.4byte	0x1c
+ 250 0004 0200     		.2byte	0x2
+ 251 0006 00000000 		.4byte	.Ldebug_info0
+ 252 000a 04       		.byte	0x4
+ 253 000b 00       		.byte	0
+ 254 000c 0000     		.2byte	0
+ 255 000e 0000     		.2byte	0
+ 256 0010 00000000 		.4byte	.LFB34
+ 257 0014 0C000000 		.4byte	.LFE34-.LFB34
+ 258 0018 00000000 		.4byte	0
+ 259 001c 00000000 		.4byte	0
+ 260              		.section	.debug_ranges,"",%progbits
+ 261              	.Ldebug_ranges0:
+ 262 0000 00000000 		.4byte	.LFB34
+ 263 0004 0C000000 		.4byte	.LFE34
+ 264 0008 00000000 		.4byte	0
+ 265 000c 00000000 		.4byte	0
+ 266              		.section	.debug_line,"",%progbits
+ 267              	.Ldebug_line0:
+ 268 0000 5B000000 		.section	.debug_str,"MS",%progbits,1
+ 268      02004500 
+ 268      00000201 
+ 268      FB0E0D00 
+ 268      01010101 
+ 269              	.LASF6:
+ 270 0000 6C6F6E67 		.ascii	"long long int\000"
+ 270      206C6F6E 
+ 270      6720696E 
+ 270      7400
+ 271              	.LASF8:
+ 272 000e 756E7369 		.ascii	"unsigned int\000"
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccLwx82j.s 			page 6
+
+
+ 272      676E6564 
+ 272      20696E74 
+ 272      00
+ 273              	.LASF18:
+ 274 001b 443A5C4C 		.ascii	"D:\\Lab4_V.cydsn\000"
+ 274      6162345F 
+ 274      562E6379 
+ 274      64736E00 
+ 275              	.LASF5:
+ 276 002b 6C6F6E67 		.ascii	"long unsigned int\000"
+ 276      20756E73 
+ 276      69676E65 
+ 276      6420696E 
+ 276      7400
+ 277              	.LASF7:
+ 278 003d 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 278      206C6F6E 
+ 278      6720756E 
+ 278      7369676E 
+ 278      65642069 
+ 279              	.LASF9:
+ 280 0054 666C6F61 		.ascii	"float\000"
+ 280      7400
+ 281              	.LASF1:
+ 282 005a 756E7369 		.ascii	"unsigned char\000"
+ 282      676E6564 
+ 282      20636861 
+ 282      7200
+ 283              	.LASF11:
+ 284 0068 63686172 		.ascii	"char\000"
+ 284      00
+ 285              	.LASF19:
+ 286 006d 70726F74 		.ascii	"protocol_init\000"
+ 286      6F636F6C 
+ 286      5F696E69 
+ 286      7400
+ 287              	.LASF2:
+ 288 007b 73686F72 		.ascii	"short int\000"
+ 288      7420696E 
+ 288      7400
+ 289              	.LASF10:
+ 290 0085 646F7562 		.ascii	"double\000"
+ 290      6C6500
+ 291              	.LASF4:
+ 292 008c 6C6F6E67 		.ascii	"long int\000"
+ 292      20696E74 
+ 292      00
+ 293              	.LASF16:
+ 294 0095 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 294      43313120 
+ 294      352E342E 
+ 294      31203230 
+ 294      31363036 
+ 295 00c8 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 295      20726576 
+ 295      6973696F 
+ 295      6E203233 
+ARM GAS  C:\Users\manko\AppData\Local\Temp\ccLwx82j.s 			page 7
+
+
+ 295      37373135 
+ 296 00fb 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 296      66756E63 
+ 296      74696F6E 
+ 296      2D736563 
+ 296      74696F6E 
+ 297              	.LASF3:
+ 298 0123 73686F72 		.ascii	"short unsigned int\000"
+ 298      7420756E 
+ 298      7369676E 
+ 298      65642069 
+ 298      6E7400
+ 299              	.LASF0:
+ 300 0136 7369676E 		.ascii	"signed char\000"
+ 300      65642063 
+ 300      68617200 
+ 301              	.LASF15:
+ 302 0142 6C63645F 		.ascii	"lcd_init\000"
+ 302      696E6974 
+ 302      00
+ 303              	.LASF12:
+ 304 014b 6C6F6E67 		.ascii	"long double\000"
+ 304      20646F75 
+ 304      626C6500 
+ 305              	.LASF14:
+ 306 0157 6164635F 		.ascii	"adc_validation_init\000"
+ 306      76616C69 
+ 306      64617469 
+ 306      6F6E5F69 
+ 306      6E697400 
+ 307              	.LASF17:
+ 308 016b 70726F74 		.ascii	"protocol.c\000"
+ 308      6F636F6C 
+ 308      2E6300
+ 309              	.LASF13:
+ 310 0176 73697A65 		.ascii	"sizetype\000"
+ 310      74797065 
+ 310      00
+ 311              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

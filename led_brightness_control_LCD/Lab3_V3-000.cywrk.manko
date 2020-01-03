@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="5f2be1a5-0687-4501-bb8c-cf21cb8211bf">
+<CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf type_name="CyDesigner.Common.ProjMgmt.GUI.CyBookmarkData" version="1">
+<indicators />
+</CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf>
+</dataGuid>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Lab3_V3-000\Lab3_V3\Source Files\main.c">
+<ExpandedNodeIds>
+<v>Lab3_V3-000</v>
+<v>Lab3_V3-000\Lab3_V3</v>
+<v>Lab3_V3-000\Lab3_V3\TopDesign</v>
+<v>Lab3_V3-000\Lab3_V3\Lab3_V3.cydwr</v>
+<v>Lab3_V3-000\Lab3_V3\Lab3_V3.cydwr\Pins</v>
+<v>Lab3_V3-000\Lab3_V3\Lab3_V3.cydwr\Analog</v>
+<v>Lab3_V3-000\Lab3_V3\Lab3_V3.cydwr\DMA</v>
+<v>Lab3_V3-000\Lab3_V3\Lab3_V3.cydwr\Clocks</v>
+<v>Lab3_V3-000\Lab3_V3\Lab3_V3.cydwr\Interrupts</v>
+<v>Lab3_V3-000\Lab3_V3\Lab3_V3.cydwr\System</v>
+<v>Lab3_V3-000\Lab3_V3\Lab3_V3.cydwr\Directives</v>
+<v>Lab3_V3-000\Lab3_V3\Lab3_V3.cydwr\Flash Security</v>
+<v>Lab3_V3-000\Lab3_V3\Header Files</v>
+<v>Lab3_V3-000\Lab3_V3\Header Files\Headers</v>
+<v>Lab3_V3-000\Lab3_V3\Header Files\Headers\algorithm.h</v>
+<v>Lab3_V3-000\Lab3_V3\Header Files\Headers\lab.h</v>
+<v>Lab3_V3-000\Lab3_V3\Header Files\Headers\lcd_traffic_light.h</v>
+<v>Lab3_V3-000\Lab3_V3\Header Files\Headers\protocol.h</v>
+<v>Lab3_V3-000\Lab3_V3\Header Files\cyapicallbacks.h</v>
+<v>Lab3_V3-000\Lab3_V3\Source Files</v>
+<v>Lab3_V3-000\Lab3_V3\Source Files\Sources</v>
+<v>Lab3_V3-000\Lab3_V3\Source Files\Sources\algorithm.c</v>
+<v>Lab3_V3-000\Lab3_V3\Source Files\Sources\lcd_traffic_light.c</v>
+<v>Lab3_V3-000\Lab3_V3\Source Files\Sources\protocol.c</v>
+<v>Lab3_V3-000\Lab3_V3\Source Files\main.c</v>
+<v>Lab3_V3-000\Lab3_V3\Generated_Source</v>
+<v>Lab3_V3-000\Lab3_V3\Generated_Source\PSoC4</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Lab3_V3-000</v>
+<v>Lab3_V3-000\Lab3_V3</v>
+<v>Lab3_V3-000\Lab3_V3\TopDesign</v>
+<v>Lab3_V3-000\Lab3_V3\Lab3_V3.cydwr</v>
+<v>Lab3_V3-000\Lab3_V3\Lab3_V3.cydwr\Pins</v>
+<v>Lab3_V3-000\Lab3_V3\Lab3_V3.cydwr\Analog</v>
+<v>Lab3_V3-000\Lab3_V3\Lab3_V3.cydwr\DMA</v>
+<v>Lab3_V3-000\Lab3_V3\Lab3_V3.cydwr\Clocks</v>
+<v>Lab3_V3-000\Lab3_V3\Lab3_V3.cydwr\Interrupts</v>
+<v>Lab3_V3-000\Lab3_V3\Lab3_V3.cydwr\System</v>
+<v>Lab3_V3-000\Lab3_V3\Lab3_V3.cydwr\Directives</v>
+<v>Lab3_V3-000\Lab3_V3\Lab3_V3.cydwr\Flash Security</v>
+<v>Lab3_V3-000\Lab3_V3\Header Files</v>
+<v>Lab3_V3-000\Lab3_V3\Header Files\Headers</v>
+<v>Lab3_V3-000\Lab3_V3\Header Files\Headers\algorithm.h</v>
+<v>Lab3_V3-000\Lab3_V3\Header Files\Headers\lab.h</v>
+<v>Lab3_V3-000\Lab3_V3\Header Files\Headers\lcd_traffic_light.h</v>
+<v>Lab3_V3-000\Lab3_V3\Header Files\Headers\protocol.h</v>
+<v>Lab3_V3-000\Lab3_V3\Header Files\cyapicallbacks.h</v>
+<v>Lab3_V3-000\Lab3_V3\Source Files</v>
+<v>Lab3_V3-000\Lab3_V3\Source Files\Sources</v>
+<v>Lab3_V3-000\Lab3_V3\Source Files\Sources\algorithm.c</v>
+<v>Lab3_V3-000\Lab3_V3\Source Files\Sources\lcd_traffic_light.c</v>
+<v>Lab3_V3-000\Lab3_V3\Source Files\Sources\protocol.c</v>
+<v>Lab3_V3-000\Lab3_V3\Source Files\main.c</v>
+<v>Lab3_V3-000\Lab3_V3\Generated_Source</v>
+<v>Lab3_V3-000\Lab3_V3\Generated_Source\PSoC4</v>
+<v>Lab3_V3-000\Lab3_V3\Generated_Source\PSoC4\Clock_1</v>
+<v>Lab3_V3-000\Lab3_V3\Generated_Source\PSoC4\Clock_2</v>
+<v>Lab3_V3-000\Lab3_V3\Generated_Source\PSoC4\Clock_3</v>
+<v>Lab3_V3-000\Lab3_V3\Generated_Source\PSoC4\cy_boot</v>
+<v>Lab3_V3-000\Lab3_V3\Generated_Source\PSoC4\cy_dmac</v>
+<v>Lab3_V3-000\Lab3_V3\Generated_Source\PSoC4\cy_lfclk</v>
+<v>Lab3_V3-000\Lab3_V3\Generated_Source\PSoC4\Em_EEPROM_Dynamic</v>
+<v>Lab3_V3-000\Lab3_V3\Generated_Source\PSoC4\Enc_Sw</v>
+<v>Lab3_V3-000\Lab3_V3\Generated_Source\PSoC4\Enc_Sw_Int</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Lab3_V3-000</v>
+<v>Lab3_V3-000\Lab3_V3</v>
+<v>Lab3_V3-000\Lab3_V3\TopDesign</v>
+<v>Lab3_V3-000\Lab3_V3\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Lab3_V3-000</v>
+<v>Lab3_V3-000\Lab3_V3</v>
+<v>Lab3_V3-000\Lab3_V3\TopDesign</v>
+<v>Lab3_V3-000\Lab3_V3\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Lab3_V3-000</v>
+<v>Lab3_V3-000\Lab3_V3</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\algorithm.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock_2.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock_3.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\CyDMA.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\Enc_Sw.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\Enc_Sw_Int.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\Enc_Sw_PM.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\LCD.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\LCD_LCDPort.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\LCD_LCDPort_PM.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\LCD_PM.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\lcd_traffic_light.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\phiA.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\phiA_PM.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\phiB.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\phiB_PM.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_Green.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_Green_PM.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_Red.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_Red_PM.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_Yellow.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_Yellow_PM.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\protocol.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\QuadDec.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\QuadDec_Int.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\QuadDec_PM.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\SW.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\SW_Int.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\SW_PM.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\Timer.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\Timer_Int.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\Timer_PM.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Lab3_V3.elf</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Lab3_V3.hex</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Lab3_V3.map</v>
+<v>Lab3_V3-000\Lab3_V3\Lab3_V3.gpdsc</v>
+<v>Lab3_V3-000\Lab3_V3\Lab3_V3.rpt</v>
+<v>Lab3_V3-000\Lab3_V3\Lab3_V3_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Lab3_V3-000</v>
+<v>Lab3_V3-000\Lab3_V3</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\algorithm.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock_2.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock_3.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\CyDMA.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\Enc_Sw.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\Enc_Sw_Int.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\Enc_Sw_PM.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\LCD.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\LCD_LCDPort.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\LCD_LCDPort_PM.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\LCD_PM.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\lcd_traffic_light.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\phiA.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\phiA_PM.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\phiB.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\phiB_PM.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_Green.lst</v>
+<v>Lab3_V3-000\Lab3_V3\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_Green_PM.lst</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Lab3_V3-000</v>
+<v>Lab3_V3-000\Lab3_V3</v>
+<v>Lab3_V3-000\Lab3_V3\PSoC 4 Architecture TRM</v>
+<v>Lab3_V3-000\Lab3_V3\PSoC 4200M Family Datasheet</v>
+<v>Lab3_V3-000\Lab3_V3\System Reference Guides</v>
+<v>Lab3_V3-000\Lab3_V3\System Reference Guides\cy_boot_v5_80</v>
+<v>Lab3_V3-000\Lab3_V3\System Reference Guides\cy_dmac_v1_10</v>
+<v>Lab3_V3-000\Lab3_V3\System Reference Guides\cy_lfclk_v1_20</v>
+<v>Lab3_V3-000\Lab3_V3\CharLCD_v2_20.pdf</v>
+<v>Lab3_V3-000\Lab3_V3\cy_clock_v2_20</v>
+<v>Lab3_V3-000\Lab3_V3\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>Lab3_V3-000\Lab3_V3\cy_isr_v1_70</v>
+<v>Lab3_V3-000\Lab3_V3\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
+<v>Lab3_V3-000\Lab3_V3\cy_pins_v2_20</v>
+<v>Lab3_V3-000\Lab3_V3\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>Lab3_V3-000\Lab3_V3\Debouncer_v1_0.pdf</v>
+<v>Lab3_V3-000\Lab3_V3\TCPWM_P4_v2_10</v>
+<v>Lab3_V3-000\Lab3_V3\TCPWM_P4_v2_10\TCPWM_P4_v2_10.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Lab3_V3-000</v>
+<v>Lab3_V3-000\Lab3_V3</v>
+<v>Lab3_V3-000\Lab3_V3\PSoC 4 Architecture TRM</v>
+<v>Lab3_V3-000\Lab3_V3\PSoC 4200M Family Datasheet</v>
+<v>Lab3_V3-000\Lab3_V3\System Reference Guides</v>
+<v>Lab3_V3-000\Lab3_V3\System Reference Guides\cy_boot_v5_80</v>
+<v>Lab3_V3-000\Lab3_V3\System Reference Guides\cy_dmac_v1_10</v>
+<v>Lab3_V3-000\Lab3_V3\System Reference Guides\cy_lfclk_v1_20</v>
+<v>Lab3_V3-000\Lab3_V3\CharLCD_v2_20.pdf</v>
+<v>Lab3_V3-000\Lab3_V3\cy_clock_v2_20</v>
+<v>Lab3_V3-000\Lab3_V3\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>Lab3_V3-000\Lab3_V3\cy_isr_v1_70</v>
+<v>Lab3_V3-000\Lab3_V3\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
+<v>Lab3_V3-000\Lab3_V3\cy_pins_v2_20</v>
+<v>Lab3_V3-000\Lab3_V3\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>Lab3_V3-000\Lab3_V3\Debouncer_v1_0.pdf</v>
+<v>Lab3_V3-000\Lab3_V3\TCPWM_P4_v2_10</v>
+<v>Lab3_V3-000\Lab3_V3\TCPWM_P4_v2_10\TCPWM_P4_v2_10.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\TopDesign\TopDesign.cysch" />
+<name v=".\algorithm.c" />
+<name v=".\lcd_traffic_light.c" />
+<name v=".\main.c" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="987, 495" SelectedTabbedMdiWindow="79c718be-d1af-43bc-a7c3-21f4dd58c2cf"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="2c5c55dd-08f1-4ee3-8db7-6187ecdbff8a" /><DocumentWindow Key="D:\university-files\5th semester\microcontrollers\Lab3_V3.cydsn\TopDesign\TopDesign.cysch" Guid="1dc9b9d6-f864-411b-95bb-b85371ea04a5" /><DocumentWindow Key="D:\university-files\5th semester\microcontrollers\Lab3_V3.cydsn\algorithm.c" Guid="7a4abce2-432a-4bea-af87-63b57a8755af" /><DocumentWindow Key="D:\university-files\5th semester\microcontrollers\Lab3_V3.cydsn\lcd_traffic_light.c" Guid="71fa056d-5e05-426b-a5bc-b3431aace59e" /><DocumentWindow Key="D:\university-files\5th semester\microcontrollers\Lab3_V3.cydsn\main.c" Guid="79c718be-d1af-43bc-a7c3-21f4dd58c2cf" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>

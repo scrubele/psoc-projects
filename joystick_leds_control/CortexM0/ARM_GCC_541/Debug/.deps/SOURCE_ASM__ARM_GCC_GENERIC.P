@@ -1,0 +1,8 @@
+D:/Lab4_V.cydsn/CortexM0/ARM_GCC_541/Debug/CyBootAsmGnu.o : D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyBootAsmGnu.s D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevicegnu_trm.inc D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfittergnu.inc 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/CyBootAsmGnu.s : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/cydevicegnu_trm.inc : 
+
+D:/Lab4_V.cydsn/Generated_Source/PSoC4/cyfittergnu.inc : 
+

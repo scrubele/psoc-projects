@@ -1,0 +1,100 @@
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/CortexM0/ARM_GCC_541/Debug/main.o : D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/Clock_1.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/Clock_2.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/Clock_3.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/CyDMA.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/CyFlash.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/CyLib.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/Enc_Sw.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/Enc_Sw_Int.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/Enc_Sw_aliases.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/LCD.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/LCD_LCDPort.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/LCD_LCDPort_aliases.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/Pin_Green.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/Pin_Green_aliases.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/Pin_Red.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/Pin_Red_aliases.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/Pin_Yellow.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/Pin_Yellow_aliases.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/QuadDec.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/QuadDec_Int.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/SW.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/SW_Int.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/SW_aliases.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/Timer.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/Timer_Int.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/cmsis_armcc.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/cmsis_compiler.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/cmsis_gcc.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/core_cm0.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/cyPm.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/cy_em_eeprom.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/cydisabledsheets.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/cyfitter.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/cypins.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/cytypes.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/phiA.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/phiA_aliases.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/phiB.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/phiB_aliases.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/project.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/algorithm.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/lab.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/lcd_traffic_light.h D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/main.c D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/protocol.h 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/Clock_1.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/Clock_2.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/Clock_3.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/CyDMA.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/CyFlash.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/CyLFClk.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/CyLib.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/Enc_Sw.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/Enc_Sw_Int.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/Enc_Sw_aliases.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/LCD.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/LCD_LCDPort.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/LCD_LCDPort_aliases.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/Pin_Green.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/Pin_Green_aliases.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/Pin_Red.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/Pin_Red_aliases.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/Pin_Yellow.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/Pin_Yellow_aliases.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/QuadDec.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/QuadDec_Int.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/SW.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/SW_Int.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/SW_aliases.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/Timer.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/Timer_Int.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/cmsis_armcc.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/cmsis_compiler.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/cmsis_gcc.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/core_cm0.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/cyPm.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/cy_em_eeprom.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/cydevice_trm.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/cydisabledsheets.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/cyfitter.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/cypins.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/cytypes.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/phiA.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/phiA_aliases.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/phiB.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/phiB_aliases.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/Generated_Source/PSoC4/project.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/algorithm.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/lab.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/lcd_traffic_light.h : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/main.c : 
+
+D:/university-files/5th\ semester/microcontrollers/Lab3_V3.cydsn/protocol.h : 
+

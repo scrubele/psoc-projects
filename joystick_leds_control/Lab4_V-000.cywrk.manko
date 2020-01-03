@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="5f2be1a5-0687-4501-bb8c-cf21cb8211bf">
+<CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf type_name="CyDesigner.Common.ProjMgmt.GUI.CyBookmarkData" version="1">
+<indicators />
+</CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf>
+</dataGuid>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Lab4_V-000\Lab4_V\Source Files\Sources\adc_validation.c">
+<ExpandedNodeIds>
+<v>Lab4_V-000</v>
+<v>Lab4_V-000\Lab4_V</v>
+<v>Lab4_V-000\Lab4_V\TopDesign</v>
+<v>Lab4_V-000\Lab4_V\Lab4_V.cydwr</v>
+<v>Lab4_V-000\Lab4_V\Lab4_V.cydwr\Pins</v>
+<v>Lab4_V-000\Lab4_V\Lab4_V.cydwr\Analog</v>
+<v>Lab4_V-000\Lab4_V\Lab4_V.cydwr\DMA</v>
+<v>Lab4_V-000\Lab4_V\Lab4_V.cydwr\Clocks</v>
+<v>Lab4_V-000\Lab4_V\Lab4_V.cydwr\Interrupts</v>
+<v>Lab4_V-000\Lab4_V\Lab4_V.cydwr\System</v>
+<v>Lab4_V-000\Lab4_V\Lab4_V.cydwr\Directives</v>
+<v>Lab4_V-000\Lab4_V\Lab4_V.cydwr\Flash Security</v>
+<v>Lab4_V-000\Lab4_V\Header Files</v>
+<v>Lab4_V-000\Lab4_V\Header Files\Headers</v>
+<v>Lab4_V-000\Lab4_V\Header Files\Headers\adc_validation.h</v>
+<v>Lab4_V-000\Lab4_V\Header Files\Headers\lab.h</v>
+<v>Lab4_V-000\Lab4_V\Header Files\Headers\lcd_degree.h</v>
+<v>Lab4_V-000\Lab4_V\Header Files\Headers\protocol.h</v>
+<v>Lab4_V-000\Lab4_V\Header Files\cyapicallbacks.h</v>
+<v>Lab4_V-000\Lab4_V\Source Files</v>
+<v>Lab4_V-000\Lab4_V\Source Files\Sources</v>
+<v>Lab4_V-000\Lab4_V\Source Files\Sources\adc_validation.c</v>
+<v>Lab4_V-000\Lab4_V\Source Files\Sources\lcd_degree.c</v>
+<v>Lab4_V-000\Lab4_V\Source Files\Sources\protocol.c</v>
+<v>Lab4_V-000\Lab4_V\Source Files\main.c</v>
+<v>Lab4_V-000\Lab4_V\Generated_Source</v>
+<v>Lab4_V-000\Lab4_V\Generated_Source\PSoC4</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Lab4_V-000</v>
+<v>Lab4_V-000\Lab4_V</v>
+<v>Lab4_V-000\Lab4_V\TopDesign</v>
+<v>Lab4_V-000\Lab4_V\Lab4_V.cydwr</v>
+<v>Lab4_V-000\Lab4_V\Lab4_V.cydwr\Pins</v>
+<v>Lab4_V-000\Lab4_V\Lab4_V.cydwr\Analog</v>
+<v>Lab4_V-000\Lab4_V\Lab4_V.cydwr\DMA</v>
+<v>Lab4_V-000\Lab4_V\Lab4_V.cydwr\Clocks</v>
+<v>Lab4_V-000\Lab4_V\Lab4_V.cydwr\Interrupts</v>
+<v>Lab4_V-000\Lab4_V\Lab4_V.cydwr\System</v>
+<v>Lab4_V-000\Lab4_V\Lab4_V.cydwr\Directives</v>
+<v>Lab4_V-000\Lab4_V\Lab4_V.cydwr\Flash Security</v>
+<v>Lab4_V-000\Lab4_V\Header Files</v>
+<v>Lab4_V-000\Lab4_V\Header Files\Headers</v>
+<v>Lab4_V-000\Lab4_V\Header Files\Headers\adc_validation.h</v>
+<v>Lab4_V-000\Lab4_V\Header Files\Headers\lab.h</v>
+<v>Lab4_V-000\Lab4_V\Header Files\Headers\lcd_degree.h</v>
+<v>Lab4_V-000\Lab4_V\Header Files\Headers\protocol.h</v>
+<v>Lab4_V-000\Lab4_V\Header Files\cyapicallbacks.h</v>
+<v>Lab4_V-000\Lab4_V\Source Files</v>
+<v>Lab4_V-000\Lab4_V\Source Files\Sources</v>
+<v>Lab4_V-000\Lab4_V\Source Files\Sources\adc_validation.c</v>
+<v>Lab4_V-000\Lab4_V\Source Files\Sources\lcd_degree.c</v>
+<v>Lab4_V-000\Lab4_V\Source Files\Sources\protocol.c</v>
+<v>Lab4_V-000\Lab4_V\Source Files\main.c</v>
+<v>Lab4_V-000\Lab4_V\Generated_Source</v>
+<v>Lab4_V-000\Lab4_V\Generated_Source\PSoC4</v>
+<v>Lab4_V-000\Lab4_V\Generated_Source\PSoC4\ADC</v>
+<v>Lab4_V-000\Lab4_V\Generated_Source\PSoC4\ADC_intClock</v>
+<v>Lab4_V-000\Lab4_V\Generated_Source\PSoC4\ADC_IRQ</v>
+<v>Lab4_V-000\Lab4_V\Generated_Source\PSoC4\Clock_1</v>
+<v>Lab4_V-000\Lab4_V\Generated_Source\PSoC4\Clock_2</v>
+<v>Lab4_V-000\Lab4_V\Generated_Source\PSoC4\cy_boot</v>
+<v>Lab4_V-000\Lab4_V\Generated_Source\PSoC4\cy_dmac</v>
+<v>Lab4_V-000\Lab4_V\Generated_Source\PSoC4\cy_lfclk</v>
+<v>Lab4_V-000\Lab4_V\Generated_Source\PSoC4\Em_EEPROM_Dynamic</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Lab4_V-000</v>
+<v>Lab4_V-000\Lab4_V</v>
+<v>Lab4_V-000\Lab4_V\TopDesign</v>
+<v>Lab4_V-000\Lab4_V\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Lab4_V-000</v>
+<v>Lab4_V-000\Lab4_V</v>
+<v>Lab4_V-000\Lab4_V\TopDesign</v>
+<v>Lab4_V-000\Lab4_V\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Lab4_V-000</v>
+<v>Lab4_V-000\Lab4_V</v>
+<v>Lab4_V-000\Lab4_V\CortexM0</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_INT.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_intClock.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_IRQ.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_PM.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\adc_validation.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock_2.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\CyDMA.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\LCD.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\lcd_degree.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\LCD_LCDPort.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\LCD_LCDPort_PM.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\LCD_PM.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_Green.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_Green_PM.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_Red.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_Red_PM.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_x.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_x_PM.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_y.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_y_PM.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\protocol.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_X.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_X_PM.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_Y.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_Y_PM.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Lab4_V.elf</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Lab4_V.hex</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Lab4_V.map</v>
+<v>Lab4_V-000\Lab4_V\Lab4_V.gpdsc</v>
+<v>Lab4_V-000\Lab4_V\Lab4_V.rpt</v>
+<v>Lab4_V-000\Lab4_V\Lab4_V_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Lab4_V-000</v>
+<v>Lab4_V-000\Lab4_V</v>
+<v>Lab4_V-000\Lab4_V\CortexM0</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_INT.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_intClock.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_IRQ.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_PM.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\adc_validation.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock_2.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\CyDMA.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\LCD.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\lcd_degree.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\LCD_LCDPort.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\LCD_LCDPort_PM.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\LCD_PM.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_Green.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_Green_PM.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_Red.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_Red_PM.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_x.lst</v>
+<v>Lab4_V-000\Lab4_V\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_x_PM.lst</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Lab4_V-000</v>
+<v>Lab4_V-000\Lab4_V</v>
+<v>Lab4_V-000\Lab4_V\PSoC 4 Architecture TRM</v>
+<v>Lab4_V-000\Lab4_V\PSoC 4200M Family Datasheet</v>
+<v>Lab4_V-000\Lab4_V\System Reference Guides</v>
+<v>Lab4_V-000\Lab4_V\System Reference Guides\cy_boot_v5_80</v>
+<v>Lab4_V-000\Lab4_V\System Reference Guides\cy_dmac_v1_10</v>
+<v>Lab4_V-000\Lab4_V\System Reference Guides\cy_lfclk_v1_20</v>
+<v>Lab4_V-000\Lab4_V\ADC_SAR_SEQ_P4_v2_50.pdf</v>
+<v>Lab4_V-000\Lab4_V\CharLCD_v2_20.pdf</v>
+<v>Lab4_V-000\Lab4_V\cy_clock_v2_20</v>
+<v>Lab4_V-000\Lab4_V\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>Lab4_V-000\Lab4_V\cy_pins_v2_20</v>
+<v>Lab4_V-000\Lab4_V\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>Lab4_V-000\Lab4_V\TCPWM_P4_v2_10</v>
+<v>Lab4_V-000\Lab4_V\TCPWM_P4_v2_10\TCPWM_P4_v2_10.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Lab4_V-000</v>
+<v>Lab4_V-000\Lab4_V</v>
+<v>Lab4_V-000\Lab4_V\PSoC 4 Architecture TRM</v>
+<v>Lab4_V-000\Lab4_V\PSoC 4200M Family Datasheet</v>
+<v>Lab4_V-000\Lab4_V\System Reference Guides</v>
+<v>Lab4_V-000\Lab4_V\System Reference Guides\cy_boot_v5_80</v>
+<v>Lab4_V-000\Lab4_V\System Reference Guides\cy_dmac_v1_10</v>
+<v>Lab4_V-000\Lab4_V\System Reference Guides\cy_lfclk_v1_20</v>
+<v>Lab4_V-000\Lab4_V\ADC_SAR_SEQ_P4_v2_50.pdf</v>
+<v>Lab4_V-000\Lab4_V\CharLCD_v2_20.pdf</v>
+<v>Lab4_V-000\Lab4_V\cy_clock_v2_20</v>
+<v>Lab4_V-000\Lab4_V\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>Lab4_V-000\Lab4_V\cy_pins_v2_20</v>
+<v>Lab4_V-000\Lab4_V\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>Lab4_V-000\Lab4_V\TCPWM_P4_v2_10</v>
+<v>Lab4_V-000\Lab4_V\TCPWM_P4_v2_10\TCPWM_P4_v2_10.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\TopDesign\TopDesign.cysch" />
+<name v=".\lcd_degree.c" />
+<name v=".\adc_validation.c" />
+<name v=".\protocol.c" />
+<name v=".\main.c" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="944, 495" SelectedTabbedMdiWindow="213ed4d1-a4a9-4d04-876c-9179c97a6782"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="2c5c55dd-08f1-4ee3-8db7-6187ecdbff8a" /><DocumentWindow Key="D:\Lab4_V.cydsn\TopDesign\TopDesign.cysch" Guid="213ed4d1-a4a9-4d04-876c-9179c97a6782" /><DocumentWindow Key="D:\Lab4_V.cydsn\lcd_degree.c" Guid="79d89a80-bca5-46b6-a2bf-af7ade6aee5a" /><DocumentWindow Key="D:\Lab4_V.cydsn\adc_validation.c" Guid="8a341d24-c5db-48e1-9185-6b067bc3c0d0" /><DocumentWindow Key="D:\Lab4_V.cydsn\protocol.c" Guid="545b22e1-a069-4646-8864-f0b62aeac26b" /><DocumentWindow Key="D:\Lab4_V.cydsn\main.c" Guid="5d537f02-b4d9-4c08-81d9-66a21518edcc" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>
